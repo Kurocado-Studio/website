@@ -1,0 +1,14 @@
+{
+  "title": "Kurocado Studio Styleguide Remix Template",
+  "description": "The official Remix Template used by Kurocado Studio",
+  "iconUrl": "https://avatars.githubusercontent.com/u/148841069?s=200&v=4",
+  "tags": [
+    "frontend",
+    "starter",
+    "react",
+    "remix",
+    "typescript",
+    "kurocado studio"
+  ],
+  "published": true
+}

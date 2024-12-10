@@ -20,9 +20,13 @@
     "typecheck": "tsc"
   },
   "dependencies": {
+    "@motionone/utils": "^10.18.0",
     "@remix-run/node": "^2.9.2",
     "@remix-run/react": "^2.9.2",
+    "clsx": "^2.1.1",
+    "framer-motion": "^11.13.5",
     "isbot": "^5.1.1",
+    "lodash-es": "^4.17.21",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "tailwind-merge": "^2.4.0",

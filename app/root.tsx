@@ -47,7 +47,7 @@ export function Layout({
           href='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css'
         />
         <Links />
-        <title>Welcome to Remix</title>
+        <title>Kurocado Studio</title>
       </head>
       <body
         className='selection:bg-lime-200 selection:text-[#f52891cc]'

@@ -6,7 +6,7 @@
  * 
  * Explore our open-source projects: {@link https://github.com/kurocado-studio}
 */
-
+@import './typography.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

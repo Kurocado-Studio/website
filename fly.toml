@@ -1,9 +1,9 @@
-# fly.toml app configuration file generated for styleguide-remix-template-ancient-night-4492 on 2024-10-28T20:56:38-05:00
+# fly.toml app configuration file generated for kurocado-studio-website on 2024-12-10T13:04:06-06:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'styleguide-remix-template'
+app = 'kurocado-studio-website'
 primary_region = 'ord'
 
 [build]

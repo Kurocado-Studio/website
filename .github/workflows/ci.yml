@@ -38,7 +38,7 @@ jobs:
     secrets: inherit
 
   release:
-    needs: document
+    needs: test
     uses: kurocado-studio/styleguide/.github/workflows/workflow.release.yml@main
     secrets: inherit
     with:

@@ -2,16 +2,13 @@ import { motion } from 'framer-motion';
 import { get } from 'lodash-es';
 import React, { createContext, useState } from 'react';
 
-import { ColorContextResolver } from '~/context/colorContext.resolver';
-import { ColorContextEnum } from '~/context/types';
+import { ColorThemeContextEnum } from '~/context/types';
 import type { ColorContextState } from '~/context/types';
-
-const { createColorContextMap } = ColorContextResolver;
+import { useColorThemeResolver } from '~/hooks/useColorThemeResolver';
 
 export const ColorContext = createContext({
-  colorContextMap: createColorContextMap(),
-  colorContext: ColorContextEnum.DEFAULT,
-  setColorContext: (colorContext: ColorContextEnum): void => {
+  colorContext: ColorThemeContextEnum.DEFAULT,
+  setColorContext: (colorContext: ColorThemeContextEnum): void => {
     /**
      * as we need a default action to handle the param
      */
@@ -25,31 +22,27 @@ export function BodyHTMLTagColorProvider({
 }: {
   children: React.ReactNode;
 }): React.ReactNode {
-  const contextResolver = ColorContextResolver.create();
+  const { resolveColorTheme, colorThemeMap, colorTheme } =
+    useColorThemeResolver();
 
   const [colors, setColors] = useState<ColorContextState>(
-    contextResolver.resolve(ColorContextEnum.DEFAULT),
+    get(colorThemeMap, [ColorThemeContextEnum.DEFAULT]),
   );
 
-  const [colorContext, setColorContext] = useState<ColorContextEnum>(
-    ColorContextEnum.DEFAULT,
-  );
-
-  const setColorsHandler = (selectedColorContext: ColorContextEnum): void => {
-    setColorContext(selectedColorContext);
-
-    const { background, foreground } = contextResolver.resolve(colorContext);
+  const setColorsHandler = (
+    selectedColorContext: ColorThemeContextEnum,
+  ): void => {
+    const { background, foreground } = resolveColorTheme(selectedColorContext);
 
     setColors({ background, foreground });
   };
 
   const providerValue = React.useMemo(
     () => ({
-      colorContext,
-      colorContextMap: createColorContextMap(),
+      colorContext: colorTheme,
       setColorContext: setColorsHandler,
     }),
-    [colorContext],
+    [colorTheme],
   );
 
   return (

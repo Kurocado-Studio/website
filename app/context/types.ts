@@ -36,7 +36,7 @@ export type CombinedColorsObject = PrimaryColorsObject &
   SecondaryColorsObject &
   BaseColorsObject;
 
-export enum ColorContextEnum {
+export enum ColorThemeContextEnum {
   BLUE = PrimaryColorsEnum.BLUE,
   DEFAULT = BaseColorsEnum.BLACK,
   WHITE = BaseColorsEnum.WHITE,
@@ -48,6 +48,6 @@ export enum ColorContextEnum {
   PURPLE = SecondaryColorsEnum.PURPLE,
 }
 
-export type ColorContextMap = {
-  [K in ColorContextEnum]: ColorContextState;
+export type ColorThemeContextMap = {
+  [K in ColorThemeContextEnum]: ColorContextState;
 };

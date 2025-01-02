@@ -3,12 +3,12 @@ import { debounce } from 'lodash-es';
 import * as React from 'react';
 
 import { ColorContext } from '~/context/ColorContext';
-import type { ColorContextEnum } from '~/context/types';
+import type { ColorThemeContextEnum } from '~/context/types';
 
 export interface ColorChangeContainerProps {
   children: React.ReactNode;
   className?: string;
-  colorContext: ColorContextEnum;
+  colorContext: ColorThemeContextEnum;
   tag?: string;
 }
 
@@ -24,15 +24,18 @@ export function ColorContextChangerContainer({
 
   const isInView = useInView(ref, { once: false, margin: '-500px' });
 
-  const debouncedSearch = debounce((debounceColorContext: ColorContextEnum) => {
-    setColorContext(debounceColorContext);
-  }, 100);
+  const debouncedColorContextHandler = debounce(
+    (debounceColorContext: ColorThemeContextEnum) => {
+      setColorContext(debounceColorContext);
+    },
+    100,
+  );
 
   React.useEffect(() => {
     if (isInView) {
-      debouncedSearch(colorContext);
+      debouncedColorContextHandler(colorContext);
     }
-  }, [isInView, colorContext, debouncedSearch]);
+  }, [isInView, colorContext, debouncedColorContextHandler]);
 
   const CurrentTag = tag || 'div';
   // @ts-expect-error Element mismatch between motion

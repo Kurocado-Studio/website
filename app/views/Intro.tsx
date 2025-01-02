@@ -2,13 +2,13 @@ import React from 'react';
 
 import { ColorContextChangerContainer } from '~/components/ColorContextChangerContainer';
 import { StaggerSplitText } from '~/components/StaggerSplitText';
-import { ColorContextEnum } from '~/context/types';
+import { ColorThemeContextEnum } from '~/context/types';
 import { HorizontalScrollText } from '~/lib/HorizontalScrollText';
 
 export function Intro(): React.ReactNode {
   return (
     <ColorContextChangerContainer
-      colorContext={ColorContextEnum.DEFAULT}
+      colorContext={ColorThemeContextEnum.GREEN}
       className='mt-24 sm:mt-32 md:mt-56'
     >
       <HorizontalScrollText baseVelocity={-2}>Kurocado</HorizontalScrollText>

@@ -14,7 +14,7 @@ import type { MetaFunction } from '@remix-run/node';
 import React from 'react';
 
 import { ColorContextChangerContainer } from '~/components/ColorContextChangerContainer';
-import { ColorContextEnum } from '~/context/types';
+import { ColorThemeContextEnum } from '~/context/types';
 import { Intro } from '~/views/Intro';
 
 export const meta: MetaFunction = () => {
@@ -40,49 +40,49 @@ export default function Index(): React.ReactNode {
     <>
       <Intro />
       <ColorContextChangerContainer
-        colorContext={ColorContextEnum.WHITE}
+        colorContext={ColorThemeContextEnum.WHITE}
         className='py-112'
       >
         Some Children
       </ColorContextChangerContainer>
 
       <ColorContextChangerContainer
-        colorContext={ColorContextEnum.RED}
+        colorContext={ColorThemeContextEnum.RED}
         className='py-112'
       >
         Some Children
       </ColorContextChangerContainer>
 
       <ColorContextChangerContainer
-        colorContext={ColorContextEnum.GREEN}
+        colorContext={ColorThemeContextEnum.GREEN}
         className='py-112'
       >
         Some Children
       </ColorContextChangerContainer>
 
       <ColorContextChangerContainer
-        colorContext={ColorContextEnum.BLUE}
+        colorContext={ColorThemeContextEnum.BLUE}
         className='py-112'
       >
         Some Children
       </ColorContextChangerContainer>
 
       <ColorContextChangerContainer
-        colorContext={ColorContextEnum.ORANGE}
+        colorContext={ColorThemeContextEnum.ORANGE}
         className='py-112'
       >
         Some Children
       </ColorContextChangerContainer>
 
       <ColorContextChangerContainer
-        colorContext={ColorContextEnum.PURPLE}
+        colorContext={ColorThemeContextEnum.PURPLE}
         className='py-112'
       >
         Some Children
       </ColorContextChangerContainer>
 
       <ColorContextChangerContainer
-        colorContext={ColorContextEnum.YELLOW}
+        colorContext={ColorThemeContextEnum.YELLOW}
         className='py-112'
       >
         Some Children

@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { get } from 'lodash-es';
-import React, { createContext, useState } from 'react';
+import React, { createContext, useCallback, useState } from 'react';
 
 import { ColorThemeContextEnum } from '~/context/types';
 import type { ColorContextState } from '~/context/types';
@@ -29,20 +29,23 @@ export function BodyHTMLTagColorProvider({
     get(colorThemeMap, [ColorThemeContextEnum.DEFAULT]),
   );
 
-  const setColorsHandler = (
-    selectedColorContext: ColorThemeContextEnum,
-  ): void => {
-    const { background, foreground } = resolveColorTheme(selectedColorContext);
+  const setColorsHandler = useCallback(
+    () =>
+      (selectedColorContext: ColorThemeContextEnum): void => {
+        const { background, foreground } =
+          resolveColorTheme(selectedColorContext);
 
-    setColors({ background, foreground });
-  };
+        setColors({ background, foreground });
+      },
+    [resolveColorTheme],
+  );
 
   const providerValue = React.useMemo(
     () => ({
       colorContext: colorTheme,
       setColorContext: setColorsHandler,
     }),
-    [colorTheme],
+    [colorTheme, setColorsHandler],
   );
 
   return (

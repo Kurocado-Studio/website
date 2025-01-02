@@ -20,6 +20,7 @@ import {
 } from '@remix-run/react';
 import React from 'react';
 
+import { BodyHTMLTagColorProvider } from '~/context/ColorContext';
 import '~/tailwind.css';
 
 export const links: LinksFunction = () => [
@@ -49,14 +50,11 @@ export function Layout({
         <Links />
         <title>Kurocado Studio</title>
       </head>
-      <body
-        className='selection:bg-lime-200 selection:text-[#f52891cc]'
-        data-testid='root-body-test-id'
-      >
+      <BodyHTMLTagColorProvider>
         {children}
         <ScrollRestoration />
         <Scripts />
-      </body>
+      </BodyHTMLTagColorProvider>
     </html>
   );
 }

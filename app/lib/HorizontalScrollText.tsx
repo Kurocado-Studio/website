@@ -80,7 +80,7 @@ export function HorizontalScrollText({
             )}
             style={{
               lineHeight: '1.0',
-              color: idx % 3 === 0 ? '#344054' : '#e0e6e6',
+              color: idx % 3 === 0 ? undefined : '#e0e6e6',
             }}
           >
             {children}

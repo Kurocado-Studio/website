@@ -13,6 +13,8 @@
 import type { MetaFunction } from '@remix-run/node';
 import React from 'react';
 
+import { ColorContextChangerContainer } from '~/components/ColorContextChangerContainer';
+import { ColorThemeContextEnum } from '~/context/types';
 import { Intro } from '~/views/Intro';
 
 export const meta: MetaFunction = () => {
@@ -34,5 +36,57 @@ export const meta: MetaFunction = () => {
 };
 
 export default function Index(): React.ReactNode {
-  return <Intro />;
+  return (
+    <>
+      <Intro />
+      <ColorContextChangerContainer
+        colorContext={ColorThemeContextEnum.WHITE}
+        className='py-112'
+      >
+        Some Children
+      </ColorContextChangerContainer>
+
+      <ColorContextChangerContainer
+        colorContext={ColorThemeContextEnum.RED}
+        className='py-112'
+      >
+        Some Children
+      </ColorContextChangerContainer>
+
+      <ColorContextChangerContainer
+        colorContext={ColorThemeContextEnum.GREEN}
+        className='py-112'
+      >
+        Some Children
+      </ColorContextChangerContainer>
+
+      <ColorContextChangerContainer
+        colorContext={ColorThemeContextEnum.BLUE}
+        className='py-112'
+      >
+        Some Children
+      </ColorContextChangerContainer>
+
+      <ColorContextChangerContainer
+        colorContext={ColorThemeContextEnum.ORANGE}
+        className='py-112'
+      >
+        Some Children
+      </ColorContextChangerContainer>
+
+      <ColorContextChangerContainer
+        colorContext={ColorThemeContextEnum.PURPLE}
+        className='py-112'
+      >
+        Some Children
+      </ColorContextChangerContainer>
+
+      <ColorContextChangerContainer
+        colorContext={ColorThemeContextEnum.YELLOW}
+        className='py-112'
+      >
+        Some Children
+      </ColorContextChangerContainer>
+    </>
+  );
 }

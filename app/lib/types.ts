@@ -1,7 +1,7 @@
 import type { motion } from 'framer-motion';
 import type React from 'react';
 
-export type PropsWithoutRef<T extends keyof React.JSX.IntrinsicElements> =
+export type PropsWithoutRef<T extends HTMLIntrinsicElements> =
   T extends keyof typeof motion
     ? React.ComponentPropsWithoutRef<(typeof motion)[T]>
     : React.ComponentPropsWithoutRef<T>;

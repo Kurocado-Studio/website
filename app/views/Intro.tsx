@@ -8,7 +8,7 @@ import { HorizontalScrollText } from '~/lib/HorizontalScrollText';
 export function Intro(): React.ReactNode {
   return (
     <ColorContextChangerContainer
-      colorContext={ColorThemeContextEnum.GREEN}
+      colorContext={ColorThemeContextEnum.WHITE}
       className='mt-24 sm:mt-32 md:mt-56'
     >
       <HorizontalScrollText baseVelocity={-2}>Kurocado</HorizontalScrollText>

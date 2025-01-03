@@ -4,12 +4,13 @@ import * as React from 'react';
 
 import { ColorContext } from '~/context/ColorContext';
 import type { ColorThemeContextEnum } from '~/context/types';
+import type { ClassName, HTMLTags } from '~/lib/types';
 
 export interface ColorChangeContainerProps {
   children: React.ReactNode;
-  className?: string;
+  className?: ClassName;
   colorContext: ColorThemeContextEnum;
-  tag?: string;
+  tag?: HTMLTags;
 }
 
 export function ColorContextChangerContainer({
@@ -37,7 +38,7 @@ export function ColorContextChangerContainer({
     }
   }, [isInView, colorContext, debouncedColorContextHandler]);
 
-  const CurrentTag = tag || 'div';
+  const CurrentTag: HTMLTags = tag || 'div';
   // @ts-expect-error Element mismatch between motion
   const ColorContextChanger = motion[CurrentTag];
 

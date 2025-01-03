@@ -75,14 +75,14 @@ export const useColorThemeResolver: UseColorThemeResolver = () => {
     selectedColorContext: ColorThemeContextEnum,
   ): ColorContextState => {
     setColorTheme(selectedColorContext);
-
+    console.log('selectedColorContext', selectedColorContext);
     return get(
       colorThemeMap,
       [selectedColorContext],
       get(colorThemeMap, [ColorThemeContextEnum.DEFAULT]),
     );
   };
-
+  console.log(colorTheme);
   return {
     resolveColorTheme,
     colorThemeMap,

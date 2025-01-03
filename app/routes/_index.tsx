@@ -14,7 +14,7 @@ import type { MetaFunction } from '@remix-run/node';
 import React from 'react';
 
 import { ColorContextChangerContainer } from '~/components/ColorContextChangerContainer';
-import { ColorThemeContextEnum } from '~/context/types';
+import { ColorThemeContext } from '~/context/types';
 import { Intro } from '~/views/Intro';
 
 export const meta: MetaFunction = () => {
@@ -40,49 +40,48 @@ export default function Index(): React.ReactNode {
     <>
       <Intro />
       <ColorContextChangerContainer
-        colorContext={ColorThemeContextEnum.WHITE}
+        colorContext={ColorThemeContext.WHITE}
+        className='py-112'
+      >
+        Some Children
+      </ColorContextChangerContainer>
+      <ColorContextChangerContainer
+        colorContext={ColorThemeContext.RED}
         className='py-112'
       >
         Some Children
       </ColorContextChangerContainer>
 
       <ColorContextChangerContainer
-        colorContext={ColorThemeContextEnum.RED}
+        colorContext={ColorThemeContext.GREEN}
         className='py-112'
       >
         Some Children
       </ColorContextChangerContainer>
 
       <ColorContextChangerContainer
-        colorContext={ColorThemeContextEnum.GREEN}
+        colorContext={ColorThemeContext.BLUE}
         className='py-112'
       >
         Some Children
       </ColorContextChangerContainer>
 
       <ColorContextChangerContainer
-        colorContext={ColorThemeContextEnum.BLUE}
+        colorContext={ColorThemeContext.ORANGE}
         className='py-112'
       >
         Some Children
       </ColorContextChangerContainer>
 
       <ColorContextChangerContainer
-        colorContext={ColorThemeContextEnum.ORANGE}
+        colorContext={ColorThemeContext.PURPLE}
         className='py-112'
       >
         Some Children
       </ColorContextChangerContainer>
 
       <ColorContextChangerContainer
-        colorContext={ColorThemeContextEnum.PURPLE}
-        className='py-112'
-      >
-        Some Children
-      </ColorContextChangerContainer>
-
-      <ColorContextChangerContainer
-        colorContext={ColorThemeContextEnum.YELLOW}
+        colorContext={ColorThemeContext.YELLOW}
         className='py-112'
       >
         Some Children

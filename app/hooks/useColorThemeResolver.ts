@@ -2,10 +2,10 @@ import { get } from 'lodash-es';
 import { useState } from 'react';
 
 import {
-  BaseColorsEnum,
-  ColorThemeContextEnum,
-  PrimaryColorsEnum,
-  SecondaryColorsEnum,
+  BaseColors,
+  ColorThemeContext,
+  PrimaryColors,
+  SecondaryColors,
 } from '~/context/types';
 import type {
   ColorContextState,
@@ -14,72 +14,72 @@ import type {
 } from '~/context/types';
 
 export type UseColorThemeResolver = () => {
-  colorTheme: ColorThemeContextEnum;
+  colorTheme: ColorThemeContext;
   colorThemeMap: ColorThemeContextMap;
-  resolveColorTheme: (theme: ColorThemeContextEnum) => ColorContextState;
+  resolveColorTheme: (theme: ColorThemeContext) => ColorContextState;
 };
 
 export const useColorThemeResolver: UseColorThemeResolver = () => {
-  const [colorTheme, setColorTheme] = useState<ColorThemeContextEnum>(
-    ColorThemeContextEnum.DEFAULT,
+  const [colorTheme, setColorTheme] = useState<ColorThemeContext>(
+    ColorThemeContext.DEFAULT,
   );
 
   const colors: {
     [K in keyof CombinedColorsObject]: string;
   } = {
-    [BaseColorsEnum.BLACK]: 'Black',
-    [BaseColorsEnum.WHITE]: 'GhostWhite',
-    [PrimaryColorsEnum.BLUE]: 'DarkBlue',
-    [PrimaryColorsEnum.RED]: 'Crimson',
-    [PrimaryColorsEnum.YELLOW]: 'Khaki',
-    [SecondaryColorsEnum.GREEN]: 'MediumSeaGreen',
-    [SecondaryColorsEnum.ORANGE]: 'DarkOrange',
-    [SecondaryColorsEnum.PURPLE]: 'Indigo',
+    [BaseColors.BLACK]: 'Black',
+    [BaseColors.WHITE]: 'GhostWhite',
+    [PrimaryColors.BLUE]: 'DarkBlue',
+    [PrimaryColors.RED]: 'Crimson',
+    [PrimaryColors.YELLOW]: 'Khaki',
+    [SecondaryColors.GREEN]: 'MediumSeaGreen',
+    [SecondaryColors.ORANGE]: 'DarkOrange',
+    [SecondaryColors.PURPLE]: 'Indigo',
   };
   const colorThemeMap: ColorThemeContextMap = {
-    [ColorThemeContextEnum.DEFAULT]: {
-      background: get(colors, [BaseColorsEnum.BLACK]),
-      foreground: get(colors, [PrimaryColorsEnum.RED]),
+    [ColorThemeContext.DEFAULT]: {
+      background: get(colors, [BaseColors.BLACK]),
+      foreground: get(colors, [PrimaryColors.RED]),
     },
-    [ColorThemeContextEnum.WHITE]: {
-      background: get(colors, [BaseColorsEnum.WHITE]),
-      foreground: get(colors, [BaseColorsEnum.BLACK]),
+    [ColorThemeContext.WHITE]: {
+      background: get(colors, [BaseColors.WHITE]),
+      foreground: get(colors, [BaseColors.BLACK]),
     },
-    [ColorThemeContextEnum.RED]: {
-      background: get(colors, [PrimaryColorsEnum.RED]),
-      foreground: get(colors, [SecondaryColorsEnum.GREEN]),
+    [ColorThemeContext.RED]: {
+      background: get(colors, [PrimaryColors.RED]),
+      foreground: get(colors, [SecondaryColors.GREEN]),
     },
-    [ColorThemeContextEnum.GREEN]: {
-      background: get(colors, [SecondaryColorsEnum.GREEN]),
-      foreground: get(colors, [PrimaryColorsEnum.RED]),
+    [ColorThemeContext.GREEN]: {
+      background: get(colors, [SecondaryColors.GREEN]),
+      foreground: get(colors, [PrimaryColors.RED]),
     },
-    [ColorThemeContextEnum.BLUE]: {
-      background: get(colors, [PrimaryColorsEnum.BLUE]),
-      foreground: get(colors, [SecondaryColorsEnum.ORANGE]),
+    [ColorThemeContext.BLUE]: {
+      background: get(colors, [PrimaryColors.BLUE]),
+      foreground: get(colors, [SecondaryColors.ORANGE]),
     },
-    [ColorThemeContextEnum.ORANGE]: {
-      background: get(colors, [SecondaryColorsEnum.ORANGE]),
-      foreground: get(colors, [PrimaryColorsEnum.BLUE]),
+    [ColorThemeContext.ORANGE]: {
+      background: get(colors, [SecondaryColors.ORANGE]),
+      foreground: get(colors, [PrimaryColors.BLUE]),
     },
-    [ColorThemeContextEnum.PURPLE]: {
-      background: get(colors, [SecondaryColorsEnum.PURPLE]),
-      foreground: get(colors, [PrimaryColorsEnum.YELLOW]),
+    [ColorThemeContext.PURPLE]: {
+      background: get(colors, [SecondaryColors.PURPLE]),
+      foreground: get(colors, [PrimaryColors.YELLOW]),
     },
-    [ColorThemeContextEnum.YELLOW]: {
-      background: get(colors, [PrimaryColorsEnum.YELLOW]),
-      foreground: get(colors, [SecondaryColorsEnum.PURPLE]),
+    [ColorThemeContext.YELLOW]: {
+      background: get(colors, [PrimaryColors.YELLOW]),
+      foreground: get(colors, [SecondaryColors.PURPLE]),
     },
   };
 
   const resolveColorTheme = (
-    selectedColorContext: ColorThemeContextEnum,
+    selectedColorContext: ColorThemeContext,
   ): ColorContextState => {
     setColorTheme(selectedColorContext);
 
     return get(
       colorThemeMap,
       [selectedColorContext],
-      get(colorThemeMap, [ColorThemeContextEnum.DEFAULT]),
+      get(colorThemeMap, [ColorThemeContext.DEFAULT]),
     );
   };
 

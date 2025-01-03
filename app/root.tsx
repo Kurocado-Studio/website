@@ -21,6 +21,7 @@ import {
 import React from 'react';
 
 import { BodyHTMLTagColorProvider } from '~/context/ColorContext';
+import { CursorContextProvider } from '~/context/CursorContext';
 import '~/tailwind.css';
 
 export const links: LinksFunction = () => [
@@ -51,9 +52,11 @@ export function Layout({
         <title>Kurocado Studio</title>
       </head>
       <BodyHTMLTagColorProvider>
-        {children}
-        <ScrollRestoration />
-        <Scripts />
+        <CursorContextProvider>
+          {children}
+          <ScrollRestoration />
+          <Scripts />
+        </CursorContextProvider>
       </BodyHTMLTagColorProvider>
     </html>
   );

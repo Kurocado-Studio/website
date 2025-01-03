@@ -62,9 +62,7 @@ export function CursorContextProvider({
 }: {
   children: React.ReactNode;
 }): React.ReactNode {
-  const [cursorText, setCursorText] = React.useState<string | React.ReactNode>(
-    '',
-  );
+  const [cursorText, setCursorText] = React.useState<React.ReactNode>('');
 
   const [mouseCursorState, setMouseCursorState] = React.useState<
     Partial<CursorState>

@@ -2,6 +2,8 @@ import get from 'lodash-es/get';
 import { type ReactNode } from 'react';
 import type React from 'react';
 
+import type { PropsWithoutRef } from '~/lib/types';
+
 enum IconVariant {
   REGULAR = 'REGULAR',
   INVERTED = 'INVERTED',
@@ -17,7 +19,7 @@ interface BaseIconProps {
   variant?: IconVariant;
 }
 
-type IconComponentProps = React.ComponentProps<'i'>;
+type IconComponentProps = PropsWithoutRef<'i'>;
 
 export type IconVariantFC = React.FC<
   IconComponentProps & { variant?: IconVariant }

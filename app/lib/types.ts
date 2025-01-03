@@ -3,8 +3,8 @@ import type React from 'react';
 
 export type PropsWithoutRef<T extends HTMLIntrinsicElements> =
   T extends keyof typeof motion
-    ? React.ComponentPropsWithoutRef<(typeof motion)[T]>
-    : React.ComponentPropsWithoutRef<T>;
+    ? Omit<React.ComponentPropsWithoutRef<(typeof motion)[T]>, 'ref'>
+    : never;
 
 export type HTMLIntrinsicElements = keyof React.JSX.IntrinsicElements;
 

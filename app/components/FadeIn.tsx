@@ -9,6 +9,10 @@ const FadeInStaggerContext = createContext(false);
 
 const viewport = { once: false, margin: '0px 0px -200px' };
 
+interface FadeInStaggerProps extends PropsWithoutRef<'div'> {
+  faster?: boolean;
+}
+
 export enum FadeInDirection {
   DEFAULT = 'DEFAULT',
   UP = 'UP',
@@ -67,7 +71,7 @@ export function FadeIn<T extends HTMLIntrinsicElements = 'div'>(
 export function FadeInStagger({
   faster = false,
   ...props
-}: PropsWithoutRef<'div'> & { faster?: boolean }): React.ReactNode {
+}: FadeInStaggerProps): React.ReactNode {
   return (
     <FadeInStaggerContext.Provider value>
       <motion.div

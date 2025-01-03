@@ -3,51 +3,51 @@ export type ColorContextState = {
   foreground: string;
 };
 
-export enum BaseColorsEnum {
+export enum BaseColors {
   WHITE = 'WHITE',
   BLACK = 'BLACK',
 }
 
-export enum PrimaryColorsEnum {
+export enum PrimaryColors {
   RED = 'RED',
   BLUE = 'BLUE',
   YELLOW = 'YELLOW',
 }
 
-export enum SecondaryColorsEnum {
+export enum SecondaryColors {
   GREEN = 'GREEN',
   ORANGE = 'ORANGE',
   PURPLE = 'PURPLE',
 }
 
 type PrimaryColorsObject = {
-  [K in keyof typeof PrimaryColorsEnum]: string;
+  [K in keyof typeof PrimaryColors]: string;
 };
 
 type SecondaryColorsObject = {
-  [K in keyof typeof SecondaryColorsEnum]: string;
+  [K in keyof typeof SecondaryColors]: string;
 };
 
 type BaseColorsObject = {
-  [K in keyof typeof BaseColorsEnum]: string;
+  [K in keyof typeof BaseColors]: string;
 };
 
 export type CombinedColorsObject = PrimaryColorsObject &
   SecondaryColorsObject &
   BaseColorsObject;
 
-export enum ColorThemeContextEnum {
-  BLUE = PrimaryColorsEnum.BLUE,
-  DEFAULT = BaseColorsEnum.BLACK,
-  WHITE = BaseColorsEnum.WHITE,
-  RED = PrimaryColorsEnum.RED,
-  YELLOW = PrimaryColorsEnum.YELLOW,
+export enum ColorThemeContext {
+  BLUE = PrimaryColors.BLUE,
+  DEFAULT = BaseColors.BLACK,
+  WHITE = BaseColors.WHITE,
+  RED = PrimaryColors.RED,
+  YELLOW = PrimaryColors.YELLOW,
 
-  GREEN = SecondaryColorsEnum.GREEN,
-  ORANGE = SecondaryColorsEnum.ORANGE,
-  PURPLE = SecondaryColorsEnum.PURPLE,
+  GREEN = SecondaryColors.GREEN,
+  ORANGE = SecondaryColors.ORANGE,
+  PURPLE = SecondaryColors.PURPLE,
 }
 
 export type ColorThemeContextMap = {
-  [K in ColorThemeContextEnum]: ColorContextState;
+  [K in ColorThemeContext]: ColorContextState;
 };

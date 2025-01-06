@@ -1,6 +1,6 @@
 import type { CursorState } from 'ahooks/lib/useMouse';
 import clsx from 'clsx';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import { get } from 'lodash-es';
 import { createContext } from 'react';
 import * as React from 'react';
@@ -38,8 +38,11 @@ export enum CursorVariants {
 
 type CursorContext = {
   cursorVariant: CursorVariants | GrayscaleImageProps;
-  setCursorVariant: (cursorVariant: CursorVariants) => void;
+  setCursorVariant: (
+    cursorVariant: CursorVariants | GrayscaleImageProps,
+  ) => void;
 };
+
 export const CursorContext = createContext<CursorContext>({
   cursorVariant: CursorVariants.DEFAULT,
   setCursorVariant: (cursorVariant) => {
@@ -72,7 +75,7 @@ export function CursorContextProvider({
   });
 
   const [cursorVariant, setCursorVariant] = React.useState<CursorVariants>(
-    CursorVariants.DEFAULT,
+    CursorVariants.HIDDEN,
   );
 
   React.useEffect(() => {
@@ -120,7 +123,7 @@ export function CursorContextProvider({
   const commonSocialCustomCursor: CustomCursor = {
     borderRadius: '100%',
     color: '#fdfdfd',
-    fontSize: '60px',
+    fontSize: '48px',
     height: 96,
     textAlign: 'center',
     width: 96,
@@ -272,20 +275,16 @@ export function CursorContextProvider({
           setCursorVariant(CursorVariants.VUE);
         },
         [CursorVariants.IMG]: () => {
-          if (typeof cursorVariant === 'object') {
-            setCursorVariant(CursorVariants.IMG);
-          }
+          setCursorVariant(CursorVariants.IMG);
         },
       }),
-      [cursorVariant],
+      [],
     );
 
-  const cursorContextProviderValue = React.useMemo(
+  const providerValue = React.useMemo<CursorContext>(
     () => ({
       cursorVariant,
-      setCursorVariant: (
-        nextCursorVariant: CursorVariants | GrayscaleImageProps,
-      ) => {
+      setCursorVariant: (nextCursorVariant) => {
         if (typeof nextCursorVariant === 'object') {
           setCursorText(
             <motion.img
@@ -303,20 +302,22 @@ export function CursorContextProvider({
   );
 
   return (
-    <CursorContext.Provider value={cursorContextProviderValue}>
-      <motion.div
-        variants={cursorVariantMap}
-        animate={cursorVariant}
-        transition={spring}
-        className={clsx(
-          `max-xl:d-flex pointer-events-none fixed left-0 top-0 z-[100] hidden h-[10px] w-[10px] content-center items-center justify-center justify-items-center bg-[#1e91d6] text-base text-white md:block`,
-          get(cursorVariantMap, [cursorVariant, 'isRounded'])
-            ? 'rounded-full'
-            : 'rounded-sm',
-        )}
-      >
-        {cursorText}
-      </motion.div>
+    <CursorContext.Provider value={providerValue}>
+      <AnimatePresence>
+        <motion.span
+          variants={cursorVariantMap}
+          animate={cursorVariant}
+          transition={spring}
+          className={clsx(
+            `max-xl:d-flex pointer-events-none fixed left-0 top-0 z-[100] hidden h-[10px] w-[10px] content-center items-center justify-center justify-items-center bg-[#1e91d6] text-base text-white md:block`,
+            get(cursorVariantMap, [cursorVariant, 'isRounded'])
+              ? 'rounded-full'
+              : 'rounded-sm',
+          )}
+        >
+          {cursorText}
+        </motion.span>
+      </AnimatePresence>
       {children}
     </CursorContext.Provider>
   );

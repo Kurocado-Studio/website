@@ -5,8 +5,14 @@ import React, { createContext, useMemo, useState } from 'react';
 import { ColorThemeContext } from '~/context/types';
 import type { ColorContextState } from '~/context/types';
 import { useColorThemeResolver } from '~/hooks/useColorThemeResolver';
+import type { GrayscaleImageProps } from '~/lib/GrayscaleImage';
 
-export const ColorContext = createContext({
+type ColorContext = {
+  colorContext: ColorThemeContext | GrayscaleImageProps;
+  setColorContext: (colorContext: ColorThemeContext) => void;
+};
+
+export const ColorContext = createContext<ColorContext>({
   colorContext: ColorThemeContext.DEFAULT,
   setColorContext: (colorContext: ColorThemeContext): void => {
     /**
@@ -29,7 +35,7 @@ export function BodyHTMLTagColorProvider({
     get(colorThemeMap, [ColorThemeContext.DEFAULT]),
   );
 
-  const providerValue = useMemo(
+  const providerValue = useMemo<ColorContext>(
     () => ({
       colorContext: colorTheme,
       setColorContext: (selectedColorContext: ColorThemeContext): void => {

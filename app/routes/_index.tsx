@@ -15,6 +15,7 @@ import React from 'react';
 
 import { ColorContextChangerContainer } from '~/components/ColorContextChangerContainer';
 import { ColorThemeContext } from '~/context/types';
+import { About } from '~/views/About';
 import { Intro } from '~/views/Intro';
 
 export const meta: MetaFunction = () => {
@@ -39,12 +40,7 @@ export default function Index(): React.ReactNode {
   return (
     <>
       <Intro />
-      <ColorContextChangerContainer
-        colorContext={ColorThemeContext.WHITE}
-        className='py-112'
-      >
-        Some Children
-      </ColorContextChangerContainer>
+      <About />
       <ColorContextChangerContainer
         colorContext={ColorThemeContext.RED}
         className='py-112'

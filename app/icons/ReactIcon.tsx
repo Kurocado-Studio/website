@@ -1,4 +1,5 @@
 import clsx from 'clsx';
+import { motion } from 'framer-motion';
 import get from 'lodash-es/get';
 import React from 'react';
 
@@ -10,25 +11,28 @@ export function ReactIcon(props: IconVariantProps): React.ReactNode {
   return (
     <BaseIcon
       regular={
-        <i
+        <motion.i
           className={clsx('devicon-react-original-wordmark colored', className)}
           {...rest}
         />
       }
       inverted={
-        <i
+        <motion.i
           className={clsx('devicon-react-original-wordmark', className)}
           {...rest}
         />
       }
       plain={
-        <i
+        <motion.i
           className={clsx('devicon-react-original colored', className)}
           {...rest}
         />
       }
       plainInverted={
-        <i className={clsx('devicon-react-original', className)} {...rest} />
+        <motion.i
+          className={clsx('devicon-react-original', className)}
+          {...rest}
+        />
       }
       variant={get(props, ['variant'])}
     />

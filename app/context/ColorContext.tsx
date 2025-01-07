@@ -2,19 +2,19 @@ import { motion } from 'framer-motion';
 import { get } from 'lodash-es';
 import React, { createContext, useMemo, useState } from 'react';
 
-import { ColorThemeContext } from '~/context/types';
+import { ColorThemes } from '~/context/types';
 import type { ColorContextState } from '~/context/types';
-import { useColorThemeResolver } from '~/hooks/useColorThemeResolver';
+import { useColorThemes } from '~/hooks/useColorThemes';
 import type { GrayscaleImageProps } from '~/lib/GrayscaleImage';
 
 type ColorContext = {
-  colorContext: ColorThemeContext | GrayscaleImageProps;
-  setColorContext: (colorContext: ColorThemeContext) => void;
+  colorContext: ColorThemes | GrayscaleImageProps;
+  setColorContext: (colorContext: ColorThemes) => void;
 };
 
 export const ColorContext = createContext<ColorContext>({
-  colorContext: ColorThemeContext.DEFAULT,
-  setColorContext: (colorContext: ColorThemeContext): void => {
+  colorContext: ColorThemes.DEFAULT,
+  setColorContext: (colorContext: ColorThemes): void => {
     /**
      * as we need a default action to handle the param
      */
@@ -28,17 +28,16 @@ export function BodyHTMLTagColorProvider({
 }: {
   children: React.ReactNode;
 }): React.ReactNode {
-  const { resolveColorTheme, colorThemeMap, colorTheme } =
-    useColorThemeResolver();
+  const { resolveColorTheme, colorThemeMap, colorTheme } = useColorThemes();
 
   const [colors, setColors] = useState<ColorContextState>(
-    get(colorThemeMap, [ColorThemeContext.DEFAULT]),
+    get(colorThemeMap, [ColorThemes.DEFAULT]),
   );
 
   const providerValue = useMemo<ColorContext>(
     () => ({
       colorContext: colorTheme,
-      setColorContext: (selectedColorContext: ColorThemeContext): void => {
+      setColorContext: (selectedColorContext: ColorThemes): void => {
         const { background, foreground } =
           resolveColorTheme(selectedColorContext);
 

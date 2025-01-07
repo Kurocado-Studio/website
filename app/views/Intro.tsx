@@ -5,13 +5,13 @@ import { Container } from '~/components/Container';
 import { FadeIn, FadeInDirection, FadeInStagger } from '~/components/FadeIn';
 import { SocialMedia } from '~/components/SocialMedia';
 import { StaggerSplitText } from '~/components/StaggerSplitText';
-import { ColorThemeContext } from '~/context/types';
+import { ColorThemes } from '~/context/types';
 import { HorizontalScrollText } from '~/lib/HorizontalScrollText';
 
 export function Intro(): React.ReactNode {
   return (
     <ColorContextChangerContainer
-      colorContext={ColorThemeContext.RED}
+      colorTheme={ColorThemes.RED}
       className='mt-24 sm:mt-32 md:mt-56'
     >
       <FadeInStagger>

@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 import {
   BaseColors,
-  ColorThemeContext,
+  ColorThemes,
   PrimaryColors,
   SecondaryColors,
 } from '~/context/types';
@@ -13,15 +13,15 @@ import type {
   CombinedColorsObject,
 } from '~/context/types';
 
-export type UseColorThemeResolver = () => {
-  colorTheme: ColorThemeContext;
+export type UseColorThemes = () => {
+  colorTheme: ColorThemes;
   colorThemeMap: ColorThemeContextMap;
-  resolveColorTheme: (theme: ColorThemeContext) => ColorContextState;
+  resolveColorTheme: (theme: ColorThemes) => ColorContextState;
 };
 
-export const useColorThemeResolver: UseColorThemeResolver = () => {
-  const [colorTheme, setColorTheme] = useState<ColorThemeContext>(
-    ColorThemeContext.DEFAULT,
+export const useColorThemes: UseColorThemes = () => {
+  const [colorTheme, setColorTheme] = useState<ColorThemes>(
+    ColorThemes.DEFAULT,
   );
 
   const colors: {
@@ -37,49 +37,49 @@ export const useColorThemeResolver: UseColorThemeResolver = () => {
     [SecondaryColors.PURPLE]: 'Indigo',
   };
   const colorThemeMap: ColorThemeContextMap = {
-    [ColorThemeContext.DEFAULT]: {
+    [ColorThemes.DEFAULT]: {
       background: get(colors, [BaseColors.BLACK]),
       foreground: get(colors, [PrimaryColors.RED]),
     },
-    [ColorThemeContext.WHITE]: {
+    [ColorThemes.WHITE]: {
       background: get(colors, [BaseColors.WHITE]),
       foreground: get(colors, [BaseColors.BLACK]),
     },
-    [ColorThemeContext.RED]: {
+    [ColorThemes.RED]: {
       background: get(colors, [PrimaryColors.RED]),
       foreground: get(colors, [SecondaryColors.GREEN]),
     },
-    [ColorThemeContext.GREEN]: {
+    [ColorThemes.GREEN]: {
       background: get(colors, [SecondaryColors.GREEN]),
       foreground: get(colors, [PrimaryColors.RED]),
     },
-    [ColorThemeContext.BLUE]: {
+    [ColorThemes.BLUE]: {
       background: get(colors, [PrimaryColors.BLUE]),
       foreground: get(colors, [SecondaryColors.ORANGE]),
     },
-    [ColorThemeContext.ORANGE]: {
+    [ColorThemes.ORANGE]: {
       background: get(colors, [SecondaryColors.ORANGE]),
       foreground: get(colors, [PrimaryColors.BLUE]),
     },
-    [ColorThemeContext.PURPLE]: {
+    [ColorThemes.PURPLE]: {
       background: get(colors, [SecondaryColors.PURPLE]),
       foreground: get(colors, [PrimaryColors.YELLOW]),
     },
-    [ColorThemeContext.YELLOW]: {
+    [ColorThemes.YELLOW]: {
       background: get(colors, [PrimaryColors.YELLOW]),
       foreground: get(colors, [SecondaryColors.PURPLE]),
     },
   };
 
   const resolveColorTheme = (
-    selectedColorContext: ColorThemeContext,
+    selectedColorContext: ColorThemes,
   ): ColorContextState => {
     setColorTheme(selectedColorContext);
 
     return get(
       colorThemeMap,
       [selectedColorContext],
-      get(colorThemeMap, [ColorThemeContext.DEFAULT]),
+      get(colorThemeMap, [ColorThemes.DEFAULT]),
     );
   };
 

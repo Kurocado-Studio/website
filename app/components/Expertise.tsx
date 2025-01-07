@@ -60,63 +60,51 @@ export function ProductDesignExpertise(): React.ReactNode {
   };
 
   return (
-    <Container className='my-12 px-0 lg:mb-24 lg:px-0'>
-      <div className='flex flex-col md:flex-row'>
-        <div className='flex-1'>
-          <div className='flex flex-col md:flex-row'>
-            <div className='flex-1 pe-4'>
-              <List className='mb-24'>
-                <ListItem
-                  withHoverStyles
-                  title='e-commerce'
-                  className='cursor-none'
-                  onMouseEnter={setEcommerceVariant}
-                  onMouseLeave={setDefaultVariant}
-                />
-                <ListItem
-                  withHoverStyles
-                  title='Web apps'
-                  className='cursor-none'
-                  onMouseEnter={setWebAppsVariant}
-                  onMouseLeave={setDefaultVariant}
-                />
-                <ListItem
-                  withHoverStyles
-                  title='Design systems'
-                  className='cursor-none'
-                  onMouseEnter={setDesignSystemVariant}
-                  onMouseLeave={setDefaultVariant}
-                />
-              </List>
-            </div>
-            <div className='flex-1 pe-4'>
-              <List className='mb-24'>
-                <ListItem
-                  withHoverStyles
-                  title='Landing pages'
-                  onMouseEnter={setLandingPagesVariant}
-                  onMouseLeave={setDefaultVariant}
-                  className='cursor-none'
-                />
-                <ListItem
-                  withHoverStyles
-                  title='Enterprise applications'
-                  onMouseEnter={setEnterpriseApplicationsVariant}
-                  onMouseLeave={setDefaultVariant}
-                  className='cursor-none'
-                />
-                <ListItem
-                  withHoverStyles
-                  title='Illustrations'
-                  onMouseEnter={setIllustrationsVariant}
-                  onMouseLeave={setDefaultVariant}
-                  className='cursor-none'
-                />
-              </List>
-            </div>
-          </div>
-        </div>
-      </div>
+    <Container className='my-12 lg:px-0'>
+      <List className='mb-24'>
+        <ListItem
+          withHoverStyles
+          title='e-commerce'
+          className='cursor-none'
+          onMouseEnter={setEcommerceVariant}
+          onMouseLeave={setDefaultVariant}
+        />
+        <ListItem
+          withHoverStyles
+          title='Web apps'
+          className='cursor-none'
+          onMouseEnter={setWebAppsVariant}
+          onMouseLeave={setDefaultVariant}
+        />
+        <ListItem
+          withHoverStyles
+          title='Design systems'
+          className='cursor-none'
+          onMouseEnter={setDesignSystemVariant}
+          onMouseLeave={setDefaultVariant}
+        />
+        <ListItem
+          withHoverStyles
+          title='Landing pages'
+          onMouseEnter={setLandingPagesVariant}
+          onMouseLeave={setDefaultVariant}
+          className='cursor-none'
+        />
+        <ListItem
+          withHoverStyles
+          title='Enterprise applications'
+          onMouseEnter={setEnterpriseApplicationsVariant}
+          onMouseLeave={setDefaultVariant}
+          className='cursor-none'
+        />
+        <ListItem
+          withHoverStyles
+          title='Illustrations'
+          onMouseEnter={setIllustrationsVariant}
+          onMouseLeave={setDefaultVariant}
+          className='cursor-none'
+        />
+      </List>
     </Container>
   );
 }
@@ -153,63 +141,51 @@ export function FrontEndDevelopmentExpertise(): React.ReactNode {
   };
 
   return (
-    <Container className='my-12 px-0 lg:mb-24 lg:px-0'>
-      <div className='flex flex-col md:flex-row'>
-        <div className='flex-1'>
-          <div className='flex flex-col md:flex-row'>
-            <div className='flex-1 pe-4'>
-              <List className='mb-24'>
-                <ListItem
-                  withHoverStyles
-                  title='React'
-                  className='cursor-none'
-                  onMouseEnter={setReactVariant}
-                  onMouseLeave={setDefaultVariant}
-                />
-                <ListItem
-                  withHoverStyles
-                  title='Vue'
-                  className='cursor-none'
-                  onMouseEnter={setVueVariant}
-                  onMouseLeave={setDefaultVariant}
-                />
-                <ListItem
-                  withHoverStyles
-                  title='Typescript'
-                  className='cursor-none'
-                  onMouseEnter={setTypescriptVariant}
-                  onMouseLeave={setDefaultVariant}
-                />
-              </List>
-            </div>
-            <div className='flex-1 pe-4'>
-              <List className='mb-24'>
-                <ListItem
-                  withHoverStyles
-                  title='Framer Motion'
-                  className='cursor-none'
-                  onMouseEnter={setFramerMotionVariant}
-                  onMouseLeave={setDefaultVariant}
-                />
-                <ListItem
-                  withHoverStyles
-                  title='NestJS'
-                  className='cursor-none'
-                  onMouseEnter={setNestJSVariant}
-                  onMouseLeave={setDefaultVariant}
-                />
-                <ListItem
-                  withHoverStyles
-                  title='Tailwind'
-                  className='cursor-none'
-                  onMouseEnter={setTailwindVariant}
-                  onMouseLeave={setDefaultVariant}
-                />
-              </List>
-            </div>
-          </div>
-        </div>
-      </div>
+    <Container className='my-12 lg:px-0'>
+      <List className='mb-24'>
+        <ListItem
+          withHoverStyles
+          title='React'
+          className='cursor-none'
+          onMouseEnter={setReactVariant}
+          onMouseLeave={setDefaultVariant}
+        />
+        <ListItem
+          withHoverStyles
+          title='Vue'
+          className='cursor-none'
+          onMouseEnter={setVueVariant}
+          onMouseLeave={setDefaultVariant}
+        />
+        <ListItem
+          withHoverStyles
+          title='Typescript'
+          className='cursor-none'
+          onMouseEnter={setTypescriptVariant}
+          onMouseLeave={setDefaultVariant}
+        />
+        <ListItem
+          withHoverStyles
+          title='Framer Motion'
+          className='cursor-none'
+          onMouseEnter={setFramerMotionVariant}
+          onMouseLeave={setDefaultVariant}
+        />
+        <ListItem
+          withHoverStyles
+          title='NestJS'
+          className='cursor-none'
+          onMouseEnter={setNestJSVariant}
+          onMouseLeave={setDefaultVariant}
+        />
+        <ListItem
+          withHoverStyles
+          title='Tailwind'
+          className='cursor-none'
+          onMouseEnter={setTailwindVariant}
+          onMouseLeave={setDefaultVariant}
+        />
+      </List>
     </Container>
   );
 }

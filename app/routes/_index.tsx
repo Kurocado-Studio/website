@@ -14,7 +14,7 @@ import type { MetaFunction } from '@remix-run/node';
 import React from 'react';
 
 import { ColorContextChangerContainer } from '~/components/ColorContextChangerContainer';
-import { ColorThemeContext } from '~/context/types';
+import { ColorThemes } from '~/context/types';
 import { About } from '~/views/About';
 import { Intro } from '~/views/Intro';
 
@@ -42,42 +42,42 @@ export default function Index(): React.ReactNode {
       <Intro />
       <About />
       <ColorContextChangerContainer
-        colorContext={ColorThemeContext.RED}
+        colorTheme={ColorThemes.RED}
         className='py-112'
       >
         Some Children
       </ColorContextChangerContainer>
 
       <ColorContextChangerContainer
-        colorContext={ColorThemeContext.GREEN}
+        colorTheme={ColorThemes.GREEN}
         className='py-112'
       >
         Some Children
       </ColorContextChangerContainer>
 
       <ColorContextChangerContainer
-        colorContext={ColorThemeContext.BLUE}
+        colorTheme={ColorThemes.BLUE}
         className='py-112'
       >
         Some Children
       </ColorContextChangerContainer>
 
       <ColorContextChangerContainer
-        colorContext={ColorThemeContext.ORANGE}
+        colorTheme={ColorThemes.ORANGE}
         className='py-112'
       >
         Some Children
       </ColorContextChangerContainer>
 
       <ColorContextChangerContainer
-        colorContext={ColorThemeContext.PURPLE}
+        colorTheme={ColorThemes.PURPLE}
         className='py-112'
       >
         Some Children
       </ColorContextChangerContainer>
 
       <ColorContextChangerContainer
-        colorContext={ColorThemeContext.YELLOW}
+        colorTheme={ColorThemes.YELLOW}
         className='py-112'
       >
         Some Children

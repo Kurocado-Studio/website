@@ -3,20 +3,20 @@ import { debounce } from 'lodash-es';
 import * as React from 'react';
 
 import { ColorContext } from '~/context/ColorContext';
-import type { ColorThemeContext } from '~/context/types';
+import type { ColorThemes } from '~/context/types';
 import type { ClassName, HTMLIntrinsicElements } from '~/lib/types';
 
 export interface ColorChangeContainerProps {
   children: React.ReactNode;
   className?: ClassName;
-  colorContext: ColorThemeContext;
-  tag?: HTMLIntrinsicElements;
+  colorTheme: ColorThemes;
+  as?: HTMLIntrinsicElements;
 }
 
 export function ColorContextChangerContainer({
-  colorContext,
+  colorTheme,
   className,
-  tag,
+  as,
   children,
 }: ColorChangeContainerProps): React.ReactNode {
   const ref = React.useRef(null);
@@ -24,27 +24,30 @@ export function ColorContextChangerContainer({
   const { setColorContext, ...restColorContext } =
     React.useContext(ColorContext);
 
-  const isInView = useInView(ref, { once: false, margin: '-500px' });
+  const isInView = useInView(ref, {
+    once: false,
+    margin: '-500px',
+  });
 
   const debouncedColorContextHandler = debounce(
-    (debounceColorContext: ColorThemeContext) => {
+    (debounceColorContext: ColorThemes) => {
       setColorContext(debounceColorContext);
     },
     100,
   );
 
   React.useEffect(() => {
-    if (isInView && restColorContext.colorContext !== colorContext) {
-      debouncedColorContextHandler(colorContext);
+    if (isInView && restColorContext.colorContext !== colorTheme) {
+      debouncedColorContextHandler(colorTheme);
     }
   }, [
     isInView,
-    colorContext,
+    colorTheme,
     debouncedColorContextHandler,
     restColorContext.colorContext,
   ]);
 
-  const CurrentTag: HTMLIntrinsicElements = tag || 'div';
+  const CurrentTag: HTMLIntrinsicElements = as || 'div';
   // @ts-expect-error Element mismatch between motion
   const ColorContextChanger = motion[CurrentTag];
 

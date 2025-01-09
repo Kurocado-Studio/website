@@ -63,7 +63,7 @@ export function SocialMedia({
     },
     {
       title: 'Dribbble',
-      href: 'https://dribbble.com/KurocadoStudio/about',
+      href: 'https://dribbble.com/carlossantiago',
       icon: DribbbleIcon,
       onMouseEnter: setDribbbleVariant,
       onMouseLeave: setDefaultVariant,

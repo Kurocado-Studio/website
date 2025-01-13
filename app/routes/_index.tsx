@@ -17,6 +17,7 @@ import { ColorContextChangerContainer } from '~/components/ColorContextChangerCo
 import { ColorThemes } from '~/context/types';
 import { About } from '~/views/About';
 import { Intro } from '~/views/Intro';
+import { Projects } from '~/views/Projects';
 
 export const meta: MetaFunction = () => {
   return [
@@ -39,48 +40,23 @@ export const meta: MetaFunction = () => {
 export default function Index(): React.ReactNode {
   return (
     <>
-      <Intro />
-      <About />
       <ColorContextChangerContainer
-        colorTheme={ColorThemes.RED}
-        className='py-112'
+        as='section'
+        className='mt-24 sm:mt-32 md:mt-56'
+        colorTheme={ColorThemes.WHITE}
       >
-        Some Children
+        <Intro />
+        <About />
       </ColorContextChangerContainer>
-
-      <ColorContextChangerContainer
-        colorTheme={ColorThemes.GREEN}
-        className='py-112'
-      >
-        Some Children
+      <ColorContextChangerContainer as='section' colorTheme={ColorThemes.BLUE}>
+        <Projects />
       </ColorContextChangerContainer>
-
       <ColorContextChangerContainer
-        colorTheme={ColorThemes.BLUE}
-        className='py-112'
-      >
-        Some Children
-      </ColorContextChangerContainer>
-
-      <ColorContextChangerContainer
-        colorTheme={ColorThemes.ORANGE}
-        className='py-112'
-      >
-        Some Children
-      </ColorContextChangerContainer>
-
-      <ColorContextChangerContainer
-        colorTheme={ColorThemes.PURPLE}
-        className='py-112'
-      >
-        Some Children
-      </ColorContextChangerContainer>
-
-      <ColorContextChangerContainer
+        as='section'
         colorTheme={ColorThemes.YELLOW}
-        className='py-112'
       >
-        Some Children
+        <Intro />
+        <About />
       </ColorContextChangerContainer>
     </>
   );

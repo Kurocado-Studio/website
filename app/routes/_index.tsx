@@ -51,13 +51,6 @@ export default function Index(): React.ReactNode {
       <ColorContextChangerContainer as='section' colorTheme={ColorThemes.BLUE}>
         <Projects />
       </ColorContextChangerContainer>
-      <ColorContextChangerContainer
-        as='section'
-        colorTheme={ColorThemes.YELLOW}
-      >
-        <Intro />
-        <About />
-      </ColorContextChangerContainer>
     </>
   );
 }

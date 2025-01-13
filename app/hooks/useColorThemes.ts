@@ -1,5 +1,5 @@
 import { get } from 'lodash-es';
-import { useState } from 'react';
+import React from 'react';
 
 import {
   BaseColors,
@@ -12,15 +12,24 @@ import type {
   ColorThemeContextMap,
   CombinedColorsObject,
 } from '~/context/types';
+import type { GrayscaleImageProps } from '~/lib/GrayscaleImage';
 
 export type UseColorThemes = () => {
+  resolveHoverColorTheme: (
+    colorContextOrImageProps: ColorThemes | GrayscaleImageProps,
+  ) => ColorContextState;
+  hoverColorContextKeyMap: {
+    [K in ColorThemes]: ColorThemes;
+  };
   colorTheme: ColorThemes;
   colorThemeMap: ColorThemeContextMap;
-  resolveColorTheme: (theme: ColorThemes) => ColorContextState;
+  resolveColorTheme: (
+    themeOrImageProps: ColorThemes | GrayscaleImageProps,
+  ) => ColorContextState;
 };
 
 export const useColorThemes: UseColorThemes = () => {
-  const [colorTheme, setColorTheme] = useState<ColorThemes>(
+  const [colorTheme, setColorTheme] = React.useState<ColorThemes>(
     ColorThemes.DEFAULT,
   );
 
@@ -36,6 +45,7 @@ export const useColorThemes: UseColorThemes = () => {
     [SecondaryColors.ORANGE]: 'DarkOrange',
     [SecondaryColors.PURPLE]: 'Indigo',
   };
+
   const colorThemeMap: ColorThemeContextMap = {
     [ColorThemes.DEFAULT]: {
       background: get(colors, [BaseColors.BLACK]),
@@ -71,19 +81,47 @@ export const useColorThemes: UseColorThemes = () => {
     },
   };
 
-  const resolveColorTheme = (
-    selectedColorContext: ColorThemes,
-  ): ColorContextState => {
-    setColorTheme(selectedColorContext);
+  const hoverColorContextKeyMap: {
+    [K in ColorThemes]: ColorThemes;
+  } = {
+    [ColorThemes.BLUE]: ColorThemes.ORANGE,
+    [ColorThemes.DEFAULT]: ColorThemes.PURPLE,
+    [ColorThemes.GREEN]: ColorThemes.RED,
+    [ColorThemes.ORANGE]: ColorThemes.BLUE,
+    [ColorThemes.PURPLE]: ColorThemes.YELLOW,
+    [ColorThemes.RED]: ColorThemes.GREEN,
+    [ColorThemes.WHITE]: ColorThemes.BLUE,
+    [ColorThemes.YELLOW]: ColorThemes.PURPLE,
+  };
 
-    return get(
-      colorThemeMap,
-      [selectedColorContext],
-      get(colorThemeMap, [ColorThemes.DEFAULT]),
-    );
+  const resolveColorTheme = (
+    selectedColorContext: ColorThemes | GrayscaleImageProps,
+  ): ColorContextState => {
+    if (typeof selectedColorContext === 'string') {
+      setColorTheme(selectedColorContext);
+      return get(colorThemeMap, [selectedColorContext]);
+    }
+
+    return get(colorThemeMap, [ColorThemes.DEFAULT]);
+  };
+
+  const resolveHoverColorTheme = (
+    colorContextOrImageProps: ColorThemes | GrayscaleImageProps,
+  ): ColorContextState => {
+    if (typeof colorContextOrImageProps === 'string') {
+      const hoverColorContextKey = get(hoverColorContextKeyMap, [
+        colorContextOrImageProps,
+      ]);
+
+      return get(colorThemeMap, [hoverColorContextKey]);
+    }
+
+    return get(colorThemeMap, [ColorThemes.DEFAULT]);
   };
 
   return {
+    hoverColorContextKeyMap,
+    resolveHoverColorTheme,
     resolveColorTheme,
     colorThemeMap,
     colorTheme,

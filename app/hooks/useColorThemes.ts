@@ -90,7 +90,7 @@ export const useColorThemes: UseColorThemes = () => {
     [ColorThemes.ORANGE]: ColorThemes.BLUE,
     [ColorThemes.PURPLE]: ColorThemes.YELLOW,
     [ColorThemes.RED]: ColorThemes.GREEN,
-    [ColorThemes.WHITE]: ColorThemes.BLUE,
+    [ColorThemes.WHITE]: ColorThemes.PURPLE,
     [ColorThemes.YELLOW]: ColorThemes.PURPLE,
   };
 

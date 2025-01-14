@@ -3,6 +3,7 @@ import get from 'lodash-es/get';
 import React, { useContext } from 'react';
 
 import { FadeIn, FadeInDirection, FadeInStagger } from '~/components/FadeIn';
+import { SocialMediaLinks } from '~/config/enums';
 import { CursorContext, CursorVariants } from '~/context/CursorContext';
 import type { PropsWithoutRef } from '~/lib/types';
 
@@ -56,14 +57,14 @@ export function SocialMedia({
   const socialMediaProfiles = [
     {
       title: 'GitHub',
-      href: 'https://github.com/Kurocado-Studio',
+      href: SocialMediaLinks.GITHUB,
       icon: GitHubIcon,
       onMouseEnter: setGithubVariant,
       onMouseLeave: setDefaultVariant,
     },
     {
       title: 'Dribbble',
-      href: 'https://dribbble.com/carlossantiago',
+      href: SocialMediaLinks.DRIBBBLE,
       icon: DribbbleIcon,
       onMouseEnter: setDribbbleVariant,
       onMouseLeave: setDefaultVariant,

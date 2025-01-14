@@ -21,7 +21,10 @@ export function Container<T extends HTMLIntrinsicElements = 'div'>({
 
   return (
     <Component
-      className={clsx('relative mx-auto max-w-full px-8 lg:px-12', className)}
+      className={clsx(
+        'relative mx-auto max-w-screen-2xl px-8 lg:px-12',
+        className,
+      )}
     >
       <div className='relative mx-auto max-w-2xl lg:max-w-none'>{children}</div>
     </Component>

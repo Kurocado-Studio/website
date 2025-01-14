@@ -4,14 +4,21 @@ import React from 'react';
 
 import { Container } from '~/components/Container';
 import { SocialMedia } from '~/components/SocialMedia';
+import { ColorContext } from '~/context/ColorContext';
+import { ColorThemes } from '~/context/types';
 
 export function About(): React.ReactNode {
   const sharedTypographyClassName =
     'mb-6 font-body block text-base [text-wrap:balance] md:text-2xl';
 
+  const { setColorContext } = React.useContext(ColorContext);
+
   return (
     <Container className='pt-80'>
-      <div className='grid grid-cols-12 gap-4'>
+      <div
+        className='grid grid-cols-12 gap-4'
+        onMouseEnter={() => setColorContext(ColorThemes.WHITE)}
+      >
         <section className='col-span-12 md:col-span-6'>
           <h1
             className={clsx(

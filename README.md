@@ -4,7 +4,7 @@
  *
  * Learn more about Kurocado Studio: {@link https://www.kurocado.studio}
  *
- * Explore our open-source frontEndProjects: {@link https://github.com/kurocado-studio}
+ * Explore our open-source projects: {@link https://github.com/kurocado-studio}
 -->
 
 # Welcome to Remix!

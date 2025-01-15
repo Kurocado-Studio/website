@@ -6,6 +6,7 @@ import type { HTMLIntrinsicElements, PropsWithoutRef } from '~/lib/types';
 
 interface ContainerProps<T extends HTMLIntrinsicElements = 'div'> {
   as?: T;
+  ref?: T;
   className?: string;
   children: React.ReactNode;
 }
@@ -14,6 +15,7 @@ export function Container<T extends HTMLIntrinsicElements = 'div'>({
   as,
   className,
   children,
+  ...restOfProps
 }: Omit<PropsWithoutRef<T>, keyof ContainerProps<T>> &
   ContainerProps<T>): React.ReactNode {
   // @ts-expect-error type-mismatch
@@ -22,11 +24,12 @@ export function Container<T extends HTMLIntrinsicElements = 'div'>({
   return (
     <Component
       className={clsx(
-        'relative mx-auto max-w-screen-2xl px-8 lg:px-12',
+        'relative mx-auto w-full max-w-screen-2xl px-8 py-36 lg:px-12 lg:py-56',
         className,
       )}
+      {...restOfProps}
     >
-      <div className='relative mx-auto max-w-2xl lg:max-w-none'>{children}</div>
+      {children}
     </Component>
   );
 }

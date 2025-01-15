@@ -10,7 +10,7 @@ import { twMerge } from 'tailwind-merge';
 
 export type FramerCursorAttributes = Pick<
   Partial<React.DOMAttributes<HTMLElement>>,
-  'onMouseEnter' | 'onMouseLeave'
+  'onPointerEnter' | 'onPointerLeave'
 >;
 
 export type GrayscaleImageProps = Partial<

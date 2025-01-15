@@ -26,8 +26,8 @@ export function HorizontalScrollText({
   baseVelocity = 100,
   className,
   href,
-  onMouseEnter,
-  onMouseLeave,
+  onPointerEnter,
+  onPointerLeave,
 }: HorizontalScrollTextProps): React.ReactNode {
   const baseX = useMotionValue(0);
 
@@ -71,8 +71,8 @@ export function HorizontalScrollText({
         {Array.from({ length: 12 }, (_, idx) => (
           <HtmlTag
             {...(href && { href })}
-            onPointerEnter={onMouseEnter}
-            onMouseLeave={onMouseLeave}
+            onPointerEnter={onPointerEnter}
+            onPointerLeave={onPointerLeave}
             key={idx}
             className={clsx(
               'block font-display text-6xl font-semibold [text-wrap:balance] md:text-7xl lg:text-8xl',

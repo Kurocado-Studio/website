@@ -1,12 +1,13 @@
-import clsx from 'clsx';
 import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
 import type { MotionValue } from 'framer-motion';
 import { get } from 'lodash-es';
 import React from 'react';
 
 import { Container } from '~/components/Container';
+import { FadeIn, FadeInDirection } from '~/components/FadeIn';
 import { uiProjectImages } from '~/config/projects';
 import { ColorContext } from '~/context/ColorContext';
+import { CursorContext, CursorVariants } from '~/context/CursorContext';
 import { ColorThemes } from '~/context/types';
 import { GrayscaleImage } from '~/lib/GrayscaleImage';
 
@@ -19,9 +20,6 @@ interface DesignPreviewProps {
 }
 
 export function DesignProjects(): React.ReactNode {
-  const header = `As a Product Designer`;
-  const body = `I’ve led design strategies for startups and large enterprises, including spearheading a major product revamp at SpotOn when it transition from marketing to payment processing.`;
-
   const [projectCards, setProjectCards] = React.useState<
     { title: string; thumbnail: string }[]
   >([]);
@@ -68,72 +66,79 @@ export function DesignProjects(): React.ReactNode {
   }, []);
 
   return (
-    <section
-      onPointerEnter={() => setColorContext(ColorThemes.BLUE)}
-      ref={ref}
-      className='antialiasing relative flex flex-col self-auto overflow-hidden py-40 [perspective:1000px] [transform-style:preserve-3d] sm:mt-32 lg:py-56'
+    <Container
+      as='section'
+      onPointerEnter={() => setColorContext(ColorThemes.WHITE)}
+      className='antialiasing relative flex flex-col self-auto overflow-hidden [perspective:1000px] [transform-style:preserve-3d]'
     >
-      <Container className='relative z-10 mt-4'>
-        <span className='sr-only'> - </span>
-        <h2 className='block font-display text-4xl font-medium tracking-tight [text-wrap:balance] lg:text-7xl'>
-          {header}
-        </h2>
-        <h3
-          className={clsx(
-            'mt-12 block font-body text-base [text-wrap:balance] md:text-3xl',
-          )}
-        >
-          {body}
-        </h3>
-      </Container>
-      <motion.div className='relative z-0 mx-auto my-24 w-full max-w-screen-2xl overflow-hidden rounded border border-gray-200 bg-dark-tile py-24 md:rounded-full'>
-        <motion.article className='relative mb-8 flex flex-row-reverse space-x-8 space-x-reverse'>
-          {firstRow.map((product, idx) => (
-            <DesignPreviewCard
-              product={product}
-              translate={translateX}
-              key={`${product.title}_${String(idx)}`}
-            />
-          ))}
-        </motion.article>
-        <motion.article className='relative mb-8 flex flex-row space-x-8'>
-          {secondRow.map((product, idx) => (
-            <DesignPreviewCard
-              product={product}
-              translate={translateXReverse}
-              key={`${product.title}_${String(idx)}`}
-            />
-          ))}
-        </motion.article>
-        <motion.article className='relative mb-8 flex flex-row-reverse space-x-8 space-x-reverse'>
-          {thirdRow.map((product, idx) => (
-            <DesignPreviewCard
-              product={product}
-              translate={translateX}
-              key={`${product.title}_${String(idx)}`}
-            />
-          ))}
-        </motion.article>
-        <motion.article className='relative mb-8 flex flex-row space-x-8'>
-          {secondRow.reverse().map((product, idx) => (
-            <DesignPreviewCard
-              product={product}
-              translate={translateXReverse}
-              key={`${product.title}_${String(idx)}`}
-            />
-          ))}
-        </motion.article>
-        <motion.article className='relative flex flex-row-reverse space-x-8 space-x-reverse'>
-          {thirdRow.reverse().map((product, idx) => (
-            <DesignPreviewCard
-              product={product}
-              translate={translateX}
-              key={`${product.title}_${String(idx)}`}
-            />
-          ))}
-        </motion.article>
-      </motion.div>
-    </section>
+      <div ref={ref}>
+        <div className='relative z-10 mt-4'>
+          <FadeIn
+            as='h2'
+            direction={FadeInDirection.UP}
+            className='block font-display text-4xl font-medium tracking-tight [text-wrap:balance] lg:text-7xl'
+          >
+            As a Product Designer
+          </FadeIn>
+          <FadeIn
+            as='p'
+            direction={FadeInDirection.DOWN}
+            className='mt-12 block max-w-prose font-body text-base [text-wrap:balance] md:text-3xl'
+          >
+            I’ve led design strategies for startups and large enterprises,
+            including spearheading a major product revamp at SpotOn when it
+            transition from marketing to payment processing.
+          </FadeIn>
+        </div>
+        <motion.div className='relative z-0 mx-auto my-24 w-full max-w-screen-2xl overflow-hidden rounded border border-gray-200 bg-dark-tile py-24 md:rounded-full'>
+          <motion.article className='relative mb-8 flex flex-row-reverse space-x-8 space-x-reverse'>
+            {firstRow.map((product, idx) => (
+              <DesignPreviewCard
+                product={product}
+                translate={translateX}
+                key={`${product.title}_${String(idx)}`}
+              />
+            ))}
+          </motion.article>
+          <motion.article className='relative mb-8 flex flex-row space-x-8'>
+            {secondRow.map((product, idx) => (
+              <DesignPreviewCard
+                product={product}
+                translate={translateXReverse}
+                key={`${product.title}_${String(idx)}`}
+              />
+            ))}
+          </motion.article>
+          <motion.article className='relative mb-8 flex flex-row-reverse space-x-8 space-x-reverse'>
+            {thirdRow.map((product, idx) => (
+              <DesignPreviewCard
+                product={product}
+                translate={translateX}
+                key={`${product.title}_${String(idx)}`}
+              />
+            ))}
+          </motion.article>
+          <motion.article className='relative mb-8 flex flex-row space-x-8'>
+            {secondRow.reverse().map((product, idx) => (
+              <DesignPreviewCard
+                product={product}
+                translate={translateXReverse}
+                key={`${product.title}_${String(idx)}`}
+              />
+            ))}
+          </motion.article>
+          <motion.article className='relative flex flex-row-reverse space-x-8 space-x-reverse'>
+            {thirdRow.reverse().map((product, idx) => (
+              <DesignPreviewCard
+                product={product}
+                translate={translateX}
+                key={`${product.title}_${String(idx)}`}
+              />
+            ))}
+          </motion.article>
+        </motion.div>
+      </div>
+    </Container>
   );
 }
 
@@ -141,13 +146,20 @@ export function DesignPreviewCard({
   product,
   translate,
 }: DesignPreviewProps): React.ReactNode {
+  const { setCursorVariant } = React.useContext(CursorContext);
+
   return (
     <motion.div
       style={{ x: translate }}
       key={product.title}
       className='group/product relative aspect-square w-[12rem] flex-shrink-0 md:w-[18rem] lg:w-[24rem]'
     >
-      <GrayscaleImage src={product.thumbnail} alt={product.title} />
+      <GrayscaleImage
+        onPointerEnter={() => setCursorVariant(CursorVariants.HIDDEN)}
+        onPointerLeave={() => setCursorVariant(CursorVariants.DEFAULT)}
+        src={product.thumbnail}
+        alt={product.title}
+      />
     </motion.div>
   );
 }

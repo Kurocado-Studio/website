@@ -59,15 +59,15 @@ export function SocialMedia({
       title: 'GitHub',
       href: SocialMediaLinks.GITHUB,
       icon: GitHubIcon,
-      onMouseEnter: setGithubVariant,
-      onMouseLeave: setDefaultVariant,
+      onPointerEnter: setGithubVariant,
+      onPointerLeave: setDefaultVariant,
     },
     {
       title: 'Dribbble',
       href: SocialMediaLinks.DRIBBBLE,
       icon: DribbbleIcon,
-      onMouseEnter: setDribbbleVariant,
-      onMouseLeave: setDefaultVariant,
+      onPointerEnter: setDribbbleVariant,
+      onPointerLeave: setDefaultVariant,
     },
   ];
 
@@ -92,8 +92,8 @@ export function SocialMedia({
                   invert ? 'hover:text-neutral-200' : 'hover:text-neutral-700',
                 )}
                 target='_blank'
-                onPointerEnter={get(socialMediaProfile, ['onMouseEnter'])}
-                onMouseLeave={get(socialMediaProfile, ['onMouseLeave'])}
+                onPointerEnter={get(socialMediaProfile, ['onPointerEnter'])}
+                onPointerLeave={get(socialMediaProfile, ['onPointerLeave'])}
               >
                 <socialMediaProfile.icon className='h-12 w-12 fill-current' />
               </a>

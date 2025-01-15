@@ -9,12 +9,12 @@ import { ColorThemes } from '~/context/types';
 
 export function About(): React.ReactNode {
   const sharedTypographyClassName =
-    'mb-6 font-body block text-base [text-wrap:balance] md:text-2xl';
+    'mb-12 font-body block text-base [text-wrap:balance] md:text-2xl';
 
   const { setColorContext } = React.useContext(ColorContext);
 
   return (
-    <Container className='pt-80'>
+    <Container onPointerEnter={() => setColorContext(ColorThemes.WHITE)}>
       <div
         className='grid grid-cols-12 gap-4'
         onPointerEnter={() => setColorContext(ColorThemes.WHITE)}
@@ -30,38 +30,19 @@ export function About(): React.ReactNode {
           </h1>
           <SocialMedia className='mt-16' />
         </section>
-        <p
-          className={clsx(
-            sharedTypographyClassName,
-            'col-span-12 md:col-span-6',
-          )}
-        >
-          I’m Carlos Santiago, a Front-End Software Engineer and Product
-          Designer with over 10 years of experience creating and improving
-          digital products. My expertise lies in developing and designing
-          scalable solutions across platforms, excelling in both Product Design
-          and Front-End Engineering.
-        </p>
-        <div className='col-span-12 md:col-span-6' />
         <article className='col-span-12 md:col-span-6'>
           <p className={sharedTypographyClassName}>
-            <b>As a Product Designer</b>, I’ve led design strategies for
-            startups and large enterprises, including spearheading a major
-            product revamp at SpotOn when it transition from marketing to
-            payment processing.
+            I’m Carlos Santiago, a Front-End Software Engineer and Product
+            Designer with over 10 years of experience creating and improving
+            digital products. My expertise lies in developing and designing
+            scalable solutions across platforms, excelling in both Product
+            Design and Front-End Engineering.
           </p>
-        </article>
-        <div className='col-span-12 md:col-span-6' />
-        <article className='col-span-12 md:col-span-6'>
           <p className={sharedTypographyClassName}>
-            <b>As a Front-End Software Engineer</b>, I specialize in React, Vue,
-            TypeScript, and NestJS. At Dais Technologies, I developed solutions
-            leveraging AWS OCR, and at Project 44, I unified enterprise UIs and
-            integrated with Kong API Gateway to standardize RBAC.
+            My work at companies like Project44 and Dais Technology has allowed
+            me to collaborate with diverse stakeholders, ensuring alignment
+            between technical requirements and business objectives.
           </p>
-        </article>
-        <div className='col-span-12 md:col-span-6' />
-        <article className='col-span-12 md:col-span-6'>
           <p className={sharedTypographyClassName}>
             Currently, I’m advancing my skills with a{' '}
             <a

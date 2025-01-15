@@ -49,11 +49,6 @@ export function DesignProjects(): React.ReactNode {
     springConfig,
   );
 
-  const opacity = useSpring(
-    useTransform(scrollYProgress, [0, 0.1], [0, 1]),
-    springConfig,
-  );
-
   React.useEffect(() => {
     let lastIndex = -1;
 
@@ -91,12 +86,7 @@ export function DesignProjects(): React.ReactNode {
           {body}
         </h3>
       </Container>
-      <motion.div
-        style={{
-          opacity,
-        }}
-        className='relative z-0 mx-auto my-24 max-w-screen-2xl overflow-hidden rounded-full border border-gray-200 bg-dark-tile py-24'
-      >
+      <motion.div className='relative z-0 mx-auto my-24 w-full max-w-screen-2xl overflow-hidden rounded border border-gray-200 bg-dark-tile py-24 md:rounded-full'>
         <motion.article className='relative mb-8 flex flex-row-reverse space-x-8 space-x-reverse'>
           {firstRow.map((product, idx) => (
             <DesignPreviewCard

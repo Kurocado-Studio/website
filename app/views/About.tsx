@@ -33,7 +33,6 @@ export function About(): React.ReactNode {
         <p
           className={clsx(
             sharedTypographyClassName,
-            'font-body',
             'col-span-12 md:col-span-6',
           )}
         >
@@ -45,7 +44,7 @@ export function About(): React.ReactNode {
         </p>
         <div className='col-span-12 md:col-span-6' />
         <article className='col-span-12 md:col-span-6'>
-          <p className={clsx(sharedTypographyClassName, 'font-body')}>
+          <p className={sharedTypographyClassName}>
             <b>As a Product Designer</b>, I’ve led design strategies for
             startups and large enterprises, including spearheading a major
             product revamp at SpotOn when it transition from marketing to
@@ -54,7 +53,7 @@ export function About(): React.ReactNode {
         </article>
         <div className='col-span-12 md:col-span-6' />
         <article className='col-span-12 md:col-span-6'>
-          <p className={clsx(sharedTypographyClassName, 'font-body')}>
+          <p className={sharedTypographyClassName}>
             <b>As a Front-End Software Engineer</b>, I specialize in React, Vue,
             TypeScript, and NestJS. At Dais Technologies, I developed solutions
             leveraging AWS OCR, and at Project 44, I unified enterprise UIs and
@@ -63,7 +62,7 @@ export function About(): React.ReactNode {
         </article>
         <div className='col-span-12 md:col-span-6' />
         <article className='col-span-12 md:col-span-6'>
-          <p className={clsx(sharedTypographyClassName, 'font-body')}>
+          <p className={sharedTypographyClassName}>
             Currently, I’m advancing my skills with a{' '}
             <a
               className='font-semibold text-blue-600 visited:text-purple-600 hover:text-blue-800'

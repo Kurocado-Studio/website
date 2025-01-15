@@ -17,7 +17,7 @@ export function About(): React.ReactNode {
     <Container className='pt-80'>
       <div
         className='grid grid-cols-12 gap-4'
-        onMouseEnter={() => setColorContext(ColorThemes.WHITE)}
+        onPointerEnter={() => setColorContext(ColorThemes.WHITE)}
       >
         <section className='col-span-12 md:col-span-6'>
           <h1

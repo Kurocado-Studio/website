@@ -13,7 +13,7 @@ export function Intro(): React.ReactNode {
       <FadeIn
         className='mt-24 sm:mt-32 md:mt-56'
         direction={FadeInDirection.UP}
-        onMouseEnter={() => setColorContext(ColorThemes.WHITE)}
+        onPointerEnter={() => setColorContext(ColorThemes.WHITE)}
       >
         <HorizontalScrollText baseVelocity={-2}>Kurocado</HorizontalScrollText>
       </FadeIn>

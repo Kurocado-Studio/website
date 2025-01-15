@@ -92,7 +92,7 @@ export function SocialMedia({
                   invert ? 'hover:text-neutral-200' : 'hover:text-neutral-700',
                 )}
                 target='_blank'
-                onMouseEnter={get(socialMediaProfile, ['onMouseEnter'])}
+                onPointerEnter={get(socialMediaProfile, ['onMouseEnter'])}
                 onMouseLeave={get(socialMediaProfile, ['onMouseLeave'])}
               >
                 <socialMediaProfile.icon className='h-12 w-12 fill-current' />

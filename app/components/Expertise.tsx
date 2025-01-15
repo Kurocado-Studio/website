@@ -66,41 +66,41 @@ export function ProductDesignExpertise(): React.ReactNode {
           withHoverStyles
           title='e-commerce'
           className='cursor-none'
-          onMouseEnter={setEcommerceVariant}
+          onPointerEnter={setEcommerceVariant}
           onMouseLeave={setDefaultVariant}
         />
         <ListItem
           withHoverStyles
           title='Web apps'
           className='cursor-none'
-          onMouseEnter={setWebAppsVariant}
+          onPointerEnter={setWebAppsVariant}
           onMouseLeave={setDefaultVariant}
         />
         <ListItem
           withHoverStyles
           title='Design systems'
           className='cursor-none'
-          onMouseEnter={setDesignSystemVariant}
+          onPointerEnter={setDesignSystemVariant}
           onMouseLeave={setDefaultVariant}
         />
         <ListItem
           withHoverStyles
           title='Landing pages'
-          onMouseEnter={setLandingPagesVariant}
+          onPointerEnter={setLandingPagesVariant}
           onMouseLeave={setDefaultVariant}
           className='cursor-none'
         />
         <ListItem
           withHoverStyles
           title='Enterprise applications'
-          onMouseEnter={setEnterpriseApplicationsVariant}
+          onPointerEnter={setEnterpriseApplicationsVariant}
           onMouseLeave={setDefaultVariant}
           className='cursor-none'
         />
         <ListItem
           withHoverStyles
           title='Illustrations'
-          onMouseEnter={setIllustrationsVariant}
+          onPointerEnter={setIllustrationsVariant}
           onMouseLeave={setDefaultVariant}
           className='cursor-none'
         />
@@ -147,42 +147,42 @@ export function FrontEndDevelopmentExpertise(): React.ReactNode {
           withHoverStyles
           title='React'
           className='cursor-none'
-          onMouseEnter={setReactVariant}
+          onPointerEnter={setReactVariant}
           onMouseLeave={setDefaultVariant}
         />
         <ListItem
           withHoverStyles
           title='Vue'
           className='cursor-none'
-          onMouseEnter={setVueVariant}
+          onPointerEnter={setVueVariant}
           onMouseLeave={setDefaultVariant}
         />
         <ListItem
           withHoverStyles
           title='Typescript'
           className='cursor-none'
-          onMouseEnter={setTypescriptVariant}
+          onPointerEnter={setTypescriptVariant}
           onMouseLeave={setDefaultVariant}
         />
         <ListItem
           withHoverStyles
           title='Framer Motion'
           className='cursor-none'
-          onMouseEnter={setFramerMotionVariant}
+          onPointerEnter={setFramerMotionVariant}
           onMouseLeave={setDefaultVariant}
         />
         <ListItem
           withHoverStyles
           title='NestJS'
           className='cursor-none'
-          onMouseEnter={setNestJSVariant}
+          onPointerEnter={setNestJSVariant}
           onMouseLeave={setDefaultVariant}
         />
         <ListItem
           withHoverStyles
           title='Tailwind'
           className='cursor-none'
-          onMouseEnter={setTailwindVariant}
+          onPointerEnter={setTailwindVariant}
           onMouseLeave={setDefaultVariant}
         />
       </List>

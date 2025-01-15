@@ -74,7 +74,7 @@ export function DesignProjects(): React.ReactNode {
 
   return (
     <section
-      onMouseEnter={() => setColorContext(ColorThemes.BLUE)}
+      onPointerEnter={() => setColorContext(ColorThemes.BLUE)}
       ref={ref}
       className='antialiasing relative flex flex-col self-auto overflow-hidden py-40 [perspective:1000px] [transform-style:preserve-3d] sm:mt-32 lg:py-56'
     >

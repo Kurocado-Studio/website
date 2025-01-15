@@ -44,7 +44,7 @@ export function ListItem({
     <li
       className='group'
       onMouseLeave={onMouseLeave}
-      onMouseEnter={onMouseEnter}
+      onPointerEnter={onMouseEnter}
     >
       <FadeIn>
         <Border

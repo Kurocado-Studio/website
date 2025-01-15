@@ -5,6 +5,7 @@ import * as React from 'react';
 import { twMerge } from 'tailwind-merge';
 
 import { ColorContext } from '~/context/ColorContext';
+import { CursorContext, CursorVariants } from '~/context/CursorContext';
 import { ColorThemes } from '~/context/types';
 import { useColorThemes } from '~/hooks/useColorThemes';
 import { GrayscaleImage } from '~/lib/GrayscaleImage';
@@ -31,6 +32,8 @@ export function FrontEndProjectCard(
   const scrollY = get(props, ['scrollY']);
   const scale = useTransform(scrollY, ...get(props, ['scale']));
   const opacity = useTransform(scrollY, ...get(props, ['opacity']));
+
+  const { setCursorVariant } = React.useContext(CursorContext);
 
   const [isHovered, setIsHovered] = React.useState(false);
   const [isHydrated, setIsHydrated] = React.useState(false);
@@ -71,6 +74,8 @@ export function FrontEndProjectCard(
           'flex flex-col items-center overflow-hidden rounded-lg md:flex-row',
           `shadow transition-all duration-300 ease-in-out hover:bg-lime-400`,
         )}
+        onPointerEnter={() => setCursorVariant(CursorVariants.HIDDEN)}
+        onPointerLeave={() => setCursorVariant(CursorVariants.DEFAULT)}
         onMouseOver={() => setIsHovered(true)}
         onMouseOut={() => setIsHovered(false)}
         style={{

@@ -6,7 +6,7 @@ import { FadeIn, FadeInStagger } from '~/components/FadeIn';
 
 export type FramerCursorAttributes = Pick<
   Partial<React.DOMAttributes<HTMLElement>>,
-  'onMouseEnter' | 'onMouseLeave'
+  'onPointerEnter' | 'onPointerLeave'
 >;
 
 type ListItemProps = {
@@ -36,15 +36,15 @@ export function ListItem({
   children,
   className,
   title,
-  onMouseEnter,
-  onMouseLeave,
+  onPointerEnter,
+  onPointerLeave,
   withHoverStyles,
 }: ListItemProps): React.ReactNode {
   return (
     <li
       className='group'
-      onMouseLeave={onMouseLeave}
-      onPointerEnter={onMouseEnter}
+      onPointerLeave={onPointerLeave}
+      onPointerEnter={onPointerEnter}
     >
       <FadeIn>
         <Border

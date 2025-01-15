@@ -17,12 +17,13 @@ export enum FadeInDirection {
   DEFAULT = 'DEFAULT',
   UP = 'UP',
   DOWN = 'DOWN',
+  LEFT_TO_RIGHT = 'LEFT_TO_RIGHT',
 }
 
 export type FadeInProps<T extends HTMLIntrinsicElements> =
   PropsWithoutRef<T> & {
     direction?: FadeInDirection;
-    tag?: T;
+    as?: T;
   };
 
 export function FadeIn<T extends HTMLIntrinsicElements = 'div'>(
@@ -31,9 +32,9 @@ export function FadeIn<T extends HTMLIntrinsicElements = 'div'>(
   const shouldReduceMotion = useReducedMotion();
   const isInStaggerGroup = useContext(FadeInStaggerContext);
 
-  const { direction, tag, ...restProps } = props;
+  const { direction, as, ...restProps } = props;
 
-  const intrinsicElement: HTMLIntrinsicElements = tag ?? 'div';
+  const intrinsicElement: HTMLIntrinsicElements = as ?? 'div';
   // @ts-expect-error Element mismatch between motion
   const MotionHTMLIntrinsicElement = motion[intrinsicElement];
 
@@ -49,6 +50,10 @@ export function FadeIn<T extends HTMLIntrinsicElements = 'div'>(
     [FadeInDirection.DOWN]: {
       hidden: { opacity: 0, y: shouldReduceMotion ? 0 : -24 },
       visible: { opacity: 1, y: 0 },
+    },
+    [FadeInDirection.LEFT_TO_RIGHT]: {
+      hidden: { opacity: 0, x: shouldReduceMotion ? 0 : -24 },
+      visible: { opacity: 1, x: 0 },
     },
   };
 

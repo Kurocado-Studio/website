@@ -75,7 +75,7 @@ export function CursorContextProvider({
   });
 
   const [cursorVariant, setCursorVariant] = React.useState<CursorVariants>(
-    CursorVariants.HIDDEN,
+    CursorVariants.DEFAULT,
   );
 
   React.useEffect(() => {

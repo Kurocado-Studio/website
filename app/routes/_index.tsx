@@ -13,11 +13,10 @@
 import type { MetaFunction } from '@remix-run/node';
 import React from 'react';
 
-import { ColorContextChangerContainer } from '~/components/ColorContextChangerContainer';
-import { ColorThemes } from '~/context/types';
 import { About } from '~/views/About';
+import { DesignProjects } from '~/views/DesignProjects';
+import { FrontEndProjects } from '~/views/FrontEndProjects';
 import { Intro } from '~/views/Intro';
-import { Projects } from '~/views/Projects';
 
 export const meta: MetaFunction = () => {
   return [
@@ -40,17 +39,10 @@ export const meta: MetaFunction = () => {
 export default function Index(): React.ReactNode {
   return (
     <>
-      <ColorContextChangerContainer
-        as='section'
-        className='mt-24 sm:mt-32 md:mt-56'
-        colorTheme={ColorThemes.WHITE}
-      >
-        <Intro />
-        <About />
-      </ColorContextChangerContainer>
-      <ColorContextChangerContainer as='section' colorTheme={ColorThemes.BLUE}>
-        <Projects />
-      </ColorContextChangerContainer>
+      <Intro />
+      <About />
+      <DesignProjects />
+      <FrontEndProjects />
     </>
   );
 }

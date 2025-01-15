@@ -71,7 +71,7 @@ export function HorizontalScrollText({
         {Array.from({ length: 12 }, (_, idx) => (
           <HtmlTag
             {...(href && { href })}
-            onMouseEnter={onMouseEnter}
+            onPointerEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}
             key={idx}
             className={clsx(

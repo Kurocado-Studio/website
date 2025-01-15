@@ -61,6 +61,7 @@ export default {
         'default-background': 'rgb(255, 255, 255)',
         'default-font': 'rgb(23, 23, 23)',
         'neutral-border': 'rgb(229, 229, 229)',
+        'dark-tile': 'rgb(0, 0, 0, 0.2)',
         'subtext-color': 'rgb(115, 115, 115)',
         white: 'rgb(255, 255, 255)',
       },
@@ -149,7 +150,7 @@ export default {
         md: '16px',
         DEFAULT: '16px',
         lg: '24px',
-        full: '9999px',
+        full: '100px',
         '4xl': '2.5rem',
       },
       container: {

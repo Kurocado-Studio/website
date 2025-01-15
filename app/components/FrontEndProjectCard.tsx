@@ -9,14 +9,14 @@ import { ColorThemes } from '~/context/types';
 import { useColorThemes } from '~/hooks/useColorThemes';
 import { GrayscaleImage } from '~/lib/GrayscaleImage';
 
-export interface Project {
+export interface FrontEndProject {
   alt: string;
   category?: Array<string>;
   heading: string;
   imgBackground: string;
 }
 
-export interface ProjectMotionProps extends Project {
+export interface FrontEndProjectMotionProps extends FrontEndProject {
   opacity: [Array<number>, Array<number>];
   scale: [Array<number>, Array<number>];
   scrollY: MotionValue<number>;
@@ -25,7 +25,9 @@ export interface ProjectMotionProps extends Project {
 
 export const PROJECT_CARD_HEIGHT = 500;
 
-export function ProjectCard(props: ProjectMotionProps): React.ReactNode {
+export function FrontEndProjectCard(
+  props: FrontEndProjectMotionProps,
+): React.ReactNode {
   const scrollY = get(props, ['scrollY']);
   const scale = useTransform(scrollY, ...get(props, ['scale']));
   const opacity = useTransform(scrollY, ...get(props, ['opacity']));
@@ -52,7 +54,7 @@ export function ProjectCard(props: ProjectMotionProps): React.ReactNode {
 
   return (
     <motion.article
-      className='sticky top-0 py-20'
+      className='sticky top-0 m-auto max-w-screen-2xl py-20'
       {...{
         style: isHydrated
           ? {
@@ -88,9 +90,8 @@ export function ProjectCard(props: ProjectMotionProps): React.ReactNode {
             alt={get(props, ['alt'])}
           />
         </div>
-
         <div className='flex flex-col justify-between pl-8 leading-normal'>
-          <h2 className='block font-display text-4xl font-medium tracking-tight [text-wrap:balance] lg:text-7xl'>
+          <h2 className='block font-display text-4xl font-medium tracking-tight [text-wrap:balance] lg:text-6xl'>
             {get(props, ['heading'], '--')}
           </h2>
           <p className='mt-12 block font-body text-base [text-wrap:balance] md:text-3xl'>

@@ -149,7 +149,7 @@ export default {
         sm: '8px',
         md: '16px',
         DEFAULT: '16px',
-        lg: '24px',
+        lg: '50px',
         full: '100px',
         '4xl': '2.5rem',
       },

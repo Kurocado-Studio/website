@@ -83,14 +83,14 @@ export function DesignProjects(): React.ReactNode {
           <FadeIn
             as='p'
             direction={FadeInDirection.DOWN}
-            className='mt-12 block max-w-prose font-body text-base [text-wrap:balance] md:text-3xl'
+            className='mt-4 block max-w-prose font-body text-base [text-wrap:balance] md:mt-8 md:text-3xl'
           >
             I’ve led design strategies for startups and large enterprises,
             including spearheading a major product revamp at SpotOn when it
             transition from marketing to payment processing.
           </FadeIn>
         </div>
-        <motion.div className='relative z-0 mx-auto my-24 w-full max-w-screen-2xl overflow-hidden rounded border border-gray-200 bg-dark-tile py-24 md:rounded-full'>
+        <motion.div className='relative z-0 mx-auto mt-12 w-full max-w-screen-2xl overflow-hidden rounded-lg border border-gray-200 bg-dark-tile py-12 md:mt-24 md:rounded-full md:py-24'>
           <motion.article className='relative mb-8 flex flex-row-reverse space-x-8 space-x-reverse'>
             {firstRow.map((product, idx) => (
               <DesignPreviewCard

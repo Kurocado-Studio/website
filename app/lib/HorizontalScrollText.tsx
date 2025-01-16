@@ -75,12 +75,12 @@ export function HorizontalScrollText({
             onPointerLeave={onPointerLeave}
             key={idx}
             className={clsx(
-              'block font-display text-6xl font-semibold [text-wrap:balance] md:text-7xl lg:text-8xl',
+              'block font-display text-7xl font-semibold [text-wrap:balance] lg:text-8xl',
               className,
             )}
             style={{
               lineHeight: '1.0',
-              color: idx % 3 === 0 ? undefined : '#e0e6e6',
+              color: idx % 3 === 0 ? undefined : 'Gainsboro',
             }}
           >
             {children}

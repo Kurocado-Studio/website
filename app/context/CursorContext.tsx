@@ -1,6 +1,6 @@
 import type { CursorState } from 'ahooks/lib/useMouse';
 import clsx from 'clsx';
-import { AnimatePresence, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { get } from 'lodash-es';
 import { createContext } from 'react';
 import * as React from 'react';
@@ -11,6 +11,7 @@ import {
   DribbbleVariant,
   GithubVariant,
 } from '~/components/Cursors';
+import { useWindowSize } from '~/hooks/useWindowSize';
 import { FramerMotionIcon } from '~/icons/FramerMotionIcon';
 import { NestJsIcon } from '~/icons/NestJsIcon';
 import { ReactIcon } from '~/icons/ReactIcon';
@@ -109,8 +110,8 @@ export function CursorContextProvider({
 
   const commonInteractiveCursor: CustomCursor = {
     alignItems: 'center',
-    backgroundColor: '#dbfd39',
-    color: '#000',
+    backgroundColor: '#000',
+    color: '#ADFF2F', //GreenYellow,
     display: 'flex',
     height: 164,
     justifyContent: 'center',
@@ -227,7 +228,7 @@ export function CursorContextProvider({
           setCursorVariant(CursorVariants.CONTACT);
         },
         [CursorVariants.CONTACT_CTA]: () => {
-          setCursorText('Contact Us');
+          setCursorText('Contact Me');
           setCursorVariant(CursorVariants.CONTACT_CTA);
         },
         [CursorVariants.DEFAULT]: () => {
@@ -301,23 +302,28 @@ export function CursorContextProvider({
     [cursorVariant, cursorVariantHandlers],
   );
 
+  const {
+    size: { innerWidth },
+  } = useWindowSize();
+
   return (
     <CursorContext.Provider value={providerValue}>
-      <AnimatePresence>
+      {innerWidth > 1024 && (
         <motion.span
           variants={cursorVariantMap}
           animate={cursorVariant}
           transition={spring}
           className={clsx(
-            `max-xl:d-flex pointer-events-none fixed left-0 top-0 z-[100] hidden h-[10px] w-[10px] content-center items-center justify-center justify-items-center bg-[#1e91d6] text-base text-white md:block`,
+            `pointer-events-none fixed left-0 top-0 z-[100] hidden h-[10px] w-[10px] content-center items-center justify-center justify-items-center bg-[#1e91d6] text-base text-white md:block`,
             get(cursorVariantMap, [cursorVariant, 'isRounded'])
               ? 'rounded-full'
               : 'rounded-sm',
+            'hidden',
           )}
         >
           {cursorText}
         </motion.span>
-      </AnimatePresence>
+      )}
       {children}
     </CursorContext.Provider>
   );

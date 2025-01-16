@@ -1,9 +1,10 @@
 import clsx from 'clsx';
+import { motion } from 'framer-motion';
 import get from 'lodash-es/get';
 import React, { useContext } from 'react';
 
 import { FadeIn, FadeInDirection, FadeInStagger } from '~/components/FadeIn';
-import { SocialMediaLinks } from '~/config/enums';
+import { ContactPoints, SocialMediaLinks } from '~/config/enums';
 import { CursorContext, CursorVariants } from '~/context/CursorContext';
 import type { PropsWithoutRef } from '~/lib/types';
 
@@ -33,25 +34,24 @@ export function DribbbleIcon(props: PropsWithoutRef<'svg'>): React.ReactNode {
   );
 }
 
-export function SocialMedia({
+export function PointOfContacts({
   className,
-  invert = false,
 }: {
   className?: string;
   invert?: boolean;
 }): React.ReactNode {
-  const cursorContext = useContext(CursorContext);
+  const { setCursorVariant } = useContext(CursorContext);
 
   const setDefaultVariant = (): void => {
-    cursorContext.setCursorVariant(CursorVariants.HIDDEN);
+    setCursorVariant(CursorVariants.DEFAULT);
   };
 
   const setGithubVariant = (): void => {
-    cursorContext.setCursorVariant(CursorVariants.GITHUB);
+    setCursorVariant(CursorVariants.GITHUB);
   };
 
   const setDribbbleVariant = (): void => {
-    cursorContext.setCursorVariant(CursorVariants.DRIBBBLE);
+    setCursorVariant(CursorVariants.DRIBBBLE);
   };
 
   const socialMediaProfiles = [
@@ -71,34 +71,56 @@ export function SocialMedia({
     },
   ];
 
+  const sharedClassName =
+    'inline-flex h-16 items-center justify-center bg-[GreenYellow] text-lg fill-current px-3 align-bottom font-display font-semibold text-neutral-900 shadow-sm hover:bg-[Black] hover:text-[GreenYellow]';
+
   return (
     <FadeInStagger>
-      <ul
-        className={clsx(
-          'flex gap-x-10',
-          invert ? 'text-white' : 'text-neutral-950',
-          className,
-        )}
-      >
+      <ul className={clsx('', className)}>
+        <FadeIn direction={FadeInDirection.UP} as='li'>
+          <motion.a
+            onPointerEnter={() => setCursorVariant(CursorVariants.HIDDEN)}
+            onPointerLeave={() => setDefaultVariant()}
+            className={sharedClassName}
+            rel='noreferrer'
+            href='./public/Carlos_Santiago_Resume.pdf'
+            target='_blank'
+            download
+          >
+            Download my resume
+          </motion.a>
+        </FadeIn>
+        <FadeIn direction={FadeInDirection.UP} as='li'>
+          <motion.a
+            rel='noreferrer'
+            href={ContactPoints.EMAIL}
+            target='_blank'
+            onPointerEnter={() => setCursorVariant(CursorVariants.CONTACT)}
+            onPointerLeave={() => setDefaultVariant()}
+            className={sharedClassName}
+          >
+            E-mail me
+          </motion.a>
+        </FadeIn>
         {socialMediaProfiles.map((socialMediaProfile, idx) => (
-          <li key={`${socialMediaProfile.title}_${String(idx)}`}>
-            <FadeIn direction={FadeInDirection.UP}>
-              <a
-                rel='noreferrer'
-                href={socialMediaProfile.href}
-                aria-label={socialMediaProfile.title}
-                className={clsx(
-                  'transition',
-                  invert ? 'hover:text-neutral-200' : 'hover:text-neutral-700',
-                )}
-                target='_blank'
-                onPointerEnter={get(socialMediaProfile, ['onPointerEnter'])}
-                onPointerLeave={get(socialMediaProfile, ['onPointerLeave'])}
-              >
-                <socialMediaProfile.icon className='h-12 w-12 fill-current' />
-              </a>
-            </FadeIn>
-          </li>
+          <FadeIn
+            direction={FadeInDirection.UP}
+            as='li'
+            key={`${socialMediaProfile.title}_${String(idx)}`}
+          >
+            <motion.a
+              rel='noreferrer'
+              href={get(socialMediaProfile, ['href'])}
+              aria-label={get(socialMediaProfile, ['title'])}
+              target='_blank'
+              onPointerEnter={get(socialMediaProfile, ['onPointerEnter'])}
+              onPointerLeave={get(socialMediaProfile, ['onPointerLeave'])}
+            >
+              <socialMediaProfile.icon
+                className={clsx(sharedClassName, 'h-16 w-16 text-sm')}
+              />
+            </motion.a>
+          </FadeIn>
         ))}
       </ul>
     </FadeInStagger>

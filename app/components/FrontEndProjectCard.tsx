@@ -6,8 +6,6 @@ import { twMerge } from 'tailwind-merge';
 
 import { ColorContext } from '~/context/ColorContext';
 import { CursorContext, CursorVariants } from '~/context/CursorContext';
-import { ColorThemes } from '~/context/types';
-import { useColorThemes } from '~/hooks/useColorThemes';
 import { GrayscaleImage } from '~/lib/GrayscaleImage';
 
 export interface FrontEndProject {
@@ -35,25 +33,18 @@ export function FrontEndProjectCard(
 
   const { setCursorVariant } = React.useContext(CursorContext);
 
+  const {
+    colorContext: { hoverState, defaultState },
+  } = React.useContext(ColorContext);
+
   const [isHovered, setIsHovered] = React.useState(false);
   const [isHydrated, setIsHydrated] = React.useState(false);
-
-  const { colorContext } = React.useContext(ColorContext);
-
-  const { resolveHoverColorTheme, colorThemeMap } = useColorThemes();
-
-  const hoverColorTheme = React.useMemo(
-    () => resolveHoverColorTheme(colorContext),
-    [colorContext, resolveHoverColorTheme],
-  );
-
-  const defaultColorTheme = get(colorThemeMap, [
-    typeof colorContext === 'string' ? colorContext : ColorThemes.DEFAULT,
-  ]);
 
   React.useEffect(() => {
     setIsHydrated(true);
   }, []);
+
+  const colorContextState = isHovered ? hoverState : defaultState;
 
   return (
     <motion.article
@@ -79,18 +70,14 @@ export function FrontEndProjectCard(
         onMouseOver={() => setIsHovered(true)}
         onMouseOut={() => setIsHovered(false)}
         style={{
-          border: `1px solid ${get(defaultColorTheme, ['foreground'])}`,
-          background: get(isHovered ? hoverColorTheme : defaultColorTheme, [
-            'background',
-          ]),
-          color: get(isHovered ? hoverColorTheme : defaultColorTheme, [
-            'foreground',
-          ]),
+          border: `1px solid ${get(defaultState, ['foreground'])}`,
+          background: get(colorContextState, ['background']),
+          color: get(colorContextState, ['foreground']),
         }}
       >
         <div className='h-min w-auto overflow-hidden rounded-md'>
           <GrayscaleImage
-            className='object-cover transition-all md:h-96'
+            className='rounded-lg object-cover transition-all md:h-96'
             src={get(props, ['imgBackground'])}
             alt={get(props, ['alt'])}
           />

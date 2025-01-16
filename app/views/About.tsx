@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import React from 'react';
 
 import { Container } from '~/components/Container';
-import { SocialMedia } from '~/components/SocialMedia';
+import { PointOfContacts } from '~/components/PointOfContacts';
 import { ColorContext } from '~/context/ColorContext';
 import { ColorThemes } from '~/context/types';
 
@@ -14,11 +14,11 @@ export function About(): React.ReactNode {
   const { setColorContext } = React.useContext(ColorContext);
 
   return (
-    <Container onPointerEnter={() => setColorContext(ColorThemes.WHITE)}>
-      <div
-        className='grid grid-cols-12 gap-4'
-        onPointerEnter={() => setColorContext(ColorThemes.WHITE)}
-      >
+    <Container
+      as='section'
+      onPointerEnter={() => setColorContext(ColorThemes.WHITE)}
+    >
+      <div className='grid grid-cols-12 gap-4'>
         <section className='col-span-12 md:col-span-6'>
           <h1
             className={clsx(
@@ -28,7 +28,7 @@ export function About(): React.ReactNode {
           >
             Nice to meet you, my name is Carlos Santiago
           </h1>
-          <SocialMedia className='mt-16' />
+          <PointOfContacts className='my-16' />
         </section>
         <article className='col-span-12 md:col-span-6'>
           <p className={sharedTypographyClassName}>

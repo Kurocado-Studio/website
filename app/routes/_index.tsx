@@ -14,6 +14,7 @@ import type { MetaFunction } from '@remix-run/node';
 import React from 'react';
 
 import { About } from '~/views/About';
+import { Contact } from '~/views/Contact';
 import { DesignProjects } from '~/views/DesignProjects';
 import { FrontEndProjects } from '~/views/FrontEndProjects';
 import { Intro } from '~/views/Intro';
@@ -43,6 +44,7 @@ export default function Index(): React.ReactNode {
       <About />
       <DesignProjects />
       <FrontEndProjects />
+      <Contact />
     </>
   );
 }

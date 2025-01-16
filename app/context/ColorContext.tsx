@@ -2,22 +2,31 @@ import { motion, useScroll } from 'framer-motion';
 import type { MotionValue } from 'framer-motion';
 import { get } from 'lodash-es';
 import type { MutableRefObject } from 'react';
-import React, { createContext, useRef, useState } from 'react';
+import React, { createContext, useRef } from 'react';
 
+import {
+  colorThemeMap,
+  hoverColorContextKeyMap,
+  interactiveColorContextKeyMap,
+} from '~/config/colors';
+import type { InteractiveColorTheme } from '~/config/colors';
 import { ColorThemes } from '~/context/types';
-import type { ColorContextState } from '~/context/types';
-import { useColorThemes } from '~/hooks/useColorThemes';
-import type { GrayscaleImageProps } from '~/lib/GrayscaleImage';
 
 type ColorContext = {
   targetRef: MutableRefObject<HTMLBodyElement | null>;
-  colorContext: ColorThemes | GrayscaleImageProps;
+  colorContext: InteractiveColorTheme;
   setColorContext: (colorContext: ColorThemes) => void;
   scrollY: MotionValue<number>;
 };
 
+const initialInteractiveColorTheme: InteractiveColorTheme = {
+  defaultState: get(colorThemeMap, [ColorThemes.DEFAULT]),
+  hoverState: get(colorThemeMap, [ColorThemes.BLUE]),
+  interactiveState: get(colorThemeMap, [ColorThemes.ORANGE]),
+};
+
 export const ColorContext = createContext<ColorContext>({
-  colorContext: ColorThemes.DEFAULT,
+  colorContext: initialInteractiveColorTheme,
   targetRef: { current: null },
   scrollY: {
     current: null,
@@ -40,7 +49,10 @@ export function BodyHTMLTagColorProvider({
 }: {
   children: React.ReactNode;
 }): React.ReactNode {
-  const { resolveColorTheme, colorThemeMap, colorTheme } = useColorThemes();
+  const [colorTheme, setColorTheme] = React.useState<InteractiveColorTheme>(
+    initialInteractiveColorTheme,
+  );
+
   const colorContextTargetRef = useRef<HTMLBodyElement | null>(null);
 
   const { scrollY } = useScroll({
@@ -48,18 +60,23 @@ export function BodyHTMLTagColorProvider({
     offset: ['start start', 'end end'],
   });
 
-  const [colors, setColors] = useState<ColorContextState>(
-    get(colorThemeMap, [ColorThemes.DEFAULT]),
-  );
-
   const providerValue = {
     colorContext: colorTheme,
     targetRef: colorContextTargetRef,
     setColorContext: (selectedColorContext: ColorThemes): void => {
-      const { background, foreground } =
-        resolveColorTheme(selectedColorContext);
+      const hoverColorContextKey = get(hoverColorContextKeyMap, [
+        selectedColorContext,
+      ]);
 
-      setColors({ background, foreground });
+      const interactiveColorContextKey = get(interactiveColorContextKeyMap, [
+        selectedColorContext,
+      ]);
+
+      const defaultState = get(colorThemeMap, [selectedColorContext]);
+      const hoverState = get(colorThemeMap, [hoverColorContextKey]);
+      const interactiveState = get(colorThemeMap, [interactiveColorContextKey]);
+
+      setColorTheme({ defaultState, interactiveState, hoverState });
     },
     scrollY,
   };
@@ -69,8 +86,8 @@ export function BodyHTMLTagColorProvider({
       <motion.body
         ref={colorContextTargetRef}
         style={{
-          backgroundColor: get(colors, ['background']),
-          color: get(colors, ['foreground']),
+          backgroundColor: get(colorTheme, ['defaultState', 'background']),
+          color: get(colorTheme, ['defaultState', 'foreground']),
           transition: 'background-color 0.9s, color 1.2s',
         }}
         className='relative selection:bg-lime-200 selection:text-[#f52891cc]'

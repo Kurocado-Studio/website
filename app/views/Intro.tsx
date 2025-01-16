@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { Container } from '~/components/Container';
 import { FadeIn, FadeInDirection, FadeInStagger } from '~/components/FadeIn';
 import { ColorContext } from '~/context/ColorContext';
 import { ColorThemes } from '~/context/types';
@@ -9,17 +10,21 @@ export function Intro(): React.ReactNode {
   const { setColorContext } = React.useContext(ColorContext);
 
   return (
-    <FadeInStagger>
-      <FadeIn
-        className='mt-24 sm:mt-32 md:mt-56'
-        direction={FadeInDirection.UP}
-        onPointerEnter={() => setColorContext(ColorThemes.WHITE)}
-      >
-        <HorizontalScrollText baseVelocity={-2}>Kurocado</HorizontalScrollText>
-      </FadeIn>
-      <FadeIn direction={FadeInDirection.DOWN}>
-        <HorizontalScrollText baseVelocity={2}>Studio</HorizontalScrollText>
-      </FadeIn>
-    </FadeInStagger>
+    <Container
+      as='section'
+      withMaxWidth={false}
+      onPointerEnter={() => setColorContext(ColorThemes.WHITE)}
+    >
+      <FadeInStagger>
+        <FadeIn direction={FadeInDirection.UP}>
+          <HorizontalScrollText baseVelocity={-2}>
+            Kurocado
+          </HorizontalScrollText>
+        </FadeIn>
+        <FadeIn direction={FadeInDirection.DOWN}>
+          <HorizontalScrollText baseVelocity={2}>Studio</HorizontalScrollText>
+        </FadeIn>
+      </FadeInStagger>
+    </Container>
   );
 }

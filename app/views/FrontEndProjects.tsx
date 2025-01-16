@@ -46,28 +46,27 @@ export function FrontEndProjects(): React.ReactNode {
 
   return (
     <Container
-      className='relative z-10 mt-4 w-full'
+      as='section'
+      className='relative z-10 w-full'
       onPointerEnter={() => setColorContext(ColorThemes.BLUE)}
     >
-      <div className='relative z-10 mt-4 w-full'>
-        <FadeIn
-          as='h2'
-          direction={FadeInDirection.UP}
-          className='block font-display text-4xl font-medium tracking-tight [text-wrap:balance] lg:text-7xl'
-        >
-          As a Front-End Software Engineer
-        </FadeIn>
-        <FadeIn
-          as='p'
-          direction={FadeInDirection.DOWN}
-          className='mb-32 mt-12 block w-full max-w-prose font-body text-base [text-wrap:balance] md:text-3xl'
-        >
-          I specialize in React, Vue, TypeScript, and NestJS. At Dais
-          Technologies, I developed solutions leveraging AWS OCR, and at Project
-          44, I unified enterprise UIs and integrated with Kong API Gateway to
-          standardize RBAC.
-        </FadeIn>
-      </div>
+      <FadeIn
+        as='h2'
+        direction={FadeInDirection.UP}
+        className='block font-display text-4xl font-medium tracking-tight [text-wrap:balance] lg:text-7xl'
+      >
+        As a Front-End Software Engineer
+      </FadeIn>
+      <FadeIn
+        as='p'
+        direction={FadeInDirection.DOWN}
+        className='mt-4 block w-full max-w-prose font-body text-base [text-wrap:balance] md:mt-8 md:text-3xl lg:mb-24'
+      >
+        I specialize in React, Vue, TypeScript, and NestJS. At Dais
+        Technologies, I developed solutions leveraging AWS OCR, and at Project
+        44, I unified enterprise UIs and integrated with Kong API Gateway to
+        standardize RBAC.
+      </FadeIn>
       {frontEndProjects.map(({ heading, alt, imgBackground }, index) => (
         <FrontEndProjectCard
           alt={alt}

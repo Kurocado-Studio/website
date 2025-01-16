@@ -20,6 +20,7 @@ import {
 } from '@remix-run/react';
 import React from 'react';
 
+import { Footer } from '~/components/Footer';
 import { BodyHTMLTagColorProvider } from '~/context/ColorContext';
 import { CursorContextProvider } from '~/context/CursorContext';
 import '~/tailwind.css';
@@ -52,11 +53,10 @@ export function Layout({
         <title>Kurocado Studio</title>
       </head>
       <BodyHTMLTagColorProvider>
-        <CursorContextProvider>
-          {children}
-          <ScrollRestoration />
-          <Scripts />
-        </CursorContextProvider>
+        <CursorContextProvider>{children}</CursorContextProvider>
+        <Footer />
+        <ScrollRestoration />
+        <Scripts />
       </BodyHTMLTagColorProvider>
     </html>
   );

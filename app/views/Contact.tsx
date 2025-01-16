@@ -17,7 +17,7 @@ export function Contact(): React.ReactNode {
     <Container
       withMaxWidth={false}
       as='section'
-      className="mb-24"
+      className='mb-24'
       onPointerEnter={() => setColorContext(ColorThemes.GREEN)}
     >
       <HorizontalScrollText

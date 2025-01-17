@@ -85,7 +85,7 @@ export function PointOfContacts({
             rel='noreferrer'
             href='./public/Carlos_Santiago_Resume.pdf'
             target='_blank'
-            download
+            download='Carlos_Santiago_Resume.pdf'
           >
             Download my resume
           </motion.a>

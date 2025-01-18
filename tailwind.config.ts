@@ -150,6 +150,7 @@ export default {
         md: '16px',
         DEFAULT: '16px',
         lg: '50px',
+        xl: '62px',
         full: '100px',
         '4xl': '2.5rem',
       },

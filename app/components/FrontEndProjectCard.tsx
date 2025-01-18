@@ -1,4 +1,3 @@
-import type { MotionValue } from 'framer-motion';
 import { motion, useTransform } from 'framer-motion';
 import { get } from 'lodash-es';
 import * as React from 'react';
@@ -18,7 +17,6 @@ export interface FrontEndProject {
 export interface FrontEndProjectMotionProps extends FrontEndProject {
   opacity: [Array<number>, Array<number>];
   scale: [Array<number>, Array<number>];
-  scrollY: MotionValue<number>;
   shouldNotScale?: boolean;
 }
 
@@ -27,7 +25,7 @@ export const PROJECT_CARD_HEIGHT = 500;
 export function FrontEndProjectCard(
   props: FrontEndProjectMotionProps,
 ): React.ReactNode {
-  const scrollY = get(props, ['scrollY']);
+  const { scrollY } = React.useContext(ColorContext);
   const scale = useTransform(scrollY, ...get(props, ['scale']));
   const opacity = useTransform(scrollY, ...get(props, ['opacity']));
 
@@ -49,15 +47,11 @@ export function FrontEndProjectCard(
   return (
     <motion.article
       className='sticky top-0 m-auto max-w-screen-2xl py-20'
-      {...{
-        style: isHydrated
-          ? {
-              height: `${PROJECT_CARD_HEIGHT * 1.6}px`,
-              scale: !get(props, ['shouldNotScale']) ? scale : undefined,
-              opacity,
-            }
-          : undefined,
-      }}
+      {...(isHydrated && {
+        height: `${PROJECT_CARD_HEIGHT * 1.6}px`,
+        scale: !get(props, ['shouldNotScale']) ? scale : undefined,
+        opacity,
+      })}
     >
       <a
         href='#'
@@ -75,18 +69,18 @@ export function FrontEndProjectCard(
           color: get(colorContextState, ['foreground']),
         }}
       >
-        <div className='h-min w-auto overflow-hidden rounded-md'>
+        <div className='overflow-hidden rounded-md'>
           <GrayscaleImage
-            className='rounded-lg object-cover transition-all md:h-96'
+            className='rounded-xl object-cover p-8 transition-all md:h-96 md:w-auto'
             src={get(props, ['imgBackground'])}
             alt={get(props, ['alt'])}
           />
         </div>
-        <div className='flex flex-col justify-between pl-8 leading-normal'>
+        <div className='flex flex-col justify-between pl-8 leading-normal md:pl-0'>
           <h2 className='block font-display text-4xl font-medium tracking-tight [text-wrap:balance] lg:text-6xl'>
             {get(props, ['heading'], '--')}
           </h2>
-          <p className='mt-12 block font-body text-base [text-wrap:balance] md:text-3xl'>
+          <p className='mb-12 mt-4 block font-body text-base [text-wrap:balance] md:mb-0 md:text-3xl'>
             Here are the biggest enterprise technology acquisitions of 2021 so
             far, in reverse chronological order.
           </p>

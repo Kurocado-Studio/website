@@ -26,8 +26,6 @@ export function FrontEndProjects(): React.ReactNode {
     size: { innerHeight },
   } = useWindowSize();
 
-  const { scrollY } = React.useContext(ColorContext);
-
   const cardTimeline = React.useMemo(
     () =>
       frontEndProjects.map((_, index) => {
@@ -75,7 +73,6 @@ export function FrontEndProjects(): React.ReactNode {
           key={`${heading}_${index.toString()}`}
           opacity={get(animations, [index, 'opacity'])}
           scale={get(animations, [index, 'scale'])}
-          scrollY={scrollY}
           shouldNotScale={index === frontEndProjects.length - 1}
         />
       ))}

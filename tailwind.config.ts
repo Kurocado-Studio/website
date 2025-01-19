@@ -176,6 +176,15 @@ export default {
           max: '767px',
         },
       },
+      willChange: {
+        transform: 'transform',
+      },
+      transform: {
+        'translateZ-0': 'translateZ(0)',
+      },
+      backfaceVisibility: {
+        hidden: 'hidden',
+      },
     },
   },
   plugins: [],

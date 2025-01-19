@@ -36,14 +36,19 @@ export function DesignProjects(): React.ReactNode {
     offset: ['start start', 'end start'],
   });
 
-  const springConfig = { stiffness: 100, damping: 25, bounce: 100 };
+  const springConfig = {
+    bounce: 100,
+    damping: 20,
+    mass: 1.5,
+    stiffness: 60,
+  };
 
   const translateX = useSpring(
-    useTransform(scrollYProgress, [0, 1], [0, 1000]),
+    useTransform(scrollYProgress, [0, 1], [0, 800]),
     springConfig,
   );
   const translateXReverse = useSpring(
-    useTransform(scrollYProgress, [0, 1], [0, -1000]),
+    useTransform(scrollYProgress, [0, 1], [0, -800]),
     springConfig,
   );
 
@@ -152,7 +157,7 @@ export function DesignPreviewCard({
     <motion.div
       style={{ x: translate }}
       key={product.title}
-      className='group/product relative aspect-square w-[12rem] flex-shrink-0 md:w-[18rem] lg:w-[24rem]'
+      className='group/product backface-hidden transform-translateZ-0 relative aspect-square w-[12rem] flex-shrink-0 will-change-transform md:w-[18rem] lg:w-[24rem]'
     >
       <GrayscaleImage
         onPointerEnter={() => setCursorVariant(CursorVariants.HIDDEN)}

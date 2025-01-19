@@ -8,8 +8,7 @@ import * as React from 'react';
 import type { CustomCursor } from '~/components/Cursors';
 import {
   ContactUsVariant,
-  DribbbleVariant,
-  GithubVariant,
+  OpenInNewTapCursorVariant,
 } from '~/components/Cursors';
 import { useWindowSize } from '~/hooks/useWindowSize';
 import { FramerMotionIcon } from '~/icons/FramerMotionIcon';
@@ -34,6 +33,7 @@ export enum CursorVariants {
   SHRUG = 'SHRUG',
   TAILWIND = 'TAILWIND',
   TYPESCRIPT = 'TYPESCRIPT',
+  LINKEDIN = 'LINKEDIN',
   VUE = 'VUE',
 }
 
@@ -154,6 +154,7 @@ export function CursorContextProvider({
       y: mouseYPosition - 14,
     },
     [CursorVariants.CONTACT]: commonInteractiveCursor,
+    [CursorVariants.LINKEDIN]: commonInteractiveCursor,
     [CursorVariants.CONTACT_CTA]: {
       ...commonInteractiveCursor,
       height: 46,
@@ -236,12 +237,16 @@ export function CursorContextProvider({
           setCursorVariant(CursorVariants.DEFAULT);
         },
         [CursorVariants.DRIBBBLE]: () => {
-          setCursorText(<DribbbleVariant />);
+          setCursorText(<OpenInNewTapCursorVariant title='Dribbble' />);
           setCursorVariant(CursorVariants.DRIBBBLE);
         },
         [CursorVariants.GITHUB]: () => {
-          setCursorText(<GithubVariant />);
+          setCursorText(<OpenInNewTapCursorVariant title='Github' />);
           setCursorVariant(CursorVariants.GITHUB);
+        },
+        [CursorVariants.LINKEDIN]: () => {
+          setCursorText(<OpenInNewTapCursorVariant title='LinkedIn' />);
+          setCursorVariant(CursorVariants.LINKEDIN);
         },
         [CursorVariants.HIDDEN]: () => {
           setCursorText('');

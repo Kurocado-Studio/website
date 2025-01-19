@@ -3,6 +3,7 @@ import {
   AtSymbolIcon,
 } from '@heroicons/react/24/outline';
 import { type Variant } from 'framer-motion';
+import { get } from 'lodash-es';
 import React from 'react';
 
 import { FadeIn, FadeInDirection } from '~/components/FadeIn';
@@ -28,27 +29,20 @@ export function ContactUsVariant(): React.ReactNode {
   );
 }
 
-export function GithubVariant(): React.ReactNode {
-  return (
-    <FadeIn
-      direction={FadeInDirection.DOWN}
-      className='flex items-center justify-center'
-    >
-      <p className='pl-1 text-base font-light [text-wrap:balance]'>
-        Github <ArrowTopRightOnSquareIcon className='size-5 inline-flex pb-1' />
-      </p>
-    </FadeIn>
-  );
+export interface OpenInNewTapCursorVariantProps {
+  title: string;
 }
 
-export function DribbbleVariant(): React.ReactNode {
+export function OpenInNewTapCursorVariant(
+  props: OpenInNewTapCursorVariantProps,
+): React.ReactNode {
   return (
     <FadeIn
       direction={FadeInDirection.DOWN}
       className='flex items-center justify-center'
     >
       <p className='pl-1 text-base font-light [text-wrap:balance]'>
-        Dribbble{' '}
+        {get(props, ['title'], '--')}{' '}
         <ArrowTopRightOnSquareIcon className='size-5 inline-flex pb-1' />
       </p>
     </FadeIn>

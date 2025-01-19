@@ -26,7 +26,7 @@ export function About(): React.ReactNode {
               'font-display',
             )}
           >
-            Nice to meet you, my name is Carlos Santiago
+            About Carlos Santiago
           </h1>
           <PointOfContacts className='my-16' />
         </section>

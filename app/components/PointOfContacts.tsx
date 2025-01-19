@@ -106,7 +106,7 @@ export function PointOfContacts({
             onPointerLeave={() => setDefaultVariant()}
             className={sharedClassName}
             rel='noreferrer'
-            href='./public/Carlos_Santiago_Resume.pdf'
+            href='./Carlos_Santiago_Resume.pdf'
             target='_blank'
             download='Carlos_Santiago_Resume.pdf'
           >

@@ -3,18 +3,13 @@ import { get } from 'lodash-es';
 import * as React from 'react';
 import { twMerge } from 'tailwind-merge';
 
+import type { FrontEndProject } from '~/config/types';
 import { ColorContext } from '~/context/ColorContext';
 import { CursorContext, CursorVariants } from '~/context/CursorContext';
 import { GrayscaleImage } from '~/lib/GrayscaleImage';
 
-export interface FrontEndProject {
-  alt: string;
-  category?: Array<string>;
-  heading: string;
-  imgBackground: string;
-}
-
-export interface FrontEndProjectMotionProps extends FrontEndProject {
+export interface FrontEndProjectMotionProps {
+  frontEndProject: FrontEndProject;
   opacity: [Array<number>, Array<number>];
   scale: [Array<number>, Array<number>];
   shouldNotScale?: boolean;
@@ -48,18 +43,23 @@ export function FrontEndProjectCard(
     <motion.article
       className='sticky top-0 m-auto max-w-screen-2xl py-20'
       {...(isHydrated && {
-        height: `${PROJECT_CARD_HEIGHT * 1.6}px`,
-        scale: !get(props, ['shouldNotScale']) ? scale : undefined,
-        opacity,
+        style: {
+          height: `${PROJECT_CARD_HEIGHT * 1.6}px`,
+          scale: !get(props, ['shouldNotScale']) ? scale : undefined,
+          opacity,
+        },
       })}
     >
       <a
-        href='#'
+        href={get(props, ['frontEndProject', 'url'])}
         className={twMerge(
           'flex flex-col items-center overflow-hidden rounded-lg md:flex-row',
           `shadow transition-all duration-300 ease-in-out hover:bg-lime-400`,
+          'cursor-pointer',
         )}
-        onPointerEnter={() => setCursorVariant(CursorVariants.HIDDEN)}
+        target='_blank'
+        rel='noopener noreferrer'
+        onPointerEnter={() => setCursorVariant(CursorVariants.OPEN_IN_NEW_TAB)}
         onPointerLeave={() => setCursorVariant(CursorVariants.DEFAULT)}
         onMouseOver={() => setIsHovered(true)}
         onMouseOut={() => setIsHovered(false)}
@@ -69,20 +69,17 @@ export function FrontEndProjectCard(
           color: get(colorContextState, ['foreground']),
         }}
       >
-        <div className='overflow-hidden rounded-md'>
-          <GrayscaleImage
-            className='rounded-xl object-cover p-8 transition-all md:h-96 md:w-auto'
-            src={get(props, ['imgBackground'])}
-            alt={get(props, ['alt'])}
-          />
-        </div>
-        <div className='flex flex-col justify-between pl-8 leading-normal md:pl-0'>
-          <h2 className='block font-display text-4xl font-medium tracking-tight [text-wrap:balance] lg:text-6xl'>
-            {get(props, ['heading'], '--')}
+        <GrayscaleImage
+          className='h-auto w-full rounded-xl object-cover p-8 transition-all md:h-96'
+          src={get(props, ['frontEndProject', 'imgUrl'])}
+          alt={get(props, ['frontEndProject', 'title'], 'not specified')}
+        />
+        <div className='flex w-full flex-col justify-between px-8 leading-normal md:pl-0'>
+          <h2 className='block font-display text-4xl font-medium tracking-tight [text-wrap:balance] md:mt-8 lg:text-6xl'>
+            {get(props, ['frontEndProject', 'title'], '--')}
           </h2>
-          <p className='mb-12 mt-4 block font-body text-base [text-wrap:balance] md:mb-0 md:text-3xl'>
-            Here are the biggest enterprise technology acquisitions of 2021 so
-            far, in reverse chronological order.
+          <p className='mb-8 mt-4 block font-body text-base [text-wrap:balance] md:text-3xl'>
+            {get(props, ['frontEndProject', 'description'], '--')}
           </p>
         </div>
       </a>

@@ -1,5 +1,5 @@
 import { motion, useInView } from 'framer-motion';
-import { debounce } from 'lodash-es';
+import { debounce, get } from 'lodash-es';
 import * as React from 'react';
 
 import { ColorContext } from '~/context/ColorContext';
@@ -36,15 +36,21 @@ export function ColorContextChangerContainer({
     100,
   );
 
+  const currentBackgroundColorContextKey = get(restColorContext, [
+    'colorContext',
+    'defaultState',
+    'background',
+  ]);
+
   React.useEffect(() => {
-    if (isInView && restColorContext.colorContext !== colorTheme) {
+    if (isInView && currentBackgroundColorContextKey !== colorTheme) {
       debouncedColorContextHandler(colorTheme);
     }
   }, [
     isInView,
     colorTheme,
     debouncedColorContextHandler,
-    restColorContext.colorContext,
+    currentBackgroundColorContextKey,
   ]);
 
   const CurrentTag: HTMLIntrinsicElements = as || 'div';

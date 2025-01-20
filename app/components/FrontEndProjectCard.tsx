@@ -70,7 +70,7 @@ export function FrontEndProjectCard(
         }}
       >
         <GrayscaleImage
-          className='h-auto w-full rounded-xl object-cover p-8 transition-all md:h-96'
+          className='h-auto w-full self-start rounded-xl object-cover p-8 transition-all md:h-auto md:w-96'
           src={get(props, ['frontEndProject', 'imgUrl'])}
           alt={get(props, ['frontEndProject', 'title'], 'not specified')}
         />

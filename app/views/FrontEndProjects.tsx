@@ -68,7 +68,7 @@ export function FrontEndProjects(): React.ReactNode {
         standardize RBAC.
       </FadeIn>
       <hr
-        className='mt-56 block'
+        className='mt-24 block md:mt-56'
         style={{
           borderTop: `1px solid ${foreground}`,
           height: '1px',
@@ -77,7 +77,7 @@ export function FrontEndProjects(): React.ReactNode {
       <FadeIn
         as='h3'
         direction={FadeInDirection.UP}
-        className='mb-36 mt-12 block font-display text-3xl font-medium tracking-tight [text-wrap:balance] lg:text-6xl'
+        className='mb-12 mt-12 block font-display text-3xl font-medium tracking-tight [text-wrap:balance] md:mb-36 lg:text-6xl'
       >
         My projects
       </FadeIn>

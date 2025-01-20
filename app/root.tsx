@@ -20,9 +20,24 @@ import {
 } from '@remix-run/react';
 import React from 'react';
 
+import { Footer } from '~/components/Footer';
+import { BodyHTMLTagColorProvider } from '~/context/ColorContext';
+import { CursorContextProvider } from '~/context/CursorContext';
 import '~/tailwind.css';
 
 export const links: LinksFunction = () => [
+  {
+    rel: 'icon',
+    type: 'image/png',
+    sizes: '32x32',
+    href: '/favicon-32x32.png',
+  },
+  {
+    rel: 'icon',
+    type: 'image/png',
+    sizes: '16x16',
+    href: '/favicon-16x16.png',
+  },
   {
     rel: 'icon',
     type: 'image/x-icon',
@@ -47,16 +62,14 @@ export function Layout({
           href='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css'
         />
         <Links />
-        <title>Welcome to Remix</title>
+        <title>Kurocado Studio</title>
       </head>
-      <body
-        className='selection:bg-lime-200 selection:text-[#f52891cc]'
-        data-testid='root-body-test-id'
-      >
-        {children}
+      <BodyHTMLTagColorProvider>
+        <CursorContextProvider>{children}</CursorContextProvider>
+        <Footer />
         <ScrollRestoration />
         <Scripts />
-      </body>
+      </BodyHTMLTagColorProvider>
     </html>
   );
 }

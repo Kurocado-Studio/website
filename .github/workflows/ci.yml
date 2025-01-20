@@ -37,15 +37,17 @@ jobs:
     uses: kurocado-studio/styleguide/.github/workflows/workflow.document.yml@main
     secrets: inherit
 
+  deploy:
+    needs: test
+    uses: kurocado-studio/styleguide/.github/workflows/workflow.deploy.yml@main
+    with:
+      branch_name: ${{ github.ref_name }}
+    secrets:
+      fly_api_token: ${{ secrets.FLY_API_TOKEN }}
+
   release:
-    needs: document
+    needs: deploy
     uses: kurocado-studio/styleguide/.github/workflows/workflow.release.yml@main
     secrets: inherit
     with:
-      branch_name: ${{ github.ref }}
-
-  deploy:
-    needs: release
-    uses: kurocado-studio/styleguide/.github/workflows/workflow.deploy.yml@main
-    secrets:
-      fly_api_token: ${{ secrets.FLY_API_TOKEN }}
+      branch_name: ${{ github.ref_name }}

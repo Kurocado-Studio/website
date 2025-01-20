@@ -13,48 +13,38 @@
 import type { MetaFunction } from '@remix-run/node';
 import React from 'react';
 
+import { About } from '~/views/About';
+import { Contact } from '~/views/Contact';
+import { DesignProjects } from '~/views/DesignProjects';
+import { FrontEndProjects } from '~/views/FrontEndProjects';
+import { Intro } from '~/views/Intro';
+
 export const meta: MetaFunction = () => {
   return [
-    { title: 'New Remix App' },
-    { name: 'description', content: 'Welcome to Remix!' },
+    { title: 'Kurocado Studio' },
+    {
+      name: 'description',
+      content:
+        'Kurocado Studio specializes in SaaS development, open-source projects, and personalized web solutions.',
+    },
+    {
+      name: 'keywords',
+      content:
+        'Kurocado Studio, SaaS, open-source, web development, TypeScript',
+    },
+    { name: 'author', content: 'Carlos Santiago' },
+    { property: 'og:title', content: 'Kurocado Studio' },
   ];
 };
 
 export default function Index(): React.ReactNode {
   return (
-    <div
-      style={{
-        fontFamily: 'system-ui, sans-serif',
-        lineHeight: '1.8',
-      }}
-      className='bg-blue-500 text-white'
-    >
-      <h1>Welcome to Remix</h1>
-      <ul>
-        <li>
-          <a
-            target='_blank'
-            href='https://remix.run/tutorials/blog'
-            rel='noreferrer'
-          >
-            15m Quickstart Blog Tutorial
-          </a>
-        </li>
-        <li>
-          <a
-            target='_blank'
-            href='https://remix.run/tutorials/jokes'
-            rel='noreferrer'
-          >
-            Deep Dive Jokes App Tutorial
-          </a>
-        </li>
-        <li>
-          <a target='_blank' href='https://remix.run/docs' rel='noreferrer'>
-            Remix Docs
-          </a>
-        </li>
-      </ul>
-    </div>
+    <>
+      <Intro />
+      <About />
+      <DesignProjects />
+      <FrontEndProjects />
+      <Contact />
+    </>
   );
 }

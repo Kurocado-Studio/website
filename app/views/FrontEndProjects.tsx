@@ -20,7 +20,9 @@ export type AnimationProps = Array<{
 export function FrontEndProjects(): React.ReactNode {
   const LAYOUT_PROJECT_CARD_HEIGHT = PROJECT_CARD_HEIGHT * 10;
 
-  const { setColorContext } = React.useContext(ColorContext);
+  const { colorContext, setColorContext } = React.useContext(ColorContext);
+
+  const foreground = get(colorContext, ['defaultState', 'foreground']);
 
   const {
     size: { innerHeight },
@@ -65,15 +67,27 @@ export function FrontEndProjects(): React.ReactNode {
         44, I unified enterprise UIs and integrated with Kong API Gateway to
         standardize RBAC.
       </FadeIn>
-      {frontEndProjects.map(({ heading, alt, imgBackground }, index) => (
+      <hr
+        className='mt-56 block'
+        style={{
+          borderTop: `1px solid ${foreground}`,
+          height: '1px',
+        }}
+      />
+      <FadeIn
+        as='h3'
+        direction={FadeInDirection.UP}
+        className='mb-36 mt-12 block font-display text-3xl font-medium tracking-tight [text-wrap:balance] lg:text-6xl'
+      >
+        My projects
+      </FadeIn>
+      {frontEndProjects.map((frontEndProject, index) => (
         <FrontEndProjectCard
-          alt={alt}
-          heading={heading}
-          imgBackground={imgBackground}
-          key={`${heading}_${index.toString()}`}
+          frontEndProject={frontEndProject}
+          key={`${get(frontEndProject, ['title'], 'unknown')}_${index.toString()}`}
           opacity={get(animations, [index, 'opacity'])}
           scale={get(animations, [index, 'scale'])}
-          shouldNotScale={index === frontEndProjects.length - 1}
+          shouldNotScale={index === get(frontEndProjects, ['length'], 1) - 1}
         />
       ))}
     </Container>

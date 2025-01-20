@@ -1,17 +1,17 @@
-import type { FrontEndProject } from '~/components/FrontEndProjectCard';
+import type { DribbbleShot, FrontEndProject } from '~/config/types';
 import dali from '~/images/dribbble/dali.png';
 import dashboardPreview from '~/images/dribbble/dashboard_preview.png';
 import eyeSeeYou from '~/images/dribbble/eye_see_you.png';
 import liquiFly from '~/images/dribbble/liqui-fly.png';
 import octopus from '~/images/dribbble/octopus.png';
-import intellijIDE from '~/images/dribbble/react-typescript_8x.png';
+import portfolioMockup from '~/images/dribbble/portfolio_mockup_v1.0.png';
 import spotonApp from '~/images/dribbble/spoton_app_sample.png';
 import spotonDiscovery from '~/images/dribbble/spoton_discovery.png';
 import spotonWebsite from '~/images/dribbble/spoton_website.png';
 import vividSeatsCheckout from '~/images/dribbble/vivid_seats_checkout_concept.png';
 import warriorSummitWebsite from '~/images/dribbble/warrior_summit_website.png';
 
-export const uiProjectImages = [
+export const uiProjectImages: Array<DribbbleShot> = [
   {
     title: 'Dali',
     thumbnail: dali,
@@ -33,8 +33,8 @@ export const uiProjectImages = [
     thumbnail: octopus,
   },
   {
-    title: 'IntelliJ theme for VSCode',
-    thumbnail: intellijIDE,
+    title: 'Portfolio',
+    thumbnail: portfolioMockup,
   },
   {
     title: 'SpotOn App',
@@ -60,39 +60,18 @@ export const uiProjectImages = [
 
 export const frontEndProjects: Array<FrontEndProject> = [
   {
-    alt: '/1',
-    imgBackground:
-      'https://cdn.dribbble.com/users/310070/screenshots/7120072/media/3c86333fe1f0a4ed927679347d6ed630.png?resize=800x600&vertical=center',
-    heading: 'AnimationProps',
+    imgUrl: portfolioMockup,
+    title: 'Styleguide',
+    description: 'description',
+    categories: [],
+    url: '',
   },
   {
-    alt: '/AnimationProps',
-    imgBackground:
-      'https://cdn.dribbble.com/users/310070/screenshots/7120072/media/3c86333fe1f0a4ed927679347d6ed630.png?resize=800x600&vertical=center',
-    heading: 'AnimationProps Long Name AnimationProps',
-  },
-  {
-    alt: '/3',
-    imgBackground:
-      'https://cdn.dribbble.com/users/310070/screenshots/7120072/media/3c86333fe1f0a4ed927679347d6ed630.png?resize=800x600&vertical=center',
-    heading: '3',
-  },
-  {
-    alt: '/4',
-    imgBackground:
-      'https://cdn.dribbble.com/users/310070/screenshots/7120072/media/3c86333fe1f0a4ed927679347d6ed630.png?resize=800x600&vertical=center',
-    heading: '4',
-  },
-  {
-    alt: '/5',
-    imgBackground:
-      'https://cdn.dribbble.com/users/310070/screenshots/7120072/media/3c86333fe1f0a4ed927679347d6ed630.png?resize=800x600&vertical=center',
-    heading: '5',
-  },
-  {
-    alt: '/6',
-    imgBackground:
-      'https://cdn.dribbble.com/users/310070/screenshots/7120072/media/3c86333fe1f0a4ed927679347d6ed630.png?resize=800x600&vertical=center',
-    heading: '6',
+    imgUrl: portfolioMockup,
+    title: 'Exploring Motion & Design',
+    description:
+      'This portfolio website highlights my experimentation with Framer Motion, demonstrating smooth, dynamic transitions and animations that bring the user experience to life. Built with Remix, React and Tailwind CSS.',
+    categories: [],
+    url: 'https://github.com/Kurocado-Studio/website',
   },
 ];

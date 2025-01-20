@@ -6,6 +6,7 @@ import React from 'react';
 import { Container } from '~/components/Container';
 import { FadeIn, FadeInDirection } from '~/components/FadeIn';
 import { uiProjectImages } from '~/config/projects';
+import type { DribbbleShot } from '~/config/types';
 import { ColorContext } from '~/context/ColorContext';
 import { CursorContext, CursorVariants } from '~/context/CursorContext';
 import { ColorThemes } from '~/context/types';
@@ -20,9 +21,9 @@ interface DesignPreviewProps {
 }
 
 export function DesignProjects(): React.ReactNode {
-  const [projectCards, setProjectCards] = React.useState<
-    { title: string; thumbnail: string }[]
-  >([]);
+  const [projectCards, setProjectCards] = React.useState<Array<DribbbleShot>>(
+    [],
+  );
 
   const firstRow = projectCards.slice(0, 10);
   const secondRow = projectCards.slice(10, 20);
@@ -36,12 +37,7 @@ export function DesignProjects(): React.ReactNode {
     offset: ['start start', 'end start'],
   });
 
-  const springConfig = {
-    bounce: 100,
-    damping: 20,
-    mass: 1.5,
-    stiffness: 60,
-  };
+  const springConfig = { stiffness: 30 };
 
   const translateX = useSpring(
     useTransform(scrollYProgress, [0, 1], [0, 800]),
@@ -55,17 +51,22 @@ export function DesignProjects(): React.ReactNode {
   React.useEffect(() => {
     let lastIndex = -1;
 
-    const projectPreviewCards = Array.from({ length: 30 }, () => {
-      let randomIndex;
+    const projectPreviewCards: Array<DribbbleShot> = Array.from(
+      { length: 30 },
+      () => {
+        let randomIndex;
 
-      do {
-        randomIndex = Math.floor(Math.random() * uiProjectImages.length);
-      } while (randomIndex === lastIndex);
+        do {
+          randomIndex = Math.floor(
+            Math.random() * get(uiProjectImages, ['length'], 0),
+          );
+        } while (randomIndex === lastIndex);
 
-      lastIndex = randomIndex;
+        lastIndex = randomIndex;
 
-      return get(uiProjectImages, [randomIndex]);
-    }) as { title: string; thumbnail: string }[];
+        return get(uiProjectImages, [randomIndex]);
+      },
+    ) as { title: string; thumbnail: string }[];
 
     setProjectCards(projectPreviewCards);
   }, []);

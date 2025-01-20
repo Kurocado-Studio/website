@@ -8,7 +8,7 @@ import * as React from 'react';
 import type { CustomCursor } from '~/components/Cursors';
 import {
   ContactUsVariant,
-  OpenInNewTapCursorVariant,
+  OpenInNewTabCursorVariant,
 } from '~/components/Cursors';
 import { useWindowSize } from '~/hooks/useWindowSize';
 import { FramerMotionIcon } from '~/icons/FramerMotionIcon';
@@ -34,6 +34,7 @@ export enum CursorVariants {
   TAILWIND = 'TAILWIND',
   TYPESCRIPT = 'TYPESCRIPT',
   LINKEDIN = 'LINKEDIN',
+  OPEN_IN_NEW_TAB = 'OPEN_IN_NEW_TAB',
   VUE = 'VUE',
 }
 
@@ -153,6 +154,7 @@ export function CursorContextProvider({
       x: mouseXPosition - 14,
       y: mouseYPosition - 14,
     },
+    [CursorVariants.OPEN_IN_NEW_TAB]: commonInteractiveCursor,
     [CursorVariants.CONTACT]: commonInteractiveCursor,
     [CursorVariants.LINKEDIN]: commonInteractiveCursor,
     [CursorVariants.CONTACT_CTA]: {
@@ -188,7 +190,10 @@ export function CursorContextProvider({
       y: mouseYPosition - 100,
     },
     [CursorVariants.DRIBBBLE]: commonInteractiveCursor,
-    [CursorVariants.GITHUB]: commonInteractiveCursor,
+    [CursorVariants.GITHUB]: {
+      ...commonInteractiveCursor,
+      borderRadius: '100%',
+    },
     [CursorVariants.NEST_JS]: {
       ...commonSocialCustomCursor,
       backgroundColor: '#ed1543',
@@ -237,15 +242,19 @@ export function CursorContextProvider({
           setCursorVariant(CursorVariants.DEFAULT);
         },
         [CursorVariants.DRIBBBLE]: () => {
-          setCursorText(<OpenInNewTapCursorVariant title='Dribbble' />);
+          setCursorText(<OpenInNewTabCursorVariant title='Dribbble' />);
           setCursorVariant(CursorVariants.DRIBBBLE);
         },
         [CursorVariants.GITHUB]: () => {
-          setCursorText(<OpenInNewTapCursorVariant title='Github' />);
+          setCursorText(<OpenInNewTabCursorVariant title='Github' />);
           setCursorVariant(CursorVariants.GITHUB);
         },
+        [CursorVariants.OPEN_IN_NEW_TAB]: () => {
+          setCursorText(<OpenInNewTabCursorVariant title='Open' />);
+          setCursorVariant(CursorVariants.OPEN_IN_NEW_TAB);
+        },
         [CursorVariants.LINKEDIN]: () => {
-          setCursorText(<OpenInNewTapCursorVariant title='LinkedIn' />);
+          setCursorText(<OpenInNewTabCursorVariant title='LinkedIn' />);
           setCursorVariant(CursorVariants.LINKEDIN);
         },
         [CursorVariants.HIDDEN]: () => {
@@ -323,7 +332,6 @@ export function CursorContextProvider({
             get(cursorVariantMap, [cursorVariant, 'isRounded'])
               ? 'rounded-full'
               : 'rounded-sm',
-            'hidden',
           )}
         >
           {cursorText}

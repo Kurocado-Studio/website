@@ -29,21 +29,21 @@ export function ContactUsVariant(): React.ReactNode {
   );
 }
 
-export interface OpenInNewTapCursorVariantProps {
-  title: string;
+export interface OpenInNewTabCursorVariantProps {
+  title?: string;
 }
 
-export function OpenInNewTapCursorVariant(
-  props: OpenInNewTapCursorVariantProps,
+export function OpenInNewTabCursorVariant(
+  props: OpenInNewTabCursorVariantProps,
 ): React.ReactNode {
   return (
     <FadeIn
       direction={FadeInDirection.DOWN}
-      className='flex items-center justify-center'
+      className='flex flex-col items-center justify-center'
     >
+      <ArrowTopRightOnSquareIcon className='inline-flex pb-1 text-8xl' />
       <p className='pl-1 text-base font-light [text-wrap:balance]'>
-        {get(props, ['title'], '--')}{' '}
-        <ArrowTopRightOnSquareIcon className='size-5 inline-flex pb-1' />
+        {get(props, ['title'])}{' '}
       </p>
     </FadeIn>
   );

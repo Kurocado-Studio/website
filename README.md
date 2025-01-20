@@ -8,16 +8,18 @@
 -->
 
 # Kurocado Studio Portfolio Website
+
 [Carlos Santiago's](https://github.com/csantiago132) portfolio
 
 - [See the Typescript Styleguide](https://kurocado-studio.github.io/styleguide/starter-topic.html)
 
 ## Environment Live Demo
+
 - [dev environment](https://kurocado-studio-website.fly.dev/)
 - [prod environment](https://www.kurocado.studio/)
 
-
 ## Technologies Used
+
 - Framework: Remix
 - Frontend Library: React
 - Styling: Tailwind CSS
@@ -35,9 +37,11 @@ npm run dev
 This starts your app in development mode, rebuilding assets on file changes.
 
 ## Contributing
+
 - [See how to contribute](https://kurocado-studio.github.io/styleguide/contributing.html)
 
 ## Deployment
+
 - [See the Deploy Workflow](https://kurocado-studio.github.io/styleguide/deploy-workflow.html)
 
 First, build the app for production:

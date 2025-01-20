@@ -7,9 +7,22 @@
  * Explore our open-source projects: {@link https://github.com/kurocado-studio}
 -->
 
-# Welcome to Remix!
+# Kurocado Studio Portfolio Website
+[Carlos Santiago's](https://github.com/csantiago132) portfolio
 
-- [Remix Docs](https://remix.run/docs)
+- [See the Typescript Styleguide](https://kurocado-studio.github.io/styleguide/starter-topic.html)
+
+## Environment Live Demo
+- [dev environment](https://kurocado-studio-website.fly.dev/)
+- [prod environment](https://www.kurocado.studio/)
+
+
+## Technologies Used
+- Framework: Remix
+- Frontend Library: React
+- Styling: Tailwind CSS
+- Animations: Framer Motion
+- Language: TypeScript
 
 ## Development
 
@@ -21,9 +34,13 @@ npm run dev
 
 This starts your app in development mode, rebuilding assets on file changes.
 
-## Deployment
+## Contributing
+- [See how to contribute](https://kurocado-studio.github.io/styleguide/contributing.html)
 
-First, build your app for production:
+## Deployment
+- [See the Deploy Workflow](https://kurocado-studio.github.io/styleguide/deploy-workflow.html)
+
+First, build the app for production:
 
 ```sh
 npm run build

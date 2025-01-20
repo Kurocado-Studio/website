@@ -20,7 +20,7 @@ export type GrayscaleImageProps = Partial<
 } & FramerCursorAttributes;
 
 export function GrayscaleImage(props: GrayscaleImageProps): React.ReactNode {
-  const ref = useRef<React.ElementRef<'div'>>(null);
+  const ref = useRef<React.ElementRef<'img'>>(null);
 
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -31,15 +31,14 @@ export function GrayscaleImage(props: GrayscaleImageProps): React.ReactNode {
   const filter = useMotionTemplate`grayscale(${grayscale})`;
 
   return (
-    <div ref={ref} className='group relative'>
-      <motion.img
-        style={{ filter } as unknown as React.CSSProperties}
-        className={twMerge(
-          'relative left-0 top-0 h-full w-full rounded-3xl object-cover object-left-top mix-blend-difference transition duration-300 group-hover:opacity-100',
-          get(props, ['className'], ''),
-        )}
-        {...props}
-      />
-    </div>
+    <motion.img
+      ref={ref}
+      style={{ filter } as unknown as React.CSSProperties}
+      className={twMerge(
+        'relative left-0 top-0 h-full w-full rounded-3xl object-cover object-left-top mix-blend-difference transition duration-300 group-hover:opacity-100',
+        get(props, ['className'], ''),
+      )}
+      {...props}
+    />
   );
 }

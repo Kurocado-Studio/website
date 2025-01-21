@@ -43,6 +43,7 @@ export function DesignProjects(): React.ReactNode {
     useTransform(scrollYProgress, [0, 1], [0, 800]),
     springConfig,
   );
+
   const translateXReverse = useSpring(
     useTransform(scrollYProgress, [0, 1], [0, -800]),
     springConfig,
@@ -158,9 +159,10 @@ export function DesignPreviewCard({
     <motion.div
       style={{ x: translate }}
       key={product.title}
-      className='group/product backface-hidden transform-translateZ-0 relative aspect-auto h-36 w-auto flex-shrink-0 will-change-transform md:h-56'
+      className='group/product backface-hidden transform-translateZ-0 relative flex-shrink-0 will-change-transform'
     >
       <GrayscaleImage
+        className='aspect-auto h-36 w-auto rounded md:h-auto md:w-96 md:rounded-l'
         onPointerEnter={() => setCursorVariant(CursorVariants.HIDDEN)}
         onPointerLeave={() => setCursorVariant(CursorVariants.DEFAULT)}
         src={product.thumbnail}

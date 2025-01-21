@@ -63,6 +63,12 @@ export function Layout({
         />
         <Links />
         <title>Kurocado Studio</title>
+        <script
+          src='https://cdn.usefathom.com/script.js'
+          data-spa='auto'
+          data-site='VEHTFGUH'
+          defer
+        />
       </head>
       <BodyHTMLTagColorProvider>
         <CursorContextProvider>{children}</CursorContextProvider>

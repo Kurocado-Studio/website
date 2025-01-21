@@ -106,7 +106,7 @@ export function DesignProjects(): React.ReactNode {
               />
             ))}
           </motion.article>
-          <motion.article className='relative mb-8 flex flex-row space-x-8'>
+          <motion.article className='relative my-12 flex flex-row space-x-8 lg:my-24'>
             {secondRow.map((product, idx) => (
               <DesignPreviewCard
                 product={product}
@@ -115,7 +115,7 @@ export function DesignProjects(): React.ReactNode {
               />
             ))}
           </motion.article>
-          <motion.article className='relative mb-8 flex flex-row-reverse space-x-8 space-x-reverse'>
+          <motion.article className='relative my-12 flex flex-row-reverse space-x-8 space-x-reverse lg:my-24'>
             {thirdRow.map((product, idx) => (
               <DesignPreviewCard
                 product={product}
@@ -124,7 +124,7 @@ export function DesignProjects(): React.ReactNode {
               />
             ))}
           </motion.article>
-          <motion.article className='relative mb-8 flex flex-row space-x-8'>
+          <motion.article className='relative my-12 flex flex-row space-x-8 lg:my-24'>
             {secondRow.reverse().map((product, idx) => (
               <DesignPreviewCard
                 product={product}
@@ -133,7 +133,7 @@ export function DesignProjects(): React.ReactNode {
               />
             ))}
           </motion.article>
-          <motion.article className='relative flex flex-row-reverse space-x-8 space-x-reverse'>
+          <motion.article className='relative mb-8 flex flex-row-reverse space-x-8 space-x-reverse'>
             {thirdRow.reverse().map((product, idx) => (
               <DesignPreviewCard
                 product={product}
@@ -158,7 +158,7 @@ export function DesignPreviewCard({
     <motion.div
       style={{ x: translate }}
       key={product.title}
-      className='group/product backface-hidden transform-translateZ-0 relative aspect-square w-[12rem] flex-shrink-0 will-change-transform md:w-[18rem] lg:w-[24rem]'
+      className='group/product backface-hidden transform-translateZ-0 relative aspect-auto h-36 w-auto flex-shrink-0 will-change-transform md:h-56'
     >
       <GrayscaleImage
         onPointerEnter={() => setCursorVariant(CursorVariants.HIDDEN)}

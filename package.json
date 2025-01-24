@@ -20,8 +20,14 @@
     "typecheck": "tsc"
   },
   "lint-staged": {
-    "*": ["pnpm run prettier-fix", "pnpm run commitlint" ],
-    "**/*.{ts,tsx}": ["pnpm run prettier-fix", "pnpm run eslint-fix"]
+    "*": [
+      "pnpm run prettier-fix",
+      "pnpm run commitlint"
+    ],
+    "**/*.{ts,tsx}": [
+      "pnpm run prettier-fix",
+      "pnpm run eslint-fix"
+    ]
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
@@ -48,7 +54,7 @@
     "commitlint": "19.6.0",
     "eslint": "9.16.0",
     "eslint-define-config": "2.1.0",
-    "husky": "9.0.11",
+    "husky": "^9.1.7",
     "lint-staged": "15.2.10",
     "postcss": "8.4.35",
     "prettier": "3.3.3",

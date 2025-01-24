@@ -19,6 +19,10 @@
     "test": "vitest run",
     "typecheck": "tsc"
   },
+  "lint-staged": {
+    "*": ["pnpm run prettier-fix", "pnpm run commitlint" ],
+    "**/*.{ts,tsx}": ["pnpm run prettier-fix", "pnpm run eslint-fix"]
+  },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
     "@motionone/utils": "10.18.0",

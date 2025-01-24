@@ -54,8 +54,7 @@ export function FrontEndProjectCard(
         href={get(props, ['frontEndProject', 'url'])}
         className={twMerge(
           'flex flex-col items-center overflow-hidden rounded-lg md:flex-row',
-          `shadow transition-all duration-300 ease-in-out hover:bg-lime-400`,
-          'cursor-pointer',
+          `cursor-pointer shadow transition-all duration-300 ease-in-out hover:bg-lime-400`,
         )}
         target='_blank'
         rel='noopener noreferrer'

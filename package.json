@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "build": "remix vite:build",
-    "commitlint": "pnpm exec commitlint --edit",
+    "commitlint": "pnpm exec commitlint --edit .git/COMMIT_EDITMSG",
     "dev": "remix vite:dev",
     "eslint-check": "eslint --max-warnings=0 . --debug",
     "eslint-fix": "eslint --max-warnings=0 . --fix",
@@ -18,6 +18,15 @@
     "start": "remix-serve ./build/server/index.js",
     "test": "vitest run",
     "typecheck": "tsc"
+  },
+  "lint-staged": {
+    "*": [
+      "pnpm run prettier-fix"
+    ],
+    "**/*.{ts,tsx}": [
+      "pnpm run eslint-fix",
+      "pnpm run lint"
+    ]
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
@@ -44,7 +53,7 @@
     "commitlint": "19.6.0",
     "eslint": "9.16.0",
     "eslint-define-config": "2.1.0",
-    "husky": "9.0.11",
+    "husky": "^9.1.7",
     "lint-staged": "15.2.10",
     "postcss": "8.4.35",
     "prettier": "3.3.3",

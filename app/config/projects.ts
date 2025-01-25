@@ -62,7 +62,7 @@ export const uiProjectImages: Array<DribbbleShot> = [
 export const frontEndProjects: Array<FrontEndProject> = [
   {
     title: 'Typescript Styleguide',
-    url: 'https://kurocado.atlassian.net/wiki/spaces/Styleguide/overview',
+    url: 'https://kurocado-studio.github.io/styleguide/starter-topic.html',
     description:
       'Aim to streamline development setup in 5 minutes or less, facilitate easier collaboration, enhance the overall quality of software products, and improving collaboration processes between teams.',
     imgUrl: typescriptStyleguideCover,

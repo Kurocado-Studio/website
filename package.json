@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "build": "remix vite:build",
-    "commitlint": "pnpm exec commitlint --edit",
+    "commitlint": "pnpm exec commitlint --edit .git/COMMIT_EDITMSG",
     "dev": "remix vite:dev",
     "eslint-check": "eslint --max-warnings=0 . --debug",
     "eslint-fix": "eslint --max-warnings=0 . --fix",
@@ -21,12 +21,11 @@
   },
   "lint-staged": {
     "*": [
-      "pnpm run prettier-fix",
-      "pnpm run commitlint"
+      "pnpm run prettier-fix"
     ],
     "**/*.{ts,tsx}": [
-      "pnpm run prettier-fix",
-      "pnpm run eslint-fix"
+      "pnpm run eslint-fix",
+      "pnpm run lint"
     ]
   },
   "dependencies": {

@@ -1,7 +1,5 @@
 /* eslint import/no-default-export: 0 */
-
 /* eslint import/no-cycle: 0 */
-
 /**
  * Made with ❤️ and adobo by Kurocado Studio
  * Copyright (c) 2024. All Rights Reserved.

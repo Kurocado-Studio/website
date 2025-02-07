@@ -6,9 +6,7 @@
  *
  * Explore our open-source projects: {@link https://github.com/kurocado-studio}
  */
-
 /* eslint unicorn/filename-case: 0 */
-
 /* eslint import/no-default-export: 0 */
 import type { LinksFunction } from '@remix-run/node';
 import {

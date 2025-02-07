@@ -6,7 +6,6 @@
  *
  * Explore our open-source projects: {@link https://github.com/kurocado-studio}
  */
-
 /* eslint import/no-default-export: 0 */
 import { get } from 'lodash-es';
 import { type Config } from 'tailwindcss';

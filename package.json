@@ -49,6 +49,7 @@
     "@kurocado-studio/styleguide": "1.10.3",
     "@remix-run/dev": "2.8.1",
     "@remix-run/serve": "2.9.2",
+    "@trivago/prettier-plugin-sort-imports": "^5.2.2",
     "@types/react-dom": "18.3.1",
     "autoprefixer": "10.4.18",
     "commitlint": "19.6.0",

@@ -24,22 +24,22 @@ on:
 
 jobs:
   lint:
-    uses: kurocado-studio/styleguide/.github/workflows/workflow.lint.yml@main
+    uses: kurocado-studio/dev-ops/.github/workflows/workflow.lint.yml@main
     secrets: inherit
 
   test:
     needs: lint
-    uses: kurocado-studio/styleguide/.github/workflows/workflow.test.yml@main
+    uses: kurocado-studio/dev-ops/.github/workflows/workflow.test.yml@main
     secrets: inherit
 
   document:
     needs: test
-    uses: kurocado-studio/styleguide/.github/workflows/workflow.document.yml@main
+    uses: kurocado-studio/dev-ops/.github/workflows/workflow.document.yml@main
     secrets: inherit
 
   deploy:
     needs: test
-    uses: kurocado-studio/styleguide/.github/workflows/workflow.deploy.yml@main
+    uses: kurocado-studio/dev-ops/.github/workflows/workflow.deploy.yml@main
     with:
       branch_name: ${{ github.ref_name }}
     secrets:
@@ -47,7 +47,7 @@ jobs:
 
   release:
     needs: deploy
-    uses: kurocado-studio/styleguide/.github/workflows/workflow.release.yml@main
+    uses: kurocado-studio/dev-ops/.github/workflows/workflow.release.yml@main
     secrets: inherit
     with:
       branch_name: ${{ github.ref_name }}

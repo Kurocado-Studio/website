@@ -1,13 +1,13 @@
 {
   "include": [
-    "**/.client/**/*.ts",
-    "**/.client/**/*.tsx",
-    "**/.server/**/*.ts",
-    "**/.server/**/*.tsx",
     "app/**/*.ts",
     "app/**/*.tsx",
+    "test/**/*.ts",
+    "test/**/*.tsx",
     "tailwind.config.ts",
-    "vite.config.ts"
+    "setup.remix.ts",
+    "vite.config.ts",
+    "vitest.config.ts"
   ],
   "extends": "@kurocado-studio/styleguide/tsconfig/remix",
   "compilerOptions": {

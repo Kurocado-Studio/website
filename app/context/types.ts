@@ -5,6 +5,7 @@ export type ColorContextState = {
 
 export enum BaseColors {
   WHITE = 'WHITE',
+  OFF_WHITE = 'OFF_WHITE',
   BLACK = 'BLACK',
 }
 

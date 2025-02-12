@@ -27,6 +27,7 @@ export const colors: {
 } = {
   [BaseColors.BLACK]: 'Black',
   [BaseColors.WHITE]: 'GhostWhite',
+  [BaseColors.OFF_WHITE]: 'Papayawhip',
   [PrimaryColors.BLUE]: 'DarkBlue',
   [PrimaryColors.RED]: 'Pink',
   [PrimaryColors.YELLOW]: 'Khaki',
@@ -38,7 +39,7 @@ export const colors: {
 export const colorThemeMap: ColorThemeContextMap = {
   [ColorThemes.DEFAULT]: {
     background: get(colors, [BaseColors.BLACK]),
-    foreground: get(colors, [BaseColors.WHITE]),
+    foreground: get(colors, [BaseColors.OFF_WHITE]),
   },
   [ColorThemes.WHITE]: {
     background: get(colors, [BaseColors.WHITE]),

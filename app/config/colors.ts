@@ -38,7 +38,7 @@ export const colors: {
 export const colorThemeMap: ColorThemeContextMap = {
   [ColorThemes.DEFAULT]: {
     background: get(colors, [BaseColors.BLACK]),
-    foreground: get(colors, [PrimaryColors.RED]),
+    foreground: get(colors, [BaseColors.WHITE]),
   },
   [ColorThemes.WHITE]: {
     background: get(colors, [BaseColors.WHITE]),

@@ -1,4 +1,3 @@
-import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline';
 import clsx from 'clsx';
 import React from 'react';
 
@@ -32,30 +31,18 @@ export function About(): React.ReactNode {
         </section>
         <article className='col-span-12 md:col-span-6'>
           <p className={sharedTypographyClassName}>
-            I’m Carlos Santiago, a Front-End Software Engineer and Product
-            Designer with over 10 years of experience creating and improving
-            digital products. My expertise lies in developing and designing
-            scalable solutions across platforms, excelling in both Product
-            Design and Front-End Engineering.
+            I’m a Front-End Engineer with over 5 years of experience building
+            scalable, high-performance web applications. My expertise lies in
+            React, Vue, TypeScript, and modern front-end architectures, where I
+            focus on creating seamless, engaging, and efficient user experiences
+            for enterprise and SaaS platforms.
           </p>
           <p className={sharedTypographyClassName}>
-            My work at companies like Project44 and Dais Technology has allowed
-            me to collaborate with diverse stakeholders, ensuring alignment
-            between technical requirements and business objectives.
-          </p>
-          <p className={sharedTypographyClassName}>
-            Currently, I’m advancing my skills with a{' '}
-            <a
-              className='font-semibold text-blue-600 visited:text-purple-600 hover:text-blue-800'
-              href='https://www.pmi.org/certifications/certified-associate-capm'
-              target='_blank'
-              rel='noopener noreferrer'
-            >
-              Certified Associate in Project Management (CAPM)®{' '}
-              <ArrowTopRightOnSquareIcon className='mb-2 ml-1 inline-flex w-8' />
-            </a>{' '}
-            certification to add even greater value to cross-functional and
-            complex projects.
+            I’m passionate about pushing the boundaries of front-end development
+            while continuously exploring new technologies and methodologies.
+            Currently, I’m enhancing my leadership and project execution skills
+            by pursuing a Certified Associate in Project Management (CAPM)®,
+            helping me better align technical execution with business strategy.
           </p>
         </article>
       </div>

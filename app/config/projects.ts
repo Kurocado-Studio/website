@@ -69,7 +69,7 @@ export const frontEndProjects: Array<FrontEndProject> = [
     categories: [],
   },
   {
-    title: 'Exploring Motion & Design',
+    title: `This portfolio's source code`,
     url: 'https://github.com/Kurocado-Studio/website',
     description:
       'This portfolio website highlights my experimentation with Framer Motion, demonstrating smooth, dynamic transitions and animations that bring the user experience to life. Built with Remix, React and Tailwind CSS.',

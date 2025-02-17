@@ -20,9 +20,7 @@ export type AnimationProps = Array<{
 export function FrontEndProjects(): React.ReactNode {
   const LAYOUT_PROJECT_CARD_HEIGHT = PROJECT_CARD_HEIGHT * 10;
 
-  const { colorContext, setColorContext } = React.useContext(ColorContext);
-
-  const foreground = get(colorContext, ['defaultState', 'foreground']);
+  const { setColorContext } = React.useContext(ColorContext);
 
   const {
     size: { innerHeight },
@@ -53,31 +51,7 @@ export function FrontEndProjects(): React.ReactNode {
       <FadeIn
         as='h2'
         direction={FadeInDirection.UP}
-        className='block font-display text-4xl font-medium tracking-tight [text-wrap:balance] lg:text-7xl'
-      >
-        As a Front-End Software Engineer
-      </FadeIn>
-      <FadeIn
-        as='p'
-        direction={FadeInDirection.DOWN}
-        className='mt-4 block w-full max-w-prose font-body text-base [text-wrap:balance] md:mt-8 md:text-3xl lg:mb-24'
-      >
-        I specialize in React, Vue, TypeScript, and NestJS. At Dais
-        Technologies, I developed solutions leveraging AWS OCR, and at Project
-        44, I unified enterprise UIs and integrated with Kong API Gateway to
-        standardize RBAC.
-      </FadeIn>
-      <hr
-        className='mt-24 block md:mt-56'
-        style={{
-          borderTop: `1px solid ${foreground}`,
-          height: '1px',
-        }}
-      />
-      <FadeIn
-        as='h3'
-        direction={FadeInDirection.UP}
-        className='mb-12 mt-12 block font-display text-3xl font-medium tracking-tight [text-wrap:balance] md:mb-36 lg:text-6xl'
+        className='mb-12 block font-display text-4xl font-medium tracking-tight [text-wrap:balance] lg:text-7xl'
       >
         My projects
       </FadeIn>

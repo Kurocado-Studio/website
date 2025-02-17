@@ -40,8 +40,8 @@ export default function Index(): React.ReactNode {
     <>
       <Intro />
       <About />
-      <DesignProjects />
       <FrontEndProjects />
+      <DesignProjects />
       <Contact />
     </>
   );

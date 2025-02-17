@@ -62,10 +62,6 @@ export function PointOfContacts({
     setCursorVariant(CursorVariants.GITHUB);
   };
 
-  const setDribbbleVariant = (): void => {
-    setCursorVariant(CursorVariants.DRIBBBLE);
-  };
-
   const setLinkedInVariant = (): void => {
     setCursorVariant(CursorVariants.LINKEDIN);
   };
@@ -83,13 +79,6 @@ export function PointOfContacts({
       href: SocialMediaLinks.GITHUB,
       icon: GitHubIcon,
       onPointerEnter: setGithubVariant,
-      onPointerLeave: setDefaultVariant,
-    },
-    {
-      title: 'Dribbble',
-      href: SocialMediaLinks.DRIBBBLE,
-      icon: DribbbleIcon,
-      onPointerEnter: setDribbbleVariant,
       onPointerLeave: setDefaultVariant,
     },
   ];

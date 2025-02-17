@@ -33,7 +33,7 @@ export const colors: {
   [PrimaryColors.YELLOW]: 'Khaki',
   [SecondaryColors.GREEN]: 'DarkGreen',
   [SecondaryColors.ORANGE]: 'DarkOrange',
-  [SecondaryColors.PURPLE]: 'Indigo',
+  [SecondaryColors.PURPLE]: 'Purple',
 };
 
 export const colorThemeMap: ColorThemeContextMap = {
@@ -55,15 +55,15 @@ export const colorThemeMap: ColorThemeContextMap = {
   },
   [ColorThemes.BLUE]: {
     background: get(colors, [PrimaryColors.BLUE]),
-    foreground: get(colors, [SecondaryColors.ORANGE]),
+    foreground: get(colors, [PrimaryColors.RED]),
   },
   [ColorThemes.ORANGE]: {
     background: get(colors, [SecondaryColors.ORANGE]),
-    foreground: get(colors, [PrimaryColors.BLUE]),
+    foreground: get(colors, [BaseColors.BLACK]),
   },
   [ColorThemes.PURPLE]: {
     background: get(colors, [SecondaryColors.PURPLE]),
-    foreground: get(colors, [PrimaryColors.YELLOW]),
+    foreground: get(colors, [BaseColors.OFF_WHITE]),
   },
   [ColorThemes.YELLOW]: {
     background: get(colors, [PrimaryColors.YELLOW]),

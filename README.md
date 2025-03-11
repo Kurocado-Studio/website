@@ -11,8 +11,6 @@
 
 [Carlos Santiago's](https://github.com/csantiago132) portfolio
 
-- [See the Typescript Styleguide](https://kurocado-studio.github.io/styleguide/starter-topic.html)
-
 ## Environment Live Demo
 
 - [dev environment](https://kurocado-studio-website.fly.dev/)

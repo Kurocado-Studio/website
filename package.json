@@ -32,7 +32,7 @@
     "@heroicons/react": "^2.2.0",
     "@kurocado-studio/qa": "^1.0.0",
     "@motionone/utils": "10.18.0",
-    "@remix-run/node": "2.16.0",
+    "@remix-run/node": "2.9.2",
     "@remix-run/react": "2.9.2",
     "ahooks": "^3.8.4",
     "clsx": "2.1.1",

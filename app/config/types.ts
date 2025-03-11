@@ -4,7 +4,6 @@ export interface DribbbleShot {
 }
 
 export interface FrontEndProject {
-  imgUrl: string;
   title: string;
   description: string;
   categories?: Array<string>;

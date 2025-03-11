@@ -44,7 +44,7 @@ export function FrontEndProjectCard(
       {...(isHydrated && {
         style: {
           height: `${PROJECT_CARD_HEIGHT * 1.6}px`,
-          scale: !get(props, ['shouldNotScale']) ? scale : undefined,
+          scale,
           opacity,
         },
       })}
@@ -67,7 +67,7 @@ export function FrontEndProjectCard(
           color: get(colorContextState, ['foreground']),
         }}
       >
-        <div className='flex w-full flex-col justify-between bg-dark-tile px-24 py-12 leading-normal'>
+        <div className='flex w-full flex-col justify-between bg-dark-tile px-8 py-12 leading-normal md:px-24'>
           <h2 className='block font-display text-4xl font-medium tracking-tight [text-wrap:balance] md:mt-8 lg:text-7xl'>
             {get(props, ['frontEndProject', 'title'], '--')}
           </h2>

@@ -27,7 +27,6 @@ export function About(): React.ReactNode {
           >
             About Carlos Santiago
           </h1>
-          <PointOfContacts className='my-16' />
         </section>
         <article className='col-span-12 md:col-span-6'>
           <p className={sharedTypographyClassName}>
@@ -44,6 +43,7 @@ export function About(): React.ReactNode {
             by pursuing a Certified Associate in Project Management (CAPM)®,
             helping me better align technical execution with business strategy.
           </p>
+          <PointOfContacts className='mt-24' />
         </article>
       </div>
     </Container>

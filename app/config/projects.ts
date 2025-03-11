@@ -10,7 +10,6 @@ import spotonWebsite from '~/images/dribbble/spoton_website.png';
 import vividSeatsCheckout from '~/images/dribbble/vivid_seats_checkout_concept.png';
 import warriorSummitWebsite from '~/images/dribbble/warrior_summit_website.png';
 import portfolioMockup from '~/images/projects/portfolio_mockup_v1.0.png';
-import typescriptStyleguideCover from '~/images/projects/typescript_styleguide_cover.png';
 
 export const uiProjectImages: Array<DribbbleShot> = [
   {
@@ -62,18 +61,23 @@ export const uiProjectImages: Array<DribbbleShot> = [
 export const frontEndProjects: Array<FrontEndProject> = [
   {
     title: 'Typescript Styleguide',
-    url: 'https://kurocado.youtrack.cloud/articles/STY-A-3/Overview',
+    url: 'https://github.com/Kurocado-Studio/styleguide',
     description:
       'Aim to streamline development setup in 5 minutes or less, facilitate easier collaboration, enhance the overall quality of software products, and improving collaboration processes between teams.',
-    imgUrl: typescriptStyleguideCover,
     categories: [],
   },
   {
-    title: `This portfolio's source code`,
-    url: 'https://github.com/Kurocado-Studio/website',
+    title: `Auth0 by Okta integration SDK`,
+    url: 'https://github.com/Kurocado-Studio/iam',
     description:
-      'This portfolio website highlights my experimentation with Framer Motion, demonstrating smooth, dynamic transitions and animations that bring the user experience to life. Built with Remix, React and Tailwind CSS.',
-    imgUrl: portfolioMockup,
+      'The Auth0 by Okta integration SDK is a frontend library that simplifies authentication and authorization in React applications by leveraging Auth0’s authentication platform.',
+    categories: [],
+  },
+  {
+    title: `GitHub Actions`,
+    url: 'https://github.com/Kurocado-Studio/dev-ops',
+    description:
+      'Centralizing GitHub Actions workflows in a single repository allows multiple repositories to consume shared workflows, ensuring uniformity, reducing duplication, and improving scalability.',
     categories: [],
   },
 ];

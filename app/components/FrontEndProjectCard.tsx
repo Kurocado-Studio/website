@@ -6,7 +6,6 @@ import { twMerge } from 'tailwind-merge';
 import type { FrontEndProject } from '~/config/types';
 import { ColorContext } from '~/context/ColorContext';
 import { CursorContext, CursorVariants } from '~/context/CursorContext';
-import { GrayscaleImage } from '~/lib/GrayscaleImage';
 
 export interface FrontEndProjectMotionProps {
   frontEndProject: FrontEndProject;
@@ -53,7 +52,7 @@ export function FrontEndProjectCard(
       <a
         href={get(props, ['frontEndProject', 'url'])}
         className={twMerge(
-          'flex flex-col items-center overflow-hidden rounded-lg md:flex-row',
+          'flex flex-col items-center overflow-hidden rounded-lg bg-dark-tile md:flex-row',
           `cursor-pointer shadow transition-all duration-300 ease-in-out hover:bg-lime-400`,
         )}
         target='_blank'
@@ -68,16 +67,11 @@ export function FrontEndProjectCard(
           color: get(colorContextState, ['foreground']),
         }}
       >
-        <GrayscaleImage
-          className='h-auto w-full self-start rounded-xl object-cover p-8 transition-all md:h-auto md:w-96'
-          src={get(props, ['frontEndProject', 'imgUrl'])}
-          alt={get(props, ['frontEndProject', 'title'], 'not specified')}
-        />
-        <div className='flex w-full flex-col justify-between px-8 leading-normal md:pl-0'>
-          <h2 className='block font-display text-4xl font-medium tracking-tight [text-wrap:balance] md:mt-8 lg:text-6xl'>
+        <div className='flex w-full flex-col justify-between bg-dark-tile px-24 py-12 leading-normal'>
+          <h2 className='block font-display text-4xl font-medium tracking-tight [text-wrap:balance] md:mt-8 lg:text-7xl'>
             {get(props, ['frontEndProject', 'title'], '--')}
           </h2>
-          <p className='mb-8 mt-12 block font-body text-base [text-wrap:balance] md:text-3xl'>
+          <p className='text-pretty mb-8 mt-12 block font-body md:text-4xl'>
             {get(props, ['frontEndProject', 'description'], '--')}
           </p>
         </div>

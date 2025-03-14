@@ -30,7 +30,7 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
-    "@kurocado-studio/qa": "^1.0.0",
+    "@kurocado-studio/qa": "^1.1.3",
     "@motionone/utils": "10.18.0",
     "@remix-run/node": "2.9.2",
     "@remix-run/react": "2.9.2",

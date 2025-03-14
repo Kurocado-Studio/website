@@ -15,7 +15,7 @@ export function About(): React.ReactNode {
   return (
     <Container
       as='section'
-      onPointerEnter={() => setColorContext(ColorThemes.WHITE)}
+      onPointerEnter={() => setColorContext(ColorThemes.RED)}
     >
       <div className='grid grid-cols-12 gap-4'>
         <section className='col-span-12 md:col-span-6'>
@@ -30,18 +30,26 @@ export function About(): React.ReactNode {
         </section>
         <article className='col-span-12 md:col-span-6'>
           <p className={sharedTypographyClassName}>
-            I’m a Front-End Engineer with over 5 years of experience building
-            scalable, high-performance web applications. My expertise lies in
-            React, Vue, TypeScript, and modern front-end architectures, where I
-            focus on creating seamless, engaging, and efficient user experiences
-            for enterprise and SaaS platforms.
+            I specialize in front-end development, building high-performing user
+            interfaces that balance aesthetic appeal with robust, scalable code.
+            My background includes extensive work with modern frameworks,
+            responsive design, and continuous integration workflows—all aimed at
+            delivering seamless, engaging experiences for end-users.
           </p>
           <p className={sharedTypographyClassName}>
-            I’m passionate about pushing the boundaries of front-end development
-            while continuously exploring new technologies and methodologies.
-            Currently, I’m enhancing my leadership and project execution skills
-            by pursuing a Certified Associate in Project Management (CAPM)®,
-            helping me better align technical execution with business strategy.
+            In addition to my core focus on front-end, I’ve cultivated
+            complementary product and project management skills that help me see
+            projects holistically. From aligning technical teams to
+            communicating with stakeholders, I ensure every phase of development
+            stays on track. This combined perspective empowers me to create
+            solutions that are not only visually appealing but also aligned with
+            broader business goals.
+          </p>
+          <p className={sharedTypographyClassName}>
+            My goal is to collaborate with forward-thinking teams and deliver
+            impactful, user-centered solutions that genuinely make a difference.
+            I look forward to translating ideas into streamlined, accessible
+            interfaces that everyone can enjoy.
           </p>
           <PointOfContacts className='mt-24' />
         </article>

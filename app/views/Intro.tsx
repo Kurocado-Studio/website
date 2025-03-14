@@ -13,7 +13,7 @@ export function Intro(): React.ReactNode {
     <Container
       as='section'
       withMaxWidth={false}
-      onPointerEnter={() => setColorContext(ColorThemes.WHITE)}
+      onPointerEnter={() => setColorContext(ColorThemes.MAGENTA)}
     >
       <FadeInStagger>
         <FadeIn direction={FadeInDirection.UP}>

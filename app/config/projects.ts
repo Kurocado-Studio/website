@@ -74,6 +74,13 @@ export const frontEndProjects: Array<FrontEndProject> = [
     categories: [],
   },
   {
+    title: `Url Shortener App`,
+    url: 'https://github.com/Kurocado-Studio/url-shortener',
+    description:
+      'This is a simple URL shortener built with Remix, React, and TypeScript. It allows users to input a URL and receive a shortened version.',
+    categories: [],
+  },
+  {
     title: `GitHub Actions`,
     url: 'https://github.com/Kurocado-Studio/dev-ops',
     description:

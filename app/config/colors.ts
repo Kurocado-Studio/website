@@ -5,6 +5,7 @@ import {
   ColorThemes,
   PrimaryColors,
   SecondaryColors,
+  TertiaryColors,
 } from '~/context/types';
 import type {
   ColorContextState,
@@ -34,6 +35,7 @@ export const colors: {
   [SecondaryColors.GREEN]: 'DarkGreen',
   [SecondaryColors.ORANGE]: 'DarkOrange',
   [SecondaryColors.PURPLE]: 'Purple',
+  [TertiaryColors.MAGENTA]: 'MediumVioletRed',
 };
 
 export const colorThemeMap: ColorThemeContextMap = {
@@ -69,6 +71,10 @@ export const colorThemeMap: ColorThemeContextMap = {
     background: get(colors, [PrimaryColors.YELLOW]),
     foreground: get(colors, [SecondaryColors.PURPLE]),
   },
+  [ColorThemes.MAGENTA]: {
+    background: get(colors, [TertiaryColors.MAGENTA]),
+    foreground: get(colors, [BaseColors.WHITE]),
+  },
 };
 
 export const hoverColorContextKeyMap: ColorThemeMap = {
@@ -80,6 +86,7 @@ export const hoverColorContextKeyMap: ColorThemeMap = {
   [ColorThemes.RED]: ColorThemes.GREEN,
   [ColorThemes.WHITE]: ColorThemes.PURPLE,
   [ColorThemes.YELLOW]: ColorThemes.PURPLE,
+  [ColorThemes.MAGENTA]: ColorThemes.ORANGE,
 };
 
 export const interactiveColorContextKeyMap: ColorThemeMap = {
@@ -91,4 +98,5 @@ export const interactiveColorContextKeyMap: ColorThemeMap = {
   [ColorThemes.RED]: ColorThemes.BLUE,
   [ColorThemes.WHITE]: ColorThemes.DEFAULT,
   [ColorThemes.YELLOW]: ColorThemes.BLUE,
+  [ColorThemes.MAGENTA]: ColorThemes.BLUE,
 };

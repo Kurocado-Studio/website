@@ -21,6 +21,10 @@ export enum SecondaryColors {
   PURPLE = 'PURPLE',
 }
 
+export enum TertiaryColors {
+  MAGENTA = 'MAGENTA',
+}
+
 type PrimaryColorsObject = {
   [K in keyof typeof PrimaryColors]: string;
 };
@@ -29,12 +33,17 @@ type SecondaryColorsObject = {
   [K in keyof typeof SecondaryColors]: string;
 };
 
+type TertiaryColorsObject = {
+  [K in keyof typeof TertiaryColors]: string;
+};
+
 type BaseColorsObject = {
   [K in keyof typeof BaseColors]: string;
 };
 
 export type CombinedColorsObject = PrimaryColorsObject &
   SecondaryColorsObject &
+  TertiaryColorsObject &
   BaseColorsObject;
 
 export enum ColorThemes {
@@ -47,6 +56,7 @@ export enum ColorThemes {
   GREEN = SecondaryColors.GREEN,
   ORANGE = SecondaryColors.ORANGE,
   PURPLE = SecondaryColors.PURPLE,
+  MAGENTA = TertiaryColors.MAGENTA,
 }
 
 export type ColorThemeContextMap = {

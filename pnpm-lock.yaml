@@ -109,8 +109,8 @@ importers:
         specifier: 5.4.12
         version: 5.4.12(@types/node@20.5.0)
       vite-tsconfig-paths:
-        specifier: 4.2.1
-        version: 4.2.1(typescript@5.4.2)(vite@5.4.12(@types/node@20.5.0))
+        specifier: 5.1.4
+        version: 5.1.4(typescript@5.4.2)(vite@5.4.12(@types/node@20.5.0))
       vitest:
         specifier: 2.1.8
         version: 2.1.8(@types/node@20.5.0)(jsdom@26.0.0)
@@ -6098,16 +6098,6 @@ packages:
   ts-interface-checker@0.1.13:
     resolution: {integrity: sha512-Y/arvbn+rrz3JCKl9C4kVNfTfSm2/mEp5FSz5EsZSANGPSlQrpRI5M4PKF+mJnE52jOO90PnPSc3Ur3bTQw0gA==}
 
-  tsconfck@2.1.2:
-    resolution: {integrity: sha512-ghqN1b0puy3MhhviwO2kGF8SeMDNhEbnKxjK7h6+fvY9JAxqvXi8y5NAHSQv687OVboS2uZIByzGd45/YxrRHg==}
-    engines: {node: ^14.13.1 || ^16 || >=18}
-    hasBin: true
-    peerDependencies:
-      typescript: ^4.3.5 || ^5.0.0
-    peerDependenciesMeta:
-      typescript:
-        optional: true
-
   tsconfck@3.1.5:
     resolution: {integrity: sha512-CLDfGgUp7XPswWnezWwsCRxNmgQjhYq3VXHM0/XIRxhVrKw0M1if9agzryh1QS3nxjCROvV+xWxoJO1YctzzWg==}
     engines: {node: ^18 || >=20}
@@ -6423,14 +6413,6 @@ packages:
     resolution: {integrity: sha512-P64VnD00dR+e8S26ESoFELqc17+w7pKkwlBpgXteOljFyT0zDwD8hH4zXp49M/kciy//7ZbVXIwQCekBJjfWzA==}
     peerDependencies:
       typescript: '*'
-      vite: '*'
-    peerDependenciesMeta:
-      vite:
-        optional: true
-
-  vite-tsconfig-paths@4.2.1:
-    resolution: {integrity: sha512-GNUI6ZgPqT3oervkvzU+qtys83+75N/OuDaQl7HmOqFTb0pjZsuARrRipsyJhJ3enqV8beI1xhGbToR4o78nSQ==}
-    peerDependencies:
       vite: '*'
     peerDependenciesMeta:
       vite:
@@ -13859,10 +13841,6 @@ snapshots:
 
   ts-interface-checker@0.1.13: {}
 
-  tsconfck@2.1.2(typescript@5.4.2):
-    optionalDependencies:
-      typescript: 5.4.2
-
   tsconfck@3.1.5(typescript@5.4.2):
     optionalDependencies:
       typescript: 5.4.2
@@ -14239,17 +14217,6 @@ snapshots:
       - '@types/node'
       - rollup
       - supports-color
-
-  vite-tsconfig-paths@4.2.1(typescript@5.4.2)(vite@5.4.12(@types/node@20.5.0)):
-    dependencies:
-      debug: 4.4.0
-      globrex: 0.1.2
-      tsconfck: 2.1.2(typescript@5.4.2)
-    optionalDependencies:
-      vite: 5.4.12(@types/node@20.5.0)
-    transitivePeerDependencies:
-      - supports-color
-      - typescript
 
   vite-tsconfig-paths@5.1.4(typescript@5.4.2)(vite@5.4.12(@types/node@20.5.0)):
     dependencies:

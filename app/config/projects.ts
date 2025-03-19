@@ -60,31 +60,24 @@ export const uiProjectImages: Array<DribbbleShot> = [
 
 export const frontEndProjects: Array<FrontEndProject> = [
   {
-    title: 'Typescript Styleguide',
+    title: `Platform Monorepo`,
+    url: 'https://github.com/Kurocado-Studio/platform',
+    description:
+      'A robust, TypeScript-centric platform designed to rapidly scaffold project setups like IAM and QA, enforce best practices, and boost productivity across React and Node/NestJS applications.',
+    categories: ['TypeScript', 'Monorepo', 'React', 'NestJS'],
+  },
+  {
+    title: 'TypeScript Style Guide',
     url: 'https://github.com/Kurocado-Studio/styleguide',
     description:
-      'Aim to streamline development setup in 5 minutes or less, facilitate easier collaboration, enhance the overall quality of software products, and improving collaboration processes between teams.',
-    categories: [],
+      'A centralized, reusable configuration setup that allows development teams to standardize project environments in under 5 minutes, improving collaboration and software quality.',
+    categories: ['TypeScript', 'ESLint', 'Prettier', 'CI/CD'],
   },
   {
-    title: `Auth0 by Okta integration SDK`,
-    url: 'https://github.com/Kurocado-Studio/iam',
+    title: `Design System`,
+    url: 'https://github.com/Kurocado-Studio/design-system',
     description:
-      'The Auth0 by Okta integration SDK is a frontend library that simplifies authentication and authorization in React applications by leveraging Auth0’s authentication platform.',
-    categories: [],
-  },
-  {
-    title: `Url Shortener App`,
-    url: 'https://github.com/Kurocado-Studio/url-shortener',
-    description:
-      'This is a simple URL shortener built with Remix, React, and TypeScript. It allows users to input a URL and receive a shortened version.',
-    categories: [],
-  },
-  {
-    title: `GitHub Actions`,
-    url: 'https://github.com/Kurocado-Studio/dev-ops',
-    description:
-      'Centralizing GitHub Actions workflows in a single repository allows multiple repositories to consume shared workflows, ensuring uniformity, reducing duplication, and improving scalability.',
-    categories: [],
+      'A scalable design system featuring reusable React components, dynamic theming via Tailwind, accessibility with React Aria, and engaging animations powered by Framer Motion to unify and enhance user interfaces.',
+    categories: ['Design System', 'React', 'Tailwind', 'Framer Motion'],
   },
 ];

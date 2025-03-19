@@ -30,20 +30,17 @@ export function About(): React.ReactNode {
         </section>
         <article className='col-span-12 md:col-span-6'>
           <p className={sharedTypographyClassName}>
-            I specialize in front-end development, building high-performing user
-            interfaces that balance aesthetic appeal with robust, scalable code.
-            My background includes extensive work with modern frameworks,
-            responsive design, and continuous integration workflows—all aimed at
-            delivering seamless, engaging experiences for end-users.
+            I specialize in front-end development, my background includes UX
+            Design, React, some Vue 3 experience, responsive design, and
+            continuous integration workflows.
           </p>
           <p className={sharedTypographyClassName}>
-            In addition to my core focus on front-end, I’ve cultivated
-            complementary product and project management skills that help me see
-            projects holistically. From aligning technical teams to
-            communicating with stakeholders, I ensure every phase of development
-            stays on track. This combined perspective empowers me to create
-            solutions that are not only visually appealing but also aligned with
-            broader business goals.
+            In addition to my core focus on front-end, I’ve picked some project
+            management skills that help me to aligning myself better within
+            technical teams and to communicate with stakeholders effectively.
+            This combined perspective empowers me to create solutions that are
+            not only visually appealing but also aligned with broader business
+            goals.
           </p>
           <p className={sharedTypographyClassName}>
             My goal is to collaborate with forward-thinking teams and deliver

@@ -60,24 +60,31 @@ export const uiProjectImages: Array<DribbbleShot> = [
 
 export const frontEndProjects: Array<FrontEndProject> = [
   {
-    title: `Platform Monorepo`,
-    url: 'https://github.com/Kurocado-Studio/platform',
+    title: `Identity & Access Management`,
+    url: 'https://github.com/Kurocado-Studio/iam',
     description:
-      'A robust, TypeScript-centric platform designed to rapidly scaffold project setups like IAM and QA, enforce best practices, and boost productivity across React and Node/NestJS applications.',
-    categories: ['TypeScript', 'Monorepo', 'React', 'NestJS'],
+      'A frontend library that integrates Auth0 (by Okta) to simplify authentication and authorization processes in React applications.',
+    categories: ['IAM', 'Authentication', 'Authorization'],
   },
   {
     title: 'TypeScript Style Guide',
     url: 'https://github.com/Kurocado-Studio/styleguide',
     description:
-      'A centralized, reusable configuration setup that allows development teams to standardize project environments in under 5 minutes, improving collaboration and software quality.',
+      'Quickly standardize your TypeScript setup in minutes. Helps your team collaborate smoothly and keeps your code consistent and high-quality.',
     categories: ['TypeScript', 'ESLint', 'Prettier', 'CI/CD'],
+  },
+  {
+    title: `DevOps`,
+    url: 'https://github.com/Kurocado-Studio/dev-ops',
+    description:
+      'Centralize your GitHub Actions workflows in a single repository, allowing multiple projects to share workflows easily. This ensures consistency, reduces duplication, and improves scalability.',
+    categories: ['DevOps', 'CI/CD', 'Automation', 'Infrastructure'],
   },
   {
     title: `Design System`,
     url: 'https://github.com/Kurocado-Studio/design-system',
     description:
-      'A scalable design system featuring reusable React components, dynamic theming via Tailwind, accessibility with React Aria, and engaging animations powered by Framer Motion to unify and enhance user interfaces.',
+      'A friendly, reusable UI kit built with React, featuring dynamic Tailwind themes, accessibility with React Aria, and animations with Framer Motion.',
     categories: ['Design System', 'React', 'Tailwind', 'Framer Motion'],
   },
 ];

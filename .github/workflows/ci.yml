@@ -37,6 +37,7 @@ jobs:
       branch_name: ${{ github.ref_name }}
     secrets:
       fly_api_token: ${{ secrets.FLY_API_TOKEN }}
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   release:
     needs: deploy

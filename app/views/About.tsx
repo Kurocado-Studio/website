@@ -31,17 +31,14 @@ export function About(): React.ReactNode {
         <article className='col-span-12 md:col-span-6'>
           <p className={sharedTypographyClassName}>
             I specialize in front-end development & my background includes UX
-            Design, React & Vue.In addition to my core focus on front-end, I’ve
-            picked some project management skills that help me to aligning
-            myself better within technical teams. This combined perspective
-            empowers me to create solutions that are not only visually appealing
-            but also aligned with broader business goals.
+            Design, React & Vue. I’ve picked some project management skills that
+            help me aligning myself better within stakeholders. This combined
+            perspective empowers me to create solutions that are not only
+            visually appealing but also aligned with broader business goals.
           </p>
           <p className={sharedTypographyClassName}>
             My goal is to collaborate with forward-thinking teams and deliver
-            impactful, user-centered solutions that genuinely make a difference.
-            I look forward to translating ideas into streamlined, accessible
-            interfaces that everyone can enjoy.
+            user-centered solutions, so lets connect!
           </p>
           <PointOfContacts className='mt-24' />
         </article>

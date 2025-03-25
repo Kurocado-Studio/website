@@ -8,7 +8,7 @@ import { ColorThemes } from '~/context/types';
 
 export function About(): React.ReactNode {
   const sharedTypographyClassName =
-    'mb-12 font-body block text-base [text-wrap:balance] md:text-2xl';
+    'mb-12 font-body block text-xl [text-wrap:balance] md:text-2xl';
 
   const { setColorContext } = React.useContext(ColorContext);
 

@@ -60,29 +60,15 @@ export const uiProjectImages: Array<DribbbleShot> = [
 
 export const frontEndProjects: Array<FrontEndProject> = [
   {
-    title: `Identity & Access Management`,
-    url: 'https://github.com/Kurocado-Studio/iam',
-    description:
-      'A frontend library that integrates Auth0 (by Okta) to simplify authentication and authorization processes in React applications.',
-    categories: ['IAM', 'Authentication', 'Authorization'],
-  },
-  {
-    title: 'TypeScript Style Guide',
-    url: 'https://github.com/Kurocado-Studio/styleguide',
+    title: 'TypeScript Platform',
+    url: 'https://kurocado-studio.github.io/platform/case-study.html',
     description:
       'Quickly standardize your TypeScript setup in minutes. Helps your team collaborate smoothly and keeps your code consistent and high-quality.',
     categories: ['TypeScript', 'ESLint', 'Prettier', 'CI/CD'],
   },
   {
-    title: `DevOps`,
-    url: 'https://github.com/Kurocado-Studio/dev-ops',
-    description:
-      'Centralize your GitHub Actions workflows in a single repository, allowing multiple projects to share workflows easily. This ensures consistency, reduces duplication, and improves scalability.',
-    categories: ['DevOps', 'CI/CD', 'Automation', 'Infrastructure'],
-  },
-  {
     title: `Design System`,
-    url: 'https://github.com/Kurocado-Studio/design-system',
+    url: 'https://kurocado-studio.github.io/design-system',
     description:
       'A friendly, reusable UI kit built with React, featuring dynamic Tailwind themes, accessibility with React Aria, and animations with Framer Motion.',
     categories: ['Design System', 'React', 'Tailwind', 'Framer Motion'],

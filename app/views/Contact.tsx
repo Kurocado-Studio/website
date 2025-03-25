@@ -39,7 +39,7 @@ export function Contact(): React.ReactNode {
           )}
         >
           Whether you need a new website, custom illustrations, or just want to
-          chat about your ideas, I am here help however I can.
+          chat about your ideas, I am here to help however I can.
         </p>
         <PointOfContacts />
       </Container>

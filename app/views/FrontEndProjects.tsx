@@ -53,7 +53,7 @@ export function FrontEndProjects(): React.ReactNode {
         direction={FadeInDirection.UP}
         className='mb-12 block font-display text-4xl font-medium tracking-tight [text-wrap:balance] lg:text-7xl'
       >
-        Projects
+        Case Studies
       </FadeIn>
       {frontEndProjects.map((frontEndProject, index) => (
         <FrontEndProjectCard

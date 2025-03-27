@@ -71,7 +71,7 @@ export function FrontEndProjectCard(
           <h2 className='block font-display text-4xl font-medium tracking-tight [text-wrap:balance] md:mt-8 lg:text-7xl'>
             {get(props, ['frontEndProject', 'title'], '--')}
           </h2>
-          <p className='text-pretty mb-8 mt-12 block font-body text-xl md:text-4xl'>
+          <p className='text-pretty mb-8 mt-36 block font-body text-xl md:text-4xl'>
             {get(props, ['frontEndProject', 'description'], '--')}
           </p>
         </div>

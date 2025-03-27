@@ -66,11 +66,4 @@ export const frontEndProjects: Array<FrontEndProject> = [
       'Quickly standardize your TypeScript setup in minutes. Helps your team collaborate smoothly and keeps your code consistent and high-quality.',
     categories: ['TypeScript', 'ESLint', 'Prettier', 'CI/CD'],
   },
-  {
-    title: `Design System`,
-    url: 'https://kurocado-studio.github.io/design-system',
-    description:
-      'A friendly, reusable UI kit built with React, featuring dynamic Tailwind themes, accessibility with React Aria, and animations with Framer Motion.',
-    categories: ['Design System', 'React', 'Tailwind', 'Framer Motion'],
-  },
 ];

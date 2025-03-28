@@ -3,6 +3,7 @@ import type { MotionValue } from 'framer-motion';
 import { get } from 'lodash-es';
 import React from 'react';
 
+import { ColorContextChangerContainer } from '~/components/ColorContextChangerContainer';
 import { Container } from '~/components/Container';
 import { FadeIn, FadeInDirection } from '~/components/FadeIn';
 import { uiProjectImages } from '~/config/projects';
@@ -73,56 +74,58 @@ export function DesignProjects(): React.ReactNode {
   }, []);
 
   return (
-    <Container
-      as='section'
-      onPointerEnter={() => setColorContext(ColorThemes.PURPLE)}
-      className='antialiasing relative flex flex-col self-auto overflow-hidden [perspective:1000px] [transform-style:preserve-3d]'
-    >
-      <div ref={ref}>
-        <div className='relative z-10'>
-          <FadeIn
-            as='p'
-            direction={FadeInDirection.DOWN}
-            className='block max-w-prose font-body text-xl [text-wrap:balance] md:mt-8 md:text-3xl'
-          >
-            With a background in Design and Sculpture, I bring a unique
-            perspective to front-end development—blending aesthetics with
-            functionality. My approach is deeply rooted in creating visually
-            engaging and intuitive user experiences, where form meets function
-            in the digital space.
-          </FadeIn>
+    <ColorContextChangerContainer className='m-2 rounded-xl'>
+      <Container
+        as='section'
+        onPointerEnter={() => setColorContext(ColorThemes.PURPLE)}
+        className='antialiasing relative flex flex-col self-auto overflow-hidden [perspective:1000px] [transform-style:preserve-3d]'
+      >
+        <div ref={ref}>
+          <div className='relative z-10'>
+            <FadeIn
+              as='p'
+              direction={FadeInDirection.DOWN}
+              className='block max-w-prose font-body text-xl [text-wrap:balance] md:mt-8 md:text-3xl'
+            >
+              With a background in Design and Sculpture, I bring a unique
+              perspective to front-end development—blending aesthetics with
+              functionality. My approach is deeply rooted in creating visually
+              engaging and intuitive user experiences, where form meets function
+              in the digital space.
+            </FadeIn>
+          </div>
+          <motion.div className='relative z-0 mx-auto mt-12 w-full max-w-screen-2xl overflow-hidden rounded-lg border border-gray-200 bg-dark-tile py-12 md:mt-24 md:rounded-full md:py-24'>
+            <motion.article className='relative mb-8 flex flex-row-reverse space-x-8 space-x-reverse'>
+              {firstRow.map((product, idx) => (
+                <DesignPreviewCard
+                  product={product}
+                  translate={translateX}
+                  key={`${product.title}_${String(idx)}`}
+                />
+              ))}
+            </motion.article>
+            <motion.article className='relative my-12 flex flex-row space-x-8 lg:my-24'>
+              {secondRow.map((product, idx) => (
+                <DesignPreviewCard
+                  product={product}
+                  translate={translateXReverse}
+                  key={`${product.title}_${String(idx)}`}
+                />
+              ))}
+            </motion.article>
+            <motion.article className='relative my-12 flex flex-row-reverse space-x-8 space-x-reverse lg:my-24'>
+              {thirdRow.map((product, idx) => (
+                <DesignPreviewCard
+                  product={product}
+                  translate={translateX}
+                  key={`${product.title}_${String(idx)}`}
+                />
+              ))}
+            </motion.article>
+          </motion.div>
         </div>
-        <motion.div className='relative z-0 mx-auto mt-12 w-full max-w-screen-2xl overflow-hidden rounded-lg border border-gray-200 bg-dark-tile py-12 md:mt-24 md:rounded-full md:py-24'>
-          <motion.article className='relative mb-8 flex flex-row-reverse space-x-8 space-x-reverse'>
-            {firstRow.map((product, idx) => (
-              <DesignPreviewCard
-                product={product}
-                translate={translateX}
-                key={`${product.title}_${String(idx)}`}
-              />
-            ))}
-          </motion.article>
-          <motion.article className='relative my-12 flex flex-row space-x-8 lg:my-24'>
-            {secondRow.map((product, idx) => (
-              <DesignPreviewCard
-                product={product}
-                translate={translateXReverse}
-                key={`${product.title}_${String(idx)}`}
-              />
-            ))}
-          </motion.article>
-          <motion.article className='relative my-12 flex flex-row-reverse space-x-8 space-x-reverse lg:my-24'>
-            {thirdRow.map((product, idx) => (
-              <DesignPreviewCard
-                product={product}
-                translate={translateX}
-                key={`${product.title}_${String(idx)}`}
-              />
-            ))}
-          </motion.article>
-        </motion.div>
-      </div>
-    </Container>
+      </Container>
+    </ColorContextChangerContainer>
   );
 }
 

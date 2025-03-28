@@ -1,6 +1,7 @@
 import { get } from 'lodash-es';
 import React from 'react';
 
+import { ColorContextChangerContainer } from '~/components/ColorContextChangerContainer';
 import { Container } from '~/components/Container';
 import { FadeIn, FadeInDirection } from '~/components/FadeIn';
 import {
@@ -43,27 +44,29 @@ export function FrontEndProjects(): React.ReactNode {
   }));
 
   return (
-    <Container
-      as='section'
-      className='relative z-10 w-full'
-      onPointerEnter={() => setColorContext(ColorThemes.BLUE)}
-    >
-      <FadeIn
-        as='h2'
-        direction={FadeInDirection.UP}
-        className='mb-12 block font-display text-4xl font-medium tracking-tight [text-wrap:balance] lg:text-7xl'
+    <ColorContextChangerContainer className='m-2 rounded-xl'>
+      <Container
+        as='section'
+        className='relative z-10 w-full'
+        onPointerEnter={() => setColorContext(ColorThemes.BLUE)}
       >
-        Case Studies
-      </FadeIn>
-      {frontEndProjects.map((frontEndProject, index) => (
-        <FrontEndProjectCard
-          frontEndProject={frontEndProject}
-          key={`${get(frontEndProject, ['title'], 'unknown')}_${index.toString()}`}
-          opacity={get(animations, [index, 'opacity'])}
-          scale={get(animations, [index, 'scale'])}
-          shouldNotScale={index === get(frontEndProjects, ['length'], 1) - 1}
-        />
-      ))}
-    </Container>
+        <FadeIn
+          as='h2'
+          direction={FadeInDirection.UP}
+          className='mb-12 block font-display text-4xl font-medium tracking-tight [text-wrap:balance] lg:text-7xl'
+        >
+          Case Studies
+        </FadeIn>
+        {frontEndProjects.map((frontEndProject, index) => (
+          <FrontEndProjectCard
+            frontEndProject={frontEndProject}
+            key={`${get(frontEndProject, ['title'], 'unknown')}_${index.toString()}`}
+            opacity={get(animations, [index, 'opacity'])}
+            scale={get(animations, [index, 'scale'])}
+            shouldNotScale={index === get(frontEndProjects, ['length'], 1) - 1}
+          />
+        ))}
+      </Container>
+    </ColorContextChangerContainer>
   );
 }

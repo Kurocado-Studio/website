@@ -52,7 +52,7 @@ export function FrontEndProjectCard(
       <a
         href={get(props, ['frontEndProject', 'url'])}
         className={twMerge(
-          'flex flex-col items-center overflow-hidden rounded-lg bg-dark-tile md:flex-row',
+          'flex flex-col items-center overflow-hidden rounded-lg md:flex-row',
           `cursor-pointer shadow transition-all duration-300 ease-in-out hover:bg-lime-400`,
         )}
         target='_blank'
@@ -62,7 +62,6 @@ export function FrontEndProjectCard(
         onMouseOver={() => setIsHovered(true)}
         onMouseOut={() => setIsHovered(false)}
         style={{
-          border: `1px solid ${get(defaultState, ['foreground'])}`,
           background: get(colorContextState, ['background']),
           color: get(colorContextState, ['foreground']),
         }}

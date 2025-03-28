@@ -6,11 +6,12 @@ import React, { createContext, useRef } from 'react';
 
 import {
   colorThemeMap,
+  colors,
   hoverColorContextKeyMap,
   interactiveColorContextKeyMap,
 } from '~/config/colors';
 import type { InteractiveColorTheme } from '~/config/colors';
-import { ColorThemes } from '~/context/types';
+import { BaseColors, ColorThemes } from '~/context/types';
 
 type ColorContext = {
   targetRef: MutableRefObject<HTMLBodyElement | null>;
@@ -86,8 +87,8 @@ export function BodyHTMLTagColorProvider({
       <motion.body
         ref={colorContextTargetRef}
         style={{
-          backgroundColor: get(colorTheme, ['defaultState', 'background']),
-          color: get(colorTheme, ['defaultState', 'foreground']),
+          backgroundColor: get(colors, [BaseColors.BLACK]),
+          color: get(colors, [BaseColors.OFF_WHITE]),
           transition: 'background-color 0.9s, color 1.2s',
         }}
         className='relative selection:bg-lime-200 selection:text-[#f52891cc]'

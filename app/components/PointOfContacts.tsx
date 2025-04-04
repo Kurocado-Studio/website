@@ -20,6 +20,9 @@ type SocialMediaCursorVariantMap = {
   };
 };
 
+export const interactiveClassName =
+  'inline-flex h-16 items-center justify-center bg-[GreenYellow] text-lg fill-current px-3 align-bottom font-display font-semibold text-neutral-900 shadow-sm hover:bg-[Black] hover:text-[GreenYellow]';
+
 export function PointOfContacts({
   className,
 }: {
@@ -51,9 +54,6 @@ export function PointOfContacts({
     },
   };
 
-  const sharedClassName =
-    'inline-flex h-16 items-center justify-center bg-[GreenYellow] text-lg fill-current px-3 align-bottom font-display font-semibold text-neutral-900 shadow-sm hover:bg-[Black] hover:text-[GreenYellow]';
-
   return (
     <FadeInStagger>
       <ul className={clsx('', className)}>
@@ -61,7 +61,7 @@ export function PointOfContacts({
           <motion.a
             onPointerEnter={() => setCursorVariant(CursorVariants.HIDDEN)}
             onPointerLeave={() => setDefaultVariant()}
-            className={sharedClassName}
+            className={interactiveClassName}
             rel='noreferrer'
             href='./Carlos_Santiago_Resume.pdf'
             target='_blank'
@@ -77,7 +77,7 @@ export function PointOfContacts({
             target='_blank'
             onPointerEnter={() => setCursorVariant(CursorVariants.CONTACT)}
             onPointerLeave={() => setDefaultVariant()}
-            className={sharedClassName}
+            className={interactiveClassName}
           >
             E-mail me
           </motion.a>
@@ -104,7 +104,7 @@ export function PointOfContacts({
                   socialMediaProfile.cursorVariant,
                   'icon',
                 ])}
-                className={clsx(sharedClassName, 'h-16 w-16 text-sm')}
+                className={clsx(interactiveClassName, 'h-16 w-16 text-sm')}
               />
             </motion.a>
           </FadeIn>

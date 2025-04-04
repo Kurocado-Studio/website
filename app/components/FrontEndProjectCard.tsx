@@ -3,9 +3,10 @@ import { get } from 'lodash-es';
 import * as React from 'react';
 import { twMerge } from 'tailwind-merge';
 
-import type { FrontEndProject } from '~/config/types';
 import { ColorContext } from '~/context/ColorContext';
-import { CursorContext, CursorVariants } from '~/context/CursorContext';
+import { CursorContext } from '~/context/CursorContext';
+import { CursorVariants } from '~/domain/enums';
+import type { FrontEndProject } from '~/domain/types';
 
 export interface FrontEndProjectMotionProps {
   frontEndProject: FrontEndProject;

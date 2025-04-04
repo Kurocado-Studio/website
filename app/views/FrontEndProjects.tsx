@@ -7,9 +7,9 @@ import {
   FrontEndProjectCard,
   PROJECT_CARD_HEIGHT,
 } from '~/components/FrontEndProjectCard';
-import { frontEndProjects } from '~/config/projects';
 import { ColorContext } from '~/context/ColorContext';
 import { ColorThemes } from '~/context/types';
+import { frontEndProjects } from '~/domain/projects.frontEnd';
 import { useWindowSize } from '~/hooks/useWindowSize';
 
 export type AnimationProps = Array<{

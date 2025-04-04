@@ -4,13 +4,13 @@ import { get } from 'lodash-es';
 import type { MutableRefObject } from 'react';
 import React, { createContext, useRef } from 'react';
 
+import { ColorThemes } from '~/context/types';
 import {
   colorThemeMap,
   hoverColorContextKeyMap,
   interactiveColorContextKeyMap,
-} from '~/config/colors';
-import type { InteractiveColorTheme } from '~/config/colors';
-import { ColorThemes } from '~/context/types';
+} from '~/domain/colors';
+import type { InteractiveColorTheme } from '~/domain/colors';
 
 type ColorContext = {
   targetRef: MutableRefObject<HTMLBodyElement | null>;

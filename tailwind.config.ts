@@ -12,7 +12,11 @@ import { type Config } from 'tailwindcss';
 import defaultTheme from 'tailwindcss/defaultTheme';
 
 export default {
-  content: ['./app/**/*.{js,jsx,mjs,mdx,ts,tsx}', './app/**/*.css'],
+  content: [
+    './app/**/*.{js,jsx,mjs,mdx,ts,tsx}',
+    './app/**/*.css',
+    'node_modules/@kurocado-studio/ui/**/*.js',
+  ],
   theme: {
     fontSize: {
       xs: ['0.75rem', { lineHeight: '1rem' }],

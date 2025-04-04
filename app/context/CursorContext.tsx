@@ -10,6 +10,8 @@ import {
   ContactUsVariant,
   OpenInNewTabCursorVariant,
 } from '~/components/Cursors';
+import { CursorVariants } from '~/domain/enums';
+import type { GrayscaleImageProps } from '~/domain/lib/GrayscaleImage';
 import { useWindowSize } from '~/hooks/useWindowSize';
 import { FramerMotionIcon } from '~/icons/FramerMotionIcon';
 import { NestJsIcon } from '~/icons/NestJsIcon';
@@ -17,26 +19,6 @@ import { ReactIcon } from '~/icons/ReactIcon';
 import { TailwindIcon } from '~/icons/TailwindIcon';
 import { TypescriptIcon } from '~/icons/TypescriptIcon';
 import { VueIcon } from '~/icons/VueIcon';
-import type { GrayscaleImageProps } from '~/lib/GrayscaleImage';
-
-export enum CursorVariants {
-  CONTACT = 'CONTACT',
-  CONTACT_CTA = 'CONTACT_CTA',
-  DEFAULT = 'DEFAULT',
-  DRIBBBLE = 'DRIBBBLE',
-  FRAMER_MOTION = 'FRAMER_MOTION',
-  GITHUB = 'GITHUB',
-  HIDDEN = 'HIDDEN',
-  IMG = 'IMG',
-  NEST_JS = 'NEST_JS',
-  REACT = 'REACT',
-  SHRUG = 'SHRUG',
-  TAILWIND = 'TAILWIND',
-  TYPESCRIPT = 'TYPESCRIPT',
-  LINKEDIN = 'LINKEDIN',
-  OPEN_IN_NEW_TAB = 'OPEN_IN_NEW_TAB',
-  VUE = 'VUE',
-}
 
 type CursorContext = {
   cursorVariant: CursorVariants | GrayscaleImageProps;

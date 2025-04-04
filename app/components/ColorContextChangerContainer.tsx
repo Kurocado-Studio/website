@@ -4,7 +4,7 @@ import * as React from 'react';
 
 import { ColorContext } from '~/context/ColorContext';
 import type { ColorThemes } from '~/context/types';
-import type { ClassName, HTMLIntrinsicElements } from '~/lib/types';
+import type { ClassName, HTMLIntrinsicElements } from '~/domain/types';
 
 export interface ColorChangeContainerProps {
   children: React.ReactNode;

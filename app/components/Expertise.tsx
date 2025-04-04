@@ -2,13 +2,14 @@ import * as React from 'react';
 
 import { Container } from '~/components/Container';
 import { List, ListItem } from '~/components/List';
-import { CursorContext, CursorVariants } from '~/context/CursorContext';
-import dashboardPreview from '~/images/dribbble/dashboard_preview.png';
-import eyeSeeYou from '~/images/dribbble/eye_see_you.png';
-import intellijIDE from '~/images/dribbble/react-typescript_8x.png';
-import spotonApp from '~/images/dribbble/spoton_app_sample.png';
-import vividSeatsCheckout from '~/images/dribbble/vivid_seats_checkout_concept.png';
-import warriorSummitWebsite from '~/images/dribbble/warrior_summit_website.png';
+import { CursorContext } from '~/context/CursorContext';
+import { CursorVariants } from '~/domain/enums';
+import dashboardPreview from '~/domain/images/dribbble/dashboard_preview.png';
+import eyeSeeYou from '~/domain/images/dribbble/eye_see_you.png';
+import intellijIDE from '~/domain/images/dribbble/react-typescript_8x.png';
+import spotonApp from '~/domain/images/dribbble/spoton_app_sample.png';
+import vividSeatsCheckout from '~/domain/images/dribbble/vivid_seats_checkout_concept.png';
+import warriorSummitWebsite from '~/domain/images/dribbble/warrior_summit_website.png';
 
 export function ProductDesignExpertise(): React.ReactNode {
   const { setCursorVariant } = React.useContext(CursorContext);

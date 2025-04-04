@@ -16,6 +16,7 @@ import { Contact } from '~/views/Contact';
 import { DesignProjects } from '~/views/DesignProjects';
 import { FrontEndProjects } from '~/views/FrontEndProjects';
 import { Intro } from '~/views/Intro';
+import { PlatformSpecific } from '~/views/PlatformSpecific';
 
 export const meta: MetaFunction = () => {
   return [
@@ -41,6 +42,7 @@ export default function Index(): React.ReactNode {
       <Intro />
       <About />
       <FrontEndProjects />
+      <PlatformSpecific />
       <DesignProjects />
       <Contact />
     </>

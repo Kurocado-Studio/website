@@ -10,12 +10,10 @@ export interface DribbbleShot {
 
 export interface FrontEndProject {
   title: string;
-  description: string;
-  categories?: Array<string>;
   url: string;
 }
 
-export type CaseStudy = FrontEndProject;
+export type CaseStudy = FrontEndProject & { description: string };
 
 export type FramerCursorAttributes = Pick<
   Partial<React.DOMAttributes<HTMLElement>>,

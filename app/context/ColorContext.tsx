@@ -90,7 +90,7 @@ export function BodyHTMLTagColorProvider({
           color: get(colorTheme, ['defaultState', 'foreground']),
           transition: 'background-color 0.9s, color 1.2s',
         }}
-        className='relative selection:bg-lime-200 selection:text-[#f52891cc]'
+        className='relative selection:bg-lime-200 selection:text-[magenta]'
         data-testid='root-body-test-id'
       >
         {children}

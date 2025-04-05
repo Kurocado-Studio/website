@@ -1,19 +1,30 @@
-import { motion, useInView, useScroll, useTransform } from 'framer-motion';
+import {
+  easeInOut,
+  motion,
+  useInView,
+  useScroll,
+  useSpring,
+  useTransform,
+} from 'framer-motion';
 import React, { useEffect, useRef, useState } from 'react';
 
 import { ColorContext } from '~/context/ColorContext';
 import { ColorThemes } from '~/context/types';
+import { useWindowSize } from '~/hooks/useWindowSize';
 
 export interface HorizontalScrollerProps {
   children: React.ReactNode[] | React.ReactNode;
   itemWidth?: number;
-  gap?: number;
-  fixedScrollDistance?: number;
+  className?: string;
 }
 
 export function HorizontalScroller({
   children,
 }: HorizontalScrollerProps): React.ReactNode {
+  const {
+    size: { innerHeight },
+  } = useWindowSize();
+
   const { setColorContext } = React.useContext(ColorContext);
 
   const triggerRef = useRef<HTMLDivElement | null>(null);
@@ -41,15 +52,25 @@ export function HorizontalScroller({
   const xAxisScrollRange = useTransform(
     scrollYProgress,
     [0, 1],
-    [-(initialX * 4), initialX * 5],
+    [-(initialX * 8), initialX * 8],
   );
+
+  const springConfig = {
+    stiffness: 60,
+    damping: 15,
+    restDelta: 0.5,
+    ease: easeInOut,
+  };
+
+  const translateX = useSpring(xAxisScrollRange, springConfig);
 
   return (
     <section
       onMouseEnter={() => setColorContext(ColorThemes.DEFAULT)}
       ref={triggerRef}
       style={{
-        height: '650vh',
+        overflow: 'hidden',
+        height: `${innerHeight * 12}px`,
       }}
     >
       <motion.div
@@ -58,7 +79,7 @@ export function HorizontalScroller({
         style={{
           position: isInView ? 'fixed' : 'relative',
           top: '20%',
-          x: xAxisScrollRange,
+          x: translateX,
         }}
       >
         {children}

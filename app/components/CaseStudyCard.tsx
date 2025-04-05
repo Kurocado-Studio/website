@@ -17,7 +17,7 @@ export interface FrontEndProjectMotionProps {
 
 export const PROJECT_CARD_HEIGHT = 500;
 
-export function FrontEndProjectCard(
+export function CaseStudyCard(
   props: FrontEndProjectMotionProps,
 ): React.ReactNode {
   const { scrollY } = React.useContext(ColorContext);
@@ -58,10 +58,14 @@ export function FrontEndProjectCard(
         )}
         target='_blank'
         rel='noopener noreferrer'
-        onPointerEnter={() => setCursorVariant(CursorVariants.OPEN_IN_NEW_TAB)}
-        onPointerLeave={() => setCursorVariant(CursorVariants.DEFAULT)}
-        onMouseOver={() => setIsHovered(true)}
-        onMouseOut={() => setIsHovered(false)}
+        onMouseOver={() => {
+          setCursorVariant(CursorVariants.OPEN_IN_NEW_TAB);
+          setIsHovered(true);
+        }}
+        onMouseOut={() => {
+          setCursorVariant(CursorVariants.DEFAULT);
+          setIsHovered(false);
+        }}
         style={{
           border: `1px solid ${get(defaultState, ['foreground'])}`,
           background: get(colorContextState, ['background']),

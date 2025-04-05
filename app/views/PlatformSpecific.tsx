@@ -1,48 +1,20 @@
 import React from 'react';
+import { twMerge } from 'tailwind-merge';
 
-import { FadeIn, FadeInDirection } from '~/components/FadeIn';
+import { GitHubRepositoryCard } from '~/components/GitHubRepositoryCard';
 import { HorizontalScroller } from '~/components/HorizontalScroller';
-import { GrayscaleImage } from '~/domain/lib/GrayscaleImage';
+import { frontEndProjects } from '~/domain/projects.frontEnd';
 
 export function PlatformSpecific(): React.ReactNode {
   return (
     <HorizontalScroller>
-      <FadeIn direction={FadeInDirection.UP}>
-        <GrayscaleImage
-          className='aspect-auto h-36 w-auto rounded md:h-auto md:w-96 md:rounded-l'
-          src='https://avatars.githubusercontent.com/u/148841069?s=200&v=4'
+      {frontEndProjects.map((project) => (
+        <GitHubRepositoryCard
+          key={project.url}
+          {...project}
+          className={twMerge('group/project mx-2 md:mx-4')}
         />
-      </FadeIn>
-      <FadeIn direction={FadeInDirection.UP}>
-        <GrayscaleImage
-          className='aspect-auto h-36 w-auto rounded md:h-auto md:w-96 md:rounded-l'
-          src='https://avatars.githubusercontent.com/u/148841069?s=200&v=4'
-        />
-      </FadeIn>
-      <FadeIn direction={FadeInDirection.UP}>
-        <GrayscaleImage
-          className='aspect-auto h-36 w-auto rounded md:h-auto md:w-96 md:rounded-l'
-          src='https://avatars.githubusercontent.com/u/148841069?s=200&v=4'
-        />
-      </FadeIn>
-      <FadeIn direction={FadeInDirection.UP}>
-        <GrayscaleImage
-          className='aspect-auto h-36 w-auto rounded md:h-auto md:w-96 md:rounded-l'
-          src='https://avatars.githubusercontent.com/u/148841069?s=200&v=4'
-        />
-      </FadeIn>
-      <FadeIn direction={FadeInDirection.UP}>
-        <GrayscaleImage
-          className='aspect-auto h-36 w-auto rounded md:h-auto md:w-96 md:rounded-l'
-          src='https://avatars.githubusercontent.com/u/148841069?s=200&v=4'
-        />
-      </FadeIn>
-      <FadeIn direction={FadeInDirection.UP}>
-        <GrayscaleImage
-          className='aspect-auto h-36 w-auto rounded md:h-auto md:w-96 md:rounded-l'
-          src='https://avatars.githubusercontent.com/u/148841069?s=200&v=4'
-        />
-      </FadeIn>
+      ))}
     </HorizontalScroller>
   );
 }

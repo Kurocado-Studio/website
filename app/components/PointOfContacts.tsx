@@ -20,7 +20,7 @@ type SocialMediaCursorVariantMap = {
   };
 };
 
-export const interactiveClassName =
+export const sharedClassName =
   'inline-flex h-16 items-center justify-center bg-[GreenYellow] text-lg fill-current px-3 align-bottom font-display font-semibold text-neutral-900 shadow-sm hover:bg-[Black] hover:text-[GreenYellow]';
 
 export function PointOfContacts({
@@ -61,7 +61,7 @@ export function PointOfContacts({
           <motion.a
             onPointerEnter={() => setCursorVariant(CursorVariants.HIDDEN)}
             onPointerLeave={() => setDefaultVariant()}
-            className={interactiveClassName}
+            className={sharedClassName}
             rel='noreferrer'
             href='./Carlos_Santiago_Resume.pdf'
             target='_blank'
@@ -77,7 +77,7 @@ export function PointOfContacts({
             target='_blank'
             onPointerEnter={() => setCursorVariant(CursorVariants.CONTACT)}
             onPointerLeave={() => setDefaultVariant()}
-            className={interactiveClassName}
+            className={sharedClassName}
           >
             E-mail me
           </motion.a>
@@ -104,7 +104,7 @@ export function PointOfContacts({
                   socialMediaProfile.cursorVariant,
                   'icon',
                 ])}
-                className={clsx(interactiveClassName, 'h-16 w-16 text-sm')}
+                className={clsx(sharedClassName, 'h-16 w-16 text-sm')}
               />
             </motion.a>
           </FadeIn>

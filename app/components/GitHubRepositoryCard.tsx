@@ -8,7 +8,9 @@ import { CursorContext } from '~/context/CursorContext';
 import { CursorVariants } from '~/domain/enums';
 import type { FrontEndProject } from '~/domain/types';
 
-export type GitHubRepositoryProps = FrontEndProject;
+export type GitHubRepositoryProps = FrontEndProject & {
+  className?: string;
+};
 
 export function GitHubRepositoryCard(
   props: GitHubRepositoryProps,

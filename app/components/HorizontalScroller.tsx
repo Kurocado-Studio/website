@@ -39,7 +39,6 @@ export function HorizontalScroller({
     target: triggerRef,
     offset: ['start end', 'end start'],
   });
-
   const [initialX, setInitialX] = useState(0);
 
   useEffect(() => {
@@ -70,15 +69,14 @@ export function HorizontalScroller({
       ref={triggerRef}
       style={{
         overflow: 'hidden',
-        height: `${innerHeight * 12}px`,
+        height: `${innerHeight * (innerHeight < 1024 ? 2.2 : 8.4)}px`,
       }}
     >
       <motion.div
         ref={containerRef}
-        className='sticky top-0 flex w-max'
+        className='sticky top-[5%] flex w-max md:top-[10%]'
         style={{
           position: isInView ? 'fixed' : 'relative',
-          top: '20%',
           x: translateX,
         }}
       >

@@ -19,7 +19,6 @@ export enum CursorVariants {
 
 export enum SocialMediaLinks {
   GITHUB = 'https://github.com/Kurocado-Studio',
-  GITDFDFDFHUB = 'https://github.com/Kurocado-Studio',
   LINKEDIN = 'https://www.linkedin.com/in/carlos-e-santiago',
 }
 

@@ -12,7 +12,7 @@ export function PlatformSpecific(): React.ReactNode {
         <GitHubRepositoryCard
           key={project.url}
           {...project}
-          className={twMerge('group/project mx-2 md:mx-4')}
+          className={twMerge('group/project mx-2 md:mx-4 lg:mx-8')}
         />
       ))}
     </HorizontalScroller>

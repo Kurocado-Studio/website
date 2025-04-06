@@ -25,16 +25,17 @@ export function GitHubRepositoryCard(
       {...(props as MotionProps)}
       href={get(props, ['url'])}
       className={twMerge(
-        props.className,
-        'p-8 md:p-16',
+        'p-8 lg:p-16',
         'flex w-full flex-col justify-between leading-normal',
-        'h-[60vh]',
-        'w-[calc(100vw/3)] min-w-[calc(100vw/1.3)] max-w-[calc(100vw/2)]',
-        'md:w-[calc(100vw/2.5)] md:min-w-[calc(100vw/3)] md:max-w-[calc(100vw/4)]',
+        'h-[90vh] md:h-[80vh]',
+        'w-[calc(100vw)] min-w-[calc(95vw)] max-w-[calc(100vw/2)]',
+        'md:w-[calc(100vw/2)] md:min-w-[calc(100vw/3)] md:max-w-[calc(100vw/0.4)]',
+        'lg:w-[calc(100vw/2.5)] lg:max-w-[calc(100vw/4)]',
         'bg-[DarkSlateGray] text-[DarkOrange]',
-        'hover:bg-[papayawhip] hover:text-[Magenta]',
+        'lg:hover:bg-[papayawhip] lg:hover:text-[Magenta]',
         'flex flex-col content-between overflow-hidden rounded-lg',
         `cursor-pointer shadow transition-all duration-300 ease-in-out`,
+        props.className,
       )}
       target='_blank'
       rel='noopener noreferrer'
@@ -48,10 +49,10 @@ export function GitHubRepositoryCard(
         border: `1px solid ${get(defaultState, ['foreground'])}`,
       }}
     >
-      <h2 className='block font-display text-4xl font-medium tracking-tight [text-wrap:balance] lg:text-7xl'>
+      <h2 className='block pt-4 font-display text-4xl font-medium tracking-tight [text-wrap:balance] lg:text-7xl'>
         {get(props, ['title'], '--')}
       </h2>
-      <p className='text-pretty block font-body text-xl lg:text-4xl'>
+      <p className='text-pretty block pb-4 font-body text-xl lg:text-4xl'>
         {get(props, ['description'], '--')}
       </p>
     </motion.a>

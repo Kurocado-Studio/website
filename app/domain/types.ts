@@ -10,6 +10,7 @@ export interface DribbbleShot {
 
 export interface FrontEndProject {
   title: string;
+  description: string;
   url: string;
 }
 

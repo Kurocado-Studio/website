@@ -28,11 +28,11 @@ export function GitHubRepositoryCard(
       className={twMerge(
         'relative p-8 lg:p-12',
         'flex w-full flex-col justify-between leading-normal',
-        'h-[80vh] lg:max-h-[800px]',
+        'h-[70vh] lg:max-h-[800px]',
         'w-[calc(100vw)] min-w-[calc(95vw)] max-w-[calc(100vw/2)]',
         'md:w-[calc(100vw/2)] md:min-w-[calc(100vw/3)] md:max-w-[calc(100vw/0.4)]',
         'lg:w-[calc(100vw/2.5)] lg:max-w-[calc(100vw/4)]',
-        'bg-[DarkSlateGray] text-[DarkOrange]',
+        'bg-[DarkSlateGray] text-[Coral]',
         'lg:hover:bg-[papayawhip] lg:hover:text-[Magenta]',
         'flex flex-col content-between overflow-hidden rounded-lg',
         `cursor-pointer shadow transition-all duration-300 ease-in-out`,
@@ -53,7 +53,7 @@ export function GitHubRepositoryCard(
       <h2 className='block pt-4 font-display text-4xl font-medium tracking-tight [text-wrap:balance] lg:text-7xl'>
         {get(props, ['title'], '--')}
       </h2>
-      <p className='text-pretty block pb-4 font-body text-xl lg:text-4xl'>
+      <p className='text-pretty block pb-4 font-body text-xl md:font-semibold lg:text-4xl'>
         {get(props, ['description'], '--')}
       </p>
     </motion.a>

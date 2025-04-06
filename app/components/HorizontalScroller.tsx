@@ -6,7 +6,8 @@ import {
   useSpring,
   useTransform,
 } from 'framer-motion';
-import React, { useEffect, useRef, useState } from 'react';
+import { get } from 'lodash-es';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 
 import { ColorContext } from '~/context/ColorContext';
 import { ColorThemes } from '~/context/types';
@@ -21,11 +22,13 @@ export interface HorizontalScrollerProps {
 export function HorizontalScroller({
   children,
 }: HorizontalScrollerProps): React.ReactNode {
+  const { setColorContext } = React.useContext(ColorContext);
+
   const {
     size: { innerHeight },
   } = useWindowSize();
 
-  const { setColorContext } = React.useContext(ColorContext);
+  const [isPointerDevice, setIsPointerDevice] = useState(false);
 
   const triggerRef = useRef<HTMLDivElement | null>(null);
   const containerRef = useRef<HTMLDivElement | null>(null);
@@ -56,31 +59,62 @@ export function HorizontalScroller({
 
   const springConfig = {
     stiffness: 60,
-    damping: 15,
+    damping: 20,
     ease: easeInOut,
   };
 
   const translateX = useSpring(xAxisScrollRange, springConfig);
 
-  return (
-    <section
-      onMouseEnter={() => setColorContext(ColorThemes.DEFAULT)}
-      ref={triggerRef}
-      style={{
-        overflow: 'hidden',
-        height: `${innerHeight * (innerHeight > 1024 ? 2 : 14)}px`,
-      }}
-    >
-      <motion.div
-        ref={containerRef}
-        className='sticky top-[5%] flex w-max md:top-[10%]'
-        style={{
+  const sectionProps = useMemo(() => {
+    if (isPointerDevice) {
+      return {
+        style: {
+          height: `${innerHeight * 14}px`,
+        },
+      };
+    }
+    return {
+      style: {
+        overflow: 'scroll',
+        height: `${innerHeight * 1.1}px`,
+      },
+    };
+  }, [isPointerDevice, innerHeight]);
+
+  const containerProps = useMemo(() => {
+    if (isPointerDevice) {
+      return {
+        className: 'sticky top-[5%] flex w-max md:top-[10%]',
+        style: {
           position: isInView ? 'fixed' : 'relative',
           x: translateX,
-        }}
-      >
+        },
+      };
+    }
+    return {
+      className: 'flex w-max flex-row overflow-x-scroll',
+    };
+  }, [isPointerDevice, translateX, isInView]);
+
+  useEffect(() => {
+    const isPointerFine = get(
+      window.matchMedia('(pointer: fine)'),
+      ['matches'],
+      false,
+    );
+
+    setIsPointerDevice(isPointerFine && window.innerWidth > 1024);
+  }, []);
+
+  return (
+    <motion.section
+      ref={triggerRef}
+      onMouseEnter={() => setColorContext(ColorThemes.DEFAULT)}
+      {...sectionProps}
+    >
+      <motion.div ref={containerRef} {...containerProps}>
         {children}
       </motion.div>
-    </section>
+    </motion.section>
   );
 }

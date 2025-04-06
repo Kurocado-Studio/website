@@ -27,7 +27,7 @@ export const frontEndProjects: Array<FrontEndProject> = [
   },
   {
     title: 'Developer Experience (DX)',
-    url: 'https://github.com/Kurocado-Studio/iam',
+    url: 'https://github.com/Kurocado-Studio/dev-experience',
     description:
       'description description description https://github.com/Kurocado-Studio/design-system',
   },

@@ -13,7 +13,7 @@ import { ColorThemes } from '~/context/types';
 import { useWindowSize } from '~/hooks/useWindowSize';
 
 export interface HorizontalScrollerProps {
-  children: React.ReactNode[] | React.ReactNode;
+  children?: Array<React.ReactNode>;
   itemWidth?: number;
   className?: string;
 }

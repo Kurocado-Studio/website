@@ -57,7 +57,6 @@ export function HorizontalScroller({
   const springConfig = {
     stiffness: 60,
     damping: 15,
-    // restDelta: 0.5,
     ease: easeInOut,
   };
 

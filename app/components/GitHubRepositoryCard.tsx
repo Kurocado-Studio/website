@@ -9,7 +9,7 @@ import { CursorVariants } from '~/domain/enums';
 import type { FrontEndProject } from '~/domain/types';
 
 export type GitHubRepositoryProps = FrontEndProject &
-  React.HTMLProps<HTMLElement>;
+  React.ComponentPropsWithoutRef<'div'>;
 
 export function GitHubRepositoryCard(
   props: GitHubRepositoryProps,

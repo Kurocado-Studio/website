@@ -30,6 +30,8 @@ jobs:
     uses: kurocado-studio/dev-ops/.github/workflows/workflow.document.yml@main
     secrets:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    with:
+      instance_id: dcs
 
   deploy:
     needs: test

@@ -25,9 +25,9 @@ export function GitHubRepositoryCard(
       {...(props as MotionProps)}
       href={get(props, ['url'])}
       className={twMerge(
-        'p-8 lg:p-16',
+        'relative p-8 lg:p-12',
         'flex w-full flex-col justify-between leading-normal',
-        'h-[90vh] md:h-[80vh]',
+        'h-[80vh] lg:max-h-[800px]',
         'w-[calc(100vw)] min-w-[calc(95vw)] max-w-[calc(100vw/2)]',
         'md:w-[calc(100vw/2)] md:min-w-[calc(100vw/3)] md:max-w-[calc(100vw/0.4)]',
         'lg:w-[calc(100vw/2.5)] lg:max-w-[calc(100vw/4)]',

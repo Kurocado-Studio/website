@@ -51,13 +51,13 @@ export function HorizontalScroller({
   const xAxisScrollRange = useTransform(
     scrollYProgress,
     [0, 1],
-    [-(initialX * 8), initialX * 8],
+    [-(initialX * 4), initialX * 5],
   );
 
   const springConfig = {
     stiffness: 60,
     damping: 15,
-    restDelta: 0.5,
+    // restDelta: 0.5,
     ease: easeInOut,
   };
 
@@ -69,7 +69,7 @@ export function HorizontalScroller({
       ref={triggerRef}
       style={{
         overflow: 'hidden',
-        height: `${innerHeight * (innerHeight < 1024 ? 2.2 : 8.4)}px`,
+        height: `${innerHeight * (innerHeight > 1024 ? 2 : 14)}px`,
       }}
     >
       <motion.div

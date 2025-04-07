@@ -25,7 +25,7 @@ export function HorizontalScroller({
   const { setColorContext } = React.useContext(ColorContext);
 
   const {
-    size: { innerHeight },
+    size: { innerHeight, innerWidth },
   } = useWindowSize();
 
   const [isPointerDevice, setIsPointerDevice] = useState(false);
@@ -54,7 +54,7 @@ export function HorizontalScroller({
   const xAxisScrollRange = useTransform(
     scrollYProgress,
     [0, 1],
-    [-(initialX * 4), initialX * 5],
+    [-(initialX * 3), initialX * 5],
   );
 
   const springConfig = {
@@ -69,7 +69,7 @@ export function HorizontalScroller({
     if (isPointerDevice) {
       return {
         style: {
-          height: `${innerHeight * 14}px`,
+          height: `${innerHeight * 8}px`,
         },
       };
     }
@@ -103,8 +103,8 @@ export function HorizontalScroller({
       false,
     );
 
-    setIsPointerDevice(isPointerFine && window.innerWidth > 1024);
-  }, []);
+    setIsPointerDevice(isPointerFine && innerWidth > 1024);
+  }, [innerWidth]);
 
   return (
     <motion.section

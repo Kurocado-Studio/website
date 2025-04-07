@@ -5,12 +5,13 @@ import React from 'react';
 
 import { Container } from '~/components/Container';
 import { FadeIn, FadeInDirection } from '~/components/FadeIn';
-import { uiProjectImages } from '~/config/projects';
-import type { DribbbleShot } from '~/config/types';
 import { ColorContext } from '~/context/ColorContext';
-import { CursorContext, CursorVariants } from '~/context/CursorContext';
+import { CursorContext } from '~/context/CursorContext';
 import { ColorThemes } from '~/context/types';
-import { GrayscaleImage } from '~/lib/GrayscaleImage';
+import { uiProjectImages } from '~/domain/dribbble.design';
+import { CursorVariants } from '~/domain/enums';
+import { GrayscaleImage } from '~/domain/lib/GrayscaleImage';
+import type { DribbbleShot } from '~/domain/types';
 
 interface DesignPreviewProps {
   product: {
@@ -83,7 +84,7 @@ export function DesignProjects(): React.ReactNode {
           <FadeIn
             as='p'
             direction={FadeInDirection.DOWN}
-            className='block max-w-prose font-body text-xl [text-wrap:balance] md:mt-8 md:text-3xl'
+            className='block max-w-prose text-xl font-bold [text-wrap:balance] md:mt-8 md:text-5xl'
           >
             With a background in Design and Sculpture, I bring a unique
             perspective to front-end development—blending aesthetics with

@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import React from 'react';
 
-import type { HTMLIntrinsicElements, PropsWithoutRef } from '~/lib/types';
+import type { HTMLIntrinsicElements, PropsWithoutRef } from '~/domain/types';
 
 interface BorderProps<T extends HTMLIntrinsicElements> {
   as?: T;

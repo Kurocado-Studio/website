@@ -2,7 +2,7 @@ import get from 'lodash-es/get';
 import { type ReactNode } from 'react';
 import type React from 'react';
 
-import type { PropsWithoutRef } from '~/lib/types';
+import type { PropsWithoutRef } from '~/domain/types';
 
 enum IconVariant {
   REGULAR = 'REGULAR',

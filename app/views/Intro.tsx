@@ -4,7 +4,7 @@ import { Container } from '~/components/Container';
 import { FadeIn, FadeInDirection, FadeInStagger } from '~/components/FadeIn';
 import { ColorContext } from '~/context/ColorContext';
 import { ColorThemes } from '~/context/types';
-import { HorizontalScrollText } from '~/lib/HorizontalScrollText';
+import { HorizontalScrollText } from '~/domain/lib/HorizontalScrollText';
 
 export function Intro(): React.ReactNode {
   const { setColorContext } = React.useContext(ColorContext);

@@ -1,12 +1,118 @@
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import get from 'lodash-es/get';
-import React, { useContext } from 'react';
+import React, { type PropsWithChildren, useCallback, useContext } from 'react';
 
 import { FadeIn, FadeInDirection, FadeInStagger } from '~/components/FadeIn';
-import { ContactPoints, SocialMediaLinks } from '~/config/enums';
-import { CursorContext, CursorVariants } from '~/context/CursorContext';
-import type { PropsWithoutRef } from '~/lib/types';
+import { CursorContext } from '~/context/CursorContext';
+import { ContactPoints, CursorVariants } from '~/domain/enums';
+import { socialMediaProfiles } from '~/domain/socialMediaProfiles';
+import type { PropsWithoutRef } from '~/domain/types';
+
+type SocialMediaCursorVariantMap = {
+  [CursorVariants.GITHUB]: {
+    cursor: () => void;
+    icon: React.FC;
+  };
+  [CursorVariants.LINKEDIN]: {
+    cursor: () => void;
+    icon: React.FC;
+  };
+};
+
+export const sharedClassName =
+  'inline-flex h-16 items-center justify-center bg-[GreenYellow] text-lg fill-current px-3 align-bottom font-display font-semibold text-neutral-900 shadow-sm hover:bg-[Black] hover:text-[GreenYellow]';
+
+export function PointOfContacts({
+  className,
+}: {
+  className?: string;
+  invert?: boolean;
+}): React.ReactNode {
+  const { setCursorVariant } = useContext(CursorContext);
+
+  const setDefaultVariant = (): void => {
+    setCursorVariant(CursorVariants.DEFAULT);
+  };
+
+  const setGithubVariant = (): void => {
+    setCursorVariant(CursorVariants.GITHUB);
+  };
+
+  const setLinkedInVariant = (): void => {
+    setCursorVariant(CursorVariants.LINKEDIN);
+  };
+
+  const socialMediaCursorVariantMap: SocialMediaCursorVariantMap = {
+    [CursorVariants.GITHUB]: {
+      cursor: useCallback(setGithubVariant, [setCursorVariant]),
+      icon: GitHubIcon,
+    },
+    [CursorVariants.LINKEDIN]: {
+      cursor: useCallback(setLinkedInVariant, [setCursorVariant]),
+      icon: LinkedInIcon,
+    },
+  };
+
+  return (
+    <FadeInStagger>
+      <ul className={clsx('', className)}>
+        <FadeIn direction={FadeInDirection.UP} as='li'>
+          <motion.a
+            onPointerEnter={() => setCursorVariant(CursorVariants.HIDDEN)}
+            onPointerLeave={() => setDefaultVariant()}
+            className={sharedClassName}
+            rel='noreferrer'
+            href='./Carlos_Santiago_Resume.pdf'
+            target='_blank'
+            download='Carlos_Santiago_Resume.pdf'
+          >
+            Download my resume
+          </motion.a>
+        </FadeIn>
+        <FadeIn direction={FadeInDirection.UP} as='li'>
+          <motion.a
+            rel='noreferrer'
+            href={ContactPoints.EMAIL}
+            target='_blank'
+            onPointerEnter={() => setCursorVariant(CursorVariants.CONTACT)}
+            onPointerLeave={() => setDefaultVariant()}
+            className={sharedClassName}
+          >
+            E-mail me
+          </motion.a>
+        </FadeIn>
+        {socialMediaProfiles.map((socialMediaProfile, idx) => (
+          <FadeIn
+            direction={FadeInDirection.UP}
+            as='li'
+            key={`${socialMediaProfile.title}_${String(idx)}`}
+          >
+            <motion.a
+              rel='noreferrer'
+              href={socialMediaProfile.href}
+              aria-label={socialMediaProfile.title}
+              target='_blank'
+              onPointerEnter={get(socialMediaCursorVariantMap, [
+                socialMediaProfile.cursorVariant,
+                'cursor',
+              ])}
+              onPointerLeave={setDefaultVariant}
+            >
+              <RenderSocialMediaCursorVariant
+                Component={get(socialMediaCursorVariantMap, [
+                  socialMediaProfile.cursorVariant,
+                  'icon',
+                ])}
+                className={clsx(sharedClassName, 'h-16 w-16 text-sm')}
+              />
+            </motion.a>
+          </FadeIn>
+        ))}
+      </ul>
+    </FadeInStagger>
+  );
+}
 
 export function GitHubIcon(props: PropsWithoutRef<'svg'>): React.ReactNode {
   return (
@@ -46,95 +152,13 @@ export function DribbbleIcon(props: PropsWithoutRef<'svg'>): React.ReactNode {
   );
 }
 
-export function PointOfContacts({
-  className,
+function RenderSocialMediaCursorVariant<
+  T extends PropsWithChildren<React.HTMLAttributes<HTMLElement>>,
+>({
+  Component,
+  ...rest
 }: {
-  className?: string;
-  invert?: boolean;
-}): React.ReactNode {
-  const { setCursorVariant } = useContext(CursorContext);
-
-  const setDefaultVariant = (): void => {
-    setCursorVariant(CursorVariants.DEFAULT);
-  };
-
-  const setGithubVariant = (): void => {
-    setCursorVariant(CursorVariants.GITHUB);
-  };
-
-  const setLinkedInVariant = (): void => {
-    setCursorVariant(CursorVariants.LINKEDIN);
-  };
-
-  const socialMediaProfiles = [
-    {
-      title: 'LinkedIn',
-      href: SocialMediaLinks.LINKEDIN,
-      icon: LinkedInIcon,
-      onPointerEnter: setLinkedInVariant,
-      onPointerLeave: setDefaultVariant,
-    },
-    {
-      title: 'GitHub',
-      href: SocialMediaLinks.GITHUB,
-      icon: GitHubIcon,
-      onPointerEnter: setGithubVariant,
-      onPointerLeave: setDefaultVariant,
-    },
-  ];
-
-  const sharedClassName =
-    'inline-flex h-16 items-center justify-center bg-[GreenYellow] text-lg fill-current px-3 align-bottom font-display font-semibold text-neutral-900 shadow-sm hover:bg-[Black] hover:text-[GreenYellow]';
-
-  return (
-    <FadeInStagger>
-      <ul className={clsx('', className)}>
-        <FadeIn direction={FadeInDirection.UP} as='li'>
-          <motion.a
-            onPointerEnter={() => setCursorVariant(CursorVariants.HIDDEN)}
-            onPointerLeave={() => setDefaultVariant()}
-            className={sharedClassName}
-            rel='noreferrer'
-            href='./Carlos_Santiago_Resume.pdf'
-            target='_blank'
-            download='Carlos_Santiago_Resume.pdf'
-          >
-            Download my resume
-          </motion.a>
-        </FadeIn>
-        <FadeIn direction={FadeInDirection.UP} as='li'>
-          <motion.a
-            rel='noreferrer'
-            href={ContactPoints.EMAIL}
-            target='_blank'
-            onPointerEnter={() => setCursorVariant(CursorVariants.CONTACT)}
-            onPointerLeave={() => setDefaultVariant()}
-            className={sharedClassName}
-          >
-            E-mail me
-          </motion.a>
-        </FadeIn>
-        {socialMediaProfiles.map((socialMediaProfile, idx) => (
-          <FadeIn
-            direction={FadeInDirection.UP}
-            as='li'
-            key={`${socialMediaProfile.title}_${String(idx)}`}
-          >
-            <motion.a
-              rel='noreferrer'
-              href={get(socialMediaProfile, ['href'])}
-              aria-label={get(socialMediaProfile, ['title'])}
-              target='_blank'
-              onPointerEnter={get(socialMediaProfile, ['onPointerEnter'])}
-              onPointerLeave={get(socialMediaProfile, ['onPointerLeave'])}
-            >
-              <socialMediaProfile.icon
-                className={clsx(sharedClassName, 'h-16 w-16 text-sm')}
-              />
-            </motion.a>
-          </FadeIn>
-        ))}
-      </ul>
-    </FadeInStagger>
-  );
+  Component?: React.FC<{ className?: string }>;
+} & T): React.ReactNode {
+  return Component ? <Component {...rest} /> : null;
 }

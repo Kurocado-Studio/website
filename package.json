@@ -1,5 +1,5 @@
 {
-  "name": "@kurocado-studio/styleguide-remix-template",
+  "name": "@kurocado-studio/website",
   "version": "0.0.0-semantically-released",
   "private": true,
   "type": "module",
@@ -31,6 +31,7 @@
   "dependencies": {
     "@heroicons/react": "^2.2.0",
     "@kurocado-studio/qa": "^1.1.3",
+    "@kurocado-studio/ui": "1.2.0-alpha.3",
     "@motionone/utils": "10.18.0",
     "@remix-run/node": "2.16.0",
     "@remix-run/react": "2.16.0",
@@ -58,7 +59,7 @@
     "husky": "^9.1.7",
     "lint-staged": "15.4.3",
     "postcss": "8.4.35",
-    "prettier": "3.3.3",
+    "prettier": "3.5.3",
     "prettier-plugin-packagejson": "^2.5.8",
     "prettier-plugin-tailwindcss": "^0.6.11",
     "semantic-release": "23.1.1",

@@ -12,7 +12,7 @@ import {
 } from 'framer-motion';
 import React, { useRef } from 'react';
 
-import type { FramerCursorAttributes } from '~/types';
+import type { FramerCursorAttributes } from '~/domain/types';
 
 interface HorizontalScrollTextProps extends FramerCursorAttributes {
   children: string;
@@ -47,7 +47,7 @@ export function HorizontalScrollText({
   const motionValuePayload = useTransform(
     baseX,
 
-    (baseY) => `${String(wrap(-20, -45, baseY))}%`,
+    (baseY: number) => `${String(wrap(-20, -45, baseY))}%`,
   );
 
   const directionFactor = useRef<number>(1);

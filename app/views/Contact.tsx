@@ -3,11 +3,11 @@ import React from 'react';
 
 import { Container } from '~/components/Container';
 import { PointOfContacts } from '~/components/PointOfContacts';
-import { ContactPoints } from '~/config/enums';
 import { ColorContext } from '~/context/ColorContext';
-import { CursorContext, CursorVariants } from '~/context/CursorContext';
+import { CursorContext } from '~/context/CursorContext';
 import { ColorThemes } from '~/context/types';
-import { HorizontalScrollText } from '~/lib/HorizontalScrollText';
+import { ContactPoints, CursorVariants } from '~/domain/enums';
+import { HorizontalScrollText } from '~/domain/lib/HorizontalScrollText';
 
 export function Contact(): React.ReactNode {
   const { setColorContext } = React.useContext(ColorContext);
@@ -39,7 +39,7 @@ export function Contact(): React.ReactNode {
           )}
         >
           Whether you need a new website, custom illustrations, or just want to
-          chat about your ideas, I am here help however I can.
+          chat about your ideas, I am here to help however I can.
         </p>
         <PointOfContacts />
       </Container>

@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import * as React from 'react';
 
-import type { HTMLIntrinsicElements, PropsWithoutRef } from '~/lib/types';
+import type { HTMLIntrinsicElements, PropsWithoutRef } from '~/domain/types';
 
 interface ContainerProps<T extends HTMLIntrinsicElements = 'div'> {
   as?: T;
@@ -27,7 +27,7 @@ export function Container<T extends HTMLIntrinsicElements = 'div'>({
     <Component
       className={clsx(
         'relative mx-auto w-full py-24 md:py-36',
-        withMaxWidth && 'max-w-screen-2xl px-8 lg:px-12',
+        withMaxWidth && 'max-w-screen-2xl px-4 lg:px-12',
         className,
       )}
       {...restOfProps}

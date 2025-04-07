@@ -4,13 +4,13 @@ import { get } from 'lodash-es';
 import type { MutableRefObject } from 'react';
 import React, { createContext, useRef } from 'react';
 
+import { ColorThemes } from '~/context/types';
 import {
   colorThemeMap,
   hoverColorContextKeyMap,
   interactiveColorContextKeyMap,
-} from '~/config/colors';
-import type { InteractiveColorTheme } from '~/config/colors';
-import { ColorThemes } from '~/context/types';
+} from '~/domain/colors';
+import type { InteractiveColorTheme } from '~/domain/colors';
 
 type ColorContext = {
   targetRef: MutableRefObject<HTMLBodyElement | null>;
@@ -90,7 +90,7 @@ export function BodyHTMLTagColorProvider({
           color: get(colorTheme, ['defaultState', 'foreground']),
           transition: 'background-color 0.9s, color 1.2s',
         }}
-        className='relative selection:bg-lime-200 selection:text-[#f52891cc]'
+        className='relative selection:bg-lime-200 selection:text-[magenta]'
         data-testid='root-body-test-id'
       >
         {children}

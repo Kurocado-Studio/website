@@ -25,7 +25,7 @@ export function List({
 }): React.ReactNode {
   return (
     <FadeInStagger>
-      <ul className={clsx('text-base text-neutral-600', className)}>
+      <ul className={clsx('text-xl text-neutral-600', className)}>
         {children}
       </ul>
     </FadeInStagger>

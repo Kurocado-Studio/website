@@ -5,30 +5,30 @@ export const frontEndProjects: Array<FrontEndProject> = [
     title: 'Design System',
     url: 'https://github.com/Kurocado-Studio/design-system',
     description:
-      'description description description https://github.com/Kurocado-Studio/design-system',
+      'A library of reusable UI components and guidelines to ensure visual consistency across all projects.',
   },
   {
     title: 'Engineering Styleguide',
     url: 'https://github.com/Kurocado-Studio/styleguide',
     description:
-      'A curated collection of coding standards and best practices designed to streamline development.',
+      'A centralized resource defining linting rules, formatting standards, and commit conventions.',
   },
   {
     title: 'GitHub Actions',
     url: 'https://github.com/Kurocado-Studio/dev-ops',
     description:
-      'description description description https://github.com/Kurocado-Studio/design-system',
+      'Unified GitHub Actions to automate workflows such as CI/CD, and routine maintenance tasks.',
   },
   {
     title: 'Identity and Access Management',
     url: 'https://github.com/Kurocado-Studio/iam',
     description:
-      'description description description https://github.com/Kurocado-Studio/design-system',
+      'Centralized authentication managed through Auth0 by Okta, ensuring secure access management.',
   },
   {
     title: 'Developer Experience (DX)',
     url: 'https://github.com/Kurocado-Studio/dev-experience',
     description:
-      'description description description https://github.com/Kurocado-Studio/design-system',
+      'Enhanced developer productivity through utilities like axios wrappers & reusable React hooks.',
   },
 ];

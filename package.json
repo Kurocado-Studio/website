@@ -31,7 +31,7 @@
   "dependencies": {
     "@heroicons/react": "^2.2.0",
     "@kurocado-studio/qa": "^1.1.3",
-    "@kurocado-studio/ui": "1.2.0-alpha.3",
+    "@kurocado-studio/ui": "1.2.0",
     "@motionone/utils": "10.18.0",
     "@remix-run/node": "2.16.4",
     "@remix-run/react": "2.16.0",

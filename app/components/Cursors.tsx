@@ -12,20 +12,15 @@ export type CustomCursor = Variant & { isRounded?: boolean };
 
 export function ContactUsVariant(): React.ReactNode {
   return (
-    <div className='grid grid-cols-3 grid-rows-3 gap-1 p-2'>
-      <div className='col-span-2 row-span-2'>
-        <FadeIn>
-          <AtSymbolIcon className='text-8xl' />
-        </FadeIn>
-      </div>
-      <div className='col-span-3 row-start-3'>
-        <FadeIn direction={FadeInDirection.DOWN}>
-          <p className='pl-1 text-base font-light [text-wrap:balance]'>
-            Send me an email
-          </p>
-        </FadeIn>
-      </div>
-    </div>
+    <FadeIn
+      direction={FadeInDirection.DOWN}
+      className='flex flex-col items-center justify-center'
+    >
+      <AtSymbolIcon className='inline-flex w-16 pb-1' />
+      <p className='pl-1 text-base font-light [text-wrap:balance]'>
+        Send e-mail
+      </p>
+    </FadeIn>
   );
 }
 
@@ -41,7 +36,7 @@ export function OpenInNewTabCursorVariant(
       direction={FadeInDirection.DOWN}
       className='flex flex-col items-center justify-center'
     >
-      <ArrowTopRightOnSquareIcon className='inline-flex pb-1 text-8xl' />
+      <ArrowTopRightOnSquareIcon className='inline-flex w-16 pb-1 text-8xl' />
       <p className='pl-1 text-base font-light [text-wrap:balance]'>
         {get(props, ['title'])}{' '}
       </p>

@@ -83,8 +83,8 @@ export function DesignProjects(): React.ReactNode {
         <div className='relative z-10'>
           <FadeIn
             as='p'
-            direction={FadeInDirection.DOWN}
-            className='block max-w-prose text-xl font-bold [text-wrap:balance] md:mt-8 md:text-5xl'
+            direction={FadeInDirection.UP}
+            className='block max-w-prose text-xl font-semibold [text-wrap:balance] md:mt-8 md:text-5xl'
           >
             With a background in Design and Sculpture, I bring a unique
             perspective to front-end development—blending aesthetics with

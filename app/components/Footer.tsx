@@ -15,8 +15,10 @@ export function Footer(): React.ReactNode {
       className='md:8 flex flex-wrap items-end justify-between gap-x-6 gap-y-4 pt-12 lg:py-12'
       style={{ borderTop: `1px solid ${foreground}` }}
     >
-      <p className='text-sm'>Made with love & adobo on Github</p>
-      <p className='text-sm'>© Kurocado Studio - {new Date().getFullYear()}</p>
+      <p className='text-sm font-bold'>Made with love & adobo on Github</p>
+      <p className='text-sm font-bold'>
+        © Kurocado Studio - {new Date().getFullYear()}
+      </p>
     </Container>
   );
 }

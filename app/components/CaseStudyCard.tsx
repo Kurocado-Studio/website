@@ -1,4 +1,6 @@
-import { motion, useTransform } from 'framer-motion';
+/* eslint import/no-cycle: 0 */
+import { FadeIn, FadeInDirection } from '@kurocado-studio/ui';
+import { useTransform } from 'framer-motion';
 import { get } from 'lodash-es';
 import * as React from 'react';
 import { twMerge } from 'tailwind-merge';
@@ -40,7 +42,8 @@ export function CaseStudyCard(
   const colorContextState = isHovered ? hoverState : defaultState;
 
   return (
-    <motion.article
+    <FadeIn
+      direction={FadeInDirection.DOWN}
       className='sticky top-0 m-auto max-w-screen-2xl py-20'
       {...(isHydrated && {
         style: {
@@ -76,11 +79,11 @@ export function CaseStudyCard(
           <h2 className='block font-display text-4xl font-medium tracking-tight [text-wrap:balance] md:mt-8 lg:text-7xl'>
             {get(props, ['frontEndProject', 'title'], '--')}
           </h2>
-          <p className='text-pretty mb-8 mt-12 block font-body text-xl lg:mt-36 lg:text-4xl'>
+          <p className='text-pretty mb-8 mt-12 block text-xl font-semibold [text-wrap:balance] lg:mt-36 lg:text-4xl'>
             {get(props, ['frontEndProject', 'description'], '--')}
           </p>
         </div>
       </a>
-    </motion.article>
+    </FadeIn>
   );
 }

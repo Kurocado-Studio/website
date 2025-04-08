@@ -10,6 +10,7 @@ import {
   ContactUsVariant,
   OpenInNewTabCursorVariant,
 } from '~/components/Cursors';
+import { FadeIn } from '~/components/FadeIn';
 import { CursorVariants } from '~/domain/enums';
 import type { GrayscaleImageProps } from '~/domain/lib/GrayscaleImage';
 import { useWindowSize } from '~/hooks/useWindowSize';
@@ -93,8 +94,8 @@ export function CursorContextProvider({
 
   const commonInteractiveCursor: CustomCursor = {
     alignItems: 'center',
-    backgroundColor: '#000',
-    color: '#ADFF2F', //GreenYellow,
+    backgroundColor: '#2F4F4F',
+    color: '#00FF00',
     display: 'flex',
     height: 164,
     justifyContent: 'center',
@@ -228,7 +229,7 @@ export function CursorContextProvider({
           setCursorVariant(CursorVariants.DRIBBBLE);
         },
         [CursorVariants.GITHUB]: () => {
-          setCursorText(<OpenInNewTabCursorVariant title='Github' />);
+          setCursorText(<OpenInNewTabCursorVariant title='GitHub' />);
           setCursorVariant(CursorVariants.GITHUB);
         },
         [CursorVariants.OPEN_IN_NEW_TAB]: () => {
@@ -306,6 +307,7 @@ export function CursorContextProvider({
     <CursorContext.Provider value={providerValue}>
       {innerWidth > 1024 && (
         <motion.span
+          initial="hidden"
           variants={cursorVariantMap}
           animate={cursorVariant}
           transition={spring}
@@ -316,7 +318,7 @@ export function CursorContextProvider({
               : 'rounded-sm',
           )}
         >
-          {cursorText}
+          <FadeIn>{cursorText}</FadeIn>
         </motion.span>
       )}
       {children}

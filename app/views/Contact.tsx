@@ -35,7 +35,7 @@ export function Contact(): React.ReactNode {
       <Container>
         <p
           className={clsx(
-            'mb-24 block max-w-7xl font-body text-5xl font-medium tracking-tight [text-wrap:balance]',
+            'mb-24 block max-w-7xl text-5xl font-medium font-semibold tracking-tight [text-wrap:balance]',
           )}
         >
           Whether you need a new website, custom illustrations, or just want to

@@ -53,7 +53,7 @@ export function GitHubRepositoryCard(
       <h2 className='block pt-4 font-display text-4xl font-medium tracking-tight [text-wrap:balance] lg:text-7xl'>
         {get(props, ['title'], '--')}
       </h2>
-      <p className='text-pretty block pb-4 font-body text-xl md:font-semibold lg:text-4xl'>
+      <p className='text-pretty block pb-4 text-xl font-semibold lg:text-4xl'>
         {get(props, ['description'], '--')}
       </p>
     </motion.a>

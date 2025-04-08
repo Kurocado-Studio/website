@@ -73,7 +73,7 @@ export const colorThemeMap: ColorThemeContextMap = {
   },
   [ColorThemes.MAGENTA]: {
     background: get(colors, [TertiaryColors.MAGENTA]),
-    foreground: get(colors, [BaseColors.WHITE]),
+    foreground: get(colors, [PrimaryColors.YELLOW]),
   },
 };
 

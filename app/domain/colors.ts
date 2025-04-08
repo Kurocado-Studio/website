@@ -18,6 +18,7 @@ export type ColorThemeMap = {
 };
 
 export type InteractiveColorTheme = {
+  colorThemeName: ColorThemes;
   defaultState: ColorContextState;
   interactiveState: ColorContextState;
   hoverState: ColorContextState;

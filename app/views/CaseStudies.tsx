@@ -2,9 +2,9 @@ import { get } from 'lodash-es';
 import React from 'react';
 
 import { CaseStudyCard, PROJECT_CARD_HEIGHT } from '~/components/CaseStudyCard';
+import { ColorContextChangerContainer } from '~/components/ColorContextChangerContainer';
 import { Container } from '~/components/Container';
 import { FadeIn, FadeInDirection } from '~/components/FadeIn';
-import { ColorContext } from '~/context/ColorContext';
 import { ColorThemes } from '~/context/types';
 import { caseStudies } from '~/domain/projects.caseStudies';
 import { frontEndProjects } from '~/domain/projects.frontEnd';
@@ -17,8 +17,6 @@ export type AnimationProps = Array<{
 
 export function CaseStudies(): React.ReactNode {
   const LAYOUT_PROJECT_CARD_HEIGHT = PROJECT_CARD_HEIGHT * 10;
-
-  const { setColorContext } = React.useContext(ColorContext);
 
   const {
     size: { innerHeight },
@@ -41,27 +39,25 @@ export function CaseStudies(): React.ReactNode {
   }));
 
   return (
-    <Container
-      as='section'
-      className='relative z-10 w-full'
-      onPointerEnter={() => setColorContext(ColorThemes.BLUE)}
-    >
-      <FadeIn
-        as='h2'
-        direction={FadeInDirection.UP}
-        className='mb-12 block font-display text-4xl font-medium tracking-tight [text-wrap:balance] lg:text-7xl'
-      >
-        Case Studies
-      </FadeIn>
-      {caseStudies.map((caseStudy, index) => (
-        <CaseStudyCard
-          frontEndProject={caseStudy}
-          key={`${get(caseStudy, ['title'], 'unknown')}_${index.toString()}`}
-          opacity={get(animations, [index, 'opacity'])}
-          scale={get(animations, [index, 'scale'])}
-          shouldNotScale={index === get(frontEndProjects, ['length'], 1) - 1}
-        />
-      ))}
+    <Container as='section' className='relative z-10 w-full'>
+      <ColorContextChangerContainer colorTheme={ColorThemes.BLUE}>
+        <FadeIn
+          as='h2'
+          direction={FadeInDirection.UP}
+          className='mb-12 block font-display text-4xl font-medium tracking-tight [text-wrap:balance] lg:text-7xl'
+        >
+          Case Studies
+        </FadeIn>
+        {caseStudies.map((caseStudy, index) => (
+          <CaseStudyCard
+            frontEndProject={caseStudy}
+            key={`${get(caseStudy, ['title'], 'unknown')}_${index.toString()}`}
+            opacity={get(animations, [index, 'opacity'])}
+            scale={get(animations, [index, 'scale'])}
+            shouldNotScale={index === get(frontEndProjects, ['length'], 1) - 1}
+          />
+        ))}
+      </ColorContextChangerContainer>
     </Container>
   );
 }

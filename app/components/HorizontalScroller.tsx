@@ -9,7 +9,7 @@ import {
 import { get } from 'lodash-es';
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 
-import { ColorContext } from '~/context/ColorContext';
+import { ColorContextChangerContainer } from '~/components/ColorContextChangerContainer';
 import { ColorThemes } from '~/context/types';
 import { useWindowSize } from '~/hooks/useWindowSize';
 
@@ -22,8 +22,6 @@ export interface HorizontalScrollerProps {
 export function HorizontalScroller({
   children,
 }: HorizontalScrollerProps): React.ReactNode {
-  const { setColorContext } = React.useContext(ColorContext);
-
   const {
     size: { innerHeight, innerWidth },
   } = useWindowSize();
@@ -107,14 +105,12 @@ export function HorizontalScroller({
   }, [innerWidth]);
 
   return (
-    <motion.section
-      ref={triggerRef}
-      onMouseEnter={() => setColorContext(ColorThemes.DEFAULT)}
-      {...sectionProps}
-    >
-      <motion.div ref={containerRef} {...containerProps}>
-        {children}
-      </motion.div>
-    </motion.section>
+    <ColorContextChangerContainer colorTheme={ColorThemes.DEFAULT}>
+      <motion.section ref={triggerRef} {...sectionProps}>
+        <motion.div ref={containerRef} {...containerProps}>
+          {children}
+        </motion.div>
+      </motion.section>
+    </ColorContextChangerContainer>
   );
 }

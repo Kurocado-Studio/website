@@ -1,6 +1,6 @@
-import { motion, useInView } from 'framer-motion';
-import { debounce, get } from 'lodash-es';
+import { motion } from 'framer-motion';
 import * as React from 'react';
+import { useCallback } from 'react';
 
 import { ColorContext } from '~/context/ColorContext';
 import type { ColorThemes } from '~/context/types';
@@ -21,41 +21,16 @@ export function ColorContextChangerContainer({
 }: ColorChangeContainerProps): React.ReactNode {
   const ref = React.useRef(null);
 
-  const { setColorContext, ...restColorContext } =
-    React.useContext(ColorContext);
-
-  const isInView = useInView(ref, {
-    once: false,
-    margin: '-500px',
-  });
-
-  const debouncedColorContextHandler = debounce(
-    (debounceColorContext: ColorThemes) => {
-      setColorContext(debounceColorContext);
-    },
-    100,
-  );
-
-  const currentBackgroundColorContextKey = get(restColorContext, [
-    'colorContext',
-    'defaultState',
-    'background',
-  ]);
-
-  React.useEffect(() => {
-    if (isInView && currentBackgroundColorContextKey !== colorTheme) {
-      debouncedColorContextHandler(colorTheme);
-    }
-  }, [
-    isInView,
-    colorTheme,
-    debouncedColorContextHandler,
-    currentBackgroundColorContextKey,
-  ]);
+  const { setColorContext } = React.useContext(ColorContext);
 
   const CurrentTag: HTMLIntrinsicElements = as || 'div';
   // @ts-expect-error Element mismatch between motion
   const ColorContextChanger = motion[CurrentTag];
+
+  const handleColorContext = useCallback(
+    () => setColorContext(colorTheme),
+    [colorTheme, setColorContext],
+  );
 
   return (
     <ColorContextChanger
@@ -63,6 +38,9 @@ export function ColorContextChangerContainer({
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       className={className}
+      onPointerEnter={handleColorContext}
+      onTouchStart={handleColorContext}
+      onDragStart={handleColorContext}
     >
       {children}
     </ColorContextChanger>

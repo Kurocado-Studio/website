@@ -20,6 +20,7 @@ type ColorContext = {
 };
 
 const initialInteractiveColorTheme: InteractiveColorTheme = {
+  colorThemeName: ColorThemes.DEFAULT,
   defaultState: get(colorThemeMap, [ColorThemes.DEFAULT]),
   hoverState: get(colorThemeMap, [ColorThemes.BLUE]),
   interactiveState: get(colorThemeMap, [ColorThemes.ORANGE]),
@@ -64,6 +65,7 @@ export function BodyHTMLTagColorProvider({
     colorContext: colorTheme,
     targetRef: colorContextTargetRef,
     setColorContext: (selectedColorContext: ColorThemes): void => {
+      const colorTheme = selectedColorContext;
       const hoverColorContextKey = get(hoverColorContextKeyMap, [
         selectedColorContext,
       ]);
@@ -76,7 +78,12 @@ export function BodyHTMLTagColorProvider({
       const hoverState = get(colorThemeMap, [hoverColorContextKey]);
       const interactiveState = get(colorThemeMap, [interactiveColorContextKey]);
 
-      setColorTheme({ defaultState, interactiveState, hoverState });
+      setColorTheme({
+        colorThemeName: colorTheme,
+        defaultState,
+        interactiveState,
+        hoverState,
+      });
     },
     scrollY,
   };

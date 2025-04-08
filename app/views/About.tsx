@@ -1,23 +1,21 @@
 import clsx from 'clsx';
 import React from 'react';
 
+import { ColorContextChangerContainer } from '~/components/ColorContextChangerContainer';
 import { Container } from '~/components/Container';
 import { PointOfContacts } from '~/components/PointOfContacts';
-import { ColorContext } from '~/context/ColorContext';
 import { ColorThemes } from '~/context/types';
 
 export function About(): React.ReactNode {
   const sharedTypographyClassName =
-    'mb-12 font-body block text-xl [text-wrap:balance] md:text-2xl';
-
-  const { setColorContext } = React.useContext(ColorContext);
+    'mb-12 font-semibold block text-xl [text-wrap:balance] md:text-2xl';
 
   return (
-    <Container
-      as='section'
-      onPointerEnter={() => setColorContext(ColorThemes.RED)}
-    >
-      <div className='grid grid-cols-12 gap-4'>
+    <Container as='section'>
+      <ColorContextChangerContainer
+        colorTheme={ColorThemes.RED}
+        className='grid grid-cols-12 gap-4'
+      >
         <section className='col-span-12 md:col-span-6'>
           <h1
             className={clsx(
@@ -42,7 +40,7 @@ export function About(): React.ReactNode {
           </p>
           <PointOfContacts className='mt-24' />
         </article>
-      </div>
+      </ColorContextChangerContainer>
     </Container>
   );
 }

@@ -3,9 +3,9 @@ import type { MotionValue } from 'framer-motion';
 import { get } from 'lodash-es';
 import React from 'react';
 
+import { ColorContextChangerContainer } from '~/components/ColorContextChangerContainer';
 import { Container } from '~/components/Container';
 import { FadeIn, FadeInDirection } from '~/components/FadeIn';
-import { ColorContext } from '~/context/ColorContext';
 import { CursorContext } from '~/context/CursorContext';
 import { ColorThemes } from '~/context/types';
 import { uiProjectImages } from '~/domain/dribbble.design';
@@ -30,8 +30,6 @@ export function DesignProjects(): React.ReactNode {
   const secondRow = projectCards.slice(10, 20);
   const thirdRow = projectCards.slice(20, 30);
   const ref = React.useRef(null);
-
-  const { setColorContext } = React.useContext(ColorContext);
 
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -76,11 +74,13 @@ export function DesignProjects(): React.ReactNode {
   return (
     <Container
       as='section'
-      onPointerEnter={() => setColorContext(ColorThemes.PURPLE)}
       className='antialiasing relative flex flex-col self-auto overflow-hidden [perspective:1000px] [transform-style:preserve-3d]'
     >
       <div ref={ref}>
-        <div className='relative z-10'>
+        <ColorContextChangerContainer
+          colorTheme={ColorThemes.PURPLE}
+          className='relative z-10'
+        >
           <FadeIn
             as='p'
             direction={FadeInDirection.DOWN}
@@ -92,7 +92,7 @@ export function DesignProjects(): React.ReactNode {
             engaging and intuitive user experiences, where form meets function
             in the digital space.
           </FadeIn>
-        </div>
+        </ColorContextChangerContainer>
         <motion.div className='relative z-0 mx-auto mt-12 w-full max-w-screen-2xl overflow-hidden rounded-lg border border-gray-200 bg-dark-tile py-12 md:mt-24 md:rounded-full md:py-24'>
           <motion.article className='relative mb-8 flex flex-row-reverse space-x-8 space-x-reverse'>
             {firstRow.map((product, idx) => (

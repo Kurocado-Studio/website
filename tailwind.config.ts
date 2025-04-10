@@ -15,7 +15,7 @@ export default {
   content: [
     './app/**/*.{js,jsx,mjs,mdx,ts,tsx}',
     './app/**/*.css',
-    'node_modules/@kurocado-studio/ui/**/*.js',
+    './node_modules/@kurocado-studio/ui/**/*.js',
   ],
   theme: {
     fontSize: {

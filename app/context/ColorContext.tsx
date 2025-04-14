@@ -1,5 +1,9 @@
-import { motion, useScroll } from 'framer-motion';
-import type { MotionValue } from 'framer-motion';
+import {
+  type MotionStyle,
+  type MotionValue,
+  motion,
+  useScroll,
+} from 'framer-motion';
 import { get } from 'lodash-es';
 import type { MutableRefObject } from 'react';
 import React, { createContext, useRef } from 'react';
@@ -85,11 +89,13 @@ export function BodyHTMLTagColorProvider({
     <ColorContext.Provider value={providerValue}>
       <motion.body
         ref={colorContextTargetRef}
-        style={{
-          backgroundColor: get(colorTheme, ['defaultState', 'background']),
-          color: get(colorTheme, ['defaultState', 'foreground']),
-          transition: 'background-color 0.9s, color 1.2s',
-        }}
+        style={
+          {
+            backgroundColor: get(colorTheme, ['defaultState', 'background']),
+            color: get(colorTheme, ['defaultState', 'foreground']),
+            transition: 'background-color 0.9s, color 1.2s',
+          } as MotionStyle
+        }
         className='relative selection:bg-lime-200 selection:text-[magenta]'
         data-testid='root-body-test-id'
       >

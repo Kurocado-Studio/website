@@ -12,9 +12,12 @@ export interface FrontEndProject {
   title: string;
   description: string;
   url: string;
+  isPortfolioReady?: boolean;
 }
 
-export type CaseStudy = FrontEndProject & { description: string };
+export type CaseStudy = Omit<FrontEndProject, 'description'> & {
+  descriptions: Array<string>;
+};
 
 export type FramerCursorAttributes = Pick<
   Partial<React.DOMAttributes<HTMLElement>>,

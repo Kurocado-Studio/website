@@ -55,7 +55,7 @@ export function CaseStudies(): React.ReactNode {
       </FadeIn>
       {caseStudies.map((caseStudy, index) => (
         <CaseStudyCard
-          frontEndProject={caseStudy}
+          caseStudy={caseStudy}
           key={`${get(caseStudy, ['title'], 'unknown')}_${index.toString()}`}
           opacity={get(animations, [index, 'opacity'])}
           scale={get(animations, [index, 'scale'])}

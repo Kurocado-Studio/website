@@ -307,7 +307,7 @@ export function CursorContextProvider({
     <CursorContext.Provider value={providerValue}>
       {innerWidth > 1024 && (
         <motion.span
-          initial="hidden"
+          initial='hidden'
           variants={cursorVariantMap}
           animate={cursorVariant}
           transition={spring}

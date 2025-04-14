@@ -1,4 +1,5 @@
 import {
+  type MotionProps,
   easeInOut,
   motion,
   useInView,
@@ -112,7 +113,7 @@ export function HorizontalScroller({
       onMouseEnter={() => setColorContext(ColorThemes.DEFAULT)}
       {...sectionProps}
     >
-      <motion.div ref={containerRef} {...containerProps}>
+      <motion.div ref={containerRef} {...(containerProps as MotionProps)}>
         {children}
       </motion.div>
     </motion.section>

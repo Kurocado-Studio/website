@@ -8,7 +8,10 @@ import React from 'react';
 
 import { FadeIn, FadeInDirection } from '~/components/FadeIn';
 
-export type CustomCursor = Variant & { isRounded?: boolean };
+export type CustomCursor = Variant & { isRounded?: boolean } & Record<
+    string,
+    unknown
+  >;
 
 export function ContactUsVariant(): React.ReactNode {
   return (

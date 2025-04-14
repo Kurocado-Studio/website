@@ -2,18 +2,21 @@ import type { FrontEndProject } from '~/domain/types';
 
 export const frontEndProjects: Array<FrontEndProject> = [
   {
+    isPortfolioReady: true,
     title: 'Design System',
     url: 'https://github.com/Kurocado-Studio/design-system',
     description:
       'A library of reusable UI components and guidelines to ensure visual consistency across all projects.',
   },
   {
+    isPortfolioReady: true,
     title: 'Engineering Styleguide',
     url: 'https://github.com/Kurocado-Studio/styleguide',
     description:
       'A centralized resource defining linting rules, formatting standards, and commit conventions.',
   },
   {
+    isPortfolioReady: true,
     title: 'GitHub Actions',
     url: 'https://github.com/Kurocado-Studio/dev-ops',
     description:

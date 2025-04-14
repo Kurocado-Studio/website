@@ -1,6 +1,6 @@
 import { wrap } from '@motionone/utils';
 import clsx from 'clsx';
-import type { MotionValue } from 'framer-motion';
+import type { MotionStyle, MotionValue } from 'framer-motion';
 import {
   motion,
   useAnimationFrame,
@@ -78,10 +78,12 @@ export function HorizontalScrollText({
               'block font-display text-7xl font-semibold [text-wrap:balance] lg:text-8xl',
               className,
             )}
-            style={{
-              lineHeight: '1.0',
-              color: idx % 3 === 0 ? undefined : 'Gainsboro',
-            }}
+            style={
+              {
+                lineHeight: '1.0',
+                color: idx % 3 === 0 ? undefined : 'Gainsboro',
+              } as MotionStyle
+            }
           >
             {children}
           </HtmlTag>

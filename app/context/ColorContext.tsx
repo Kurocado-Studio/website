@@ -1,4 +1,9 @@
-import { type MotionStyle, motion, useScroll , type MotionValue } from 'framer-motion';
+import {
+  type MotionStyle,
+  type MotionValue,
+  motion,
+  useScroll,
+} from 'framer-motion';
 import { get } from 'lodash-es';
 import type { MutableRefObject } from 'react';
 import React, { createContext, useRef } from 'react';

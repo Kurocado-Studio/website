@@ -21,7 +21,7 @@ export function StaggerSplitText(props: { text: string }): React.ReactNode {
           custom={individualLetterIndex}
           variants={{
             hidden: { opacity: 0, y: 12 },
-            visible: (currentIndex) => ({
+            visible: (currentIndex: number) => ({
               opacity: 1,
               y: 0,
               transition: {

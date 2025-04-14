@@ -10,21 +10,19 @@ import { CursorContext } from '~/context/CursorContext';
 import { CursorVariants } from '~/domain/enums';
 import type { CaseStudy } from '~/domain/types';
 
-export interface FrontEndProjectMotionProps {
+export interface CaseStudyCardProps {
   caseStudy: CaseStudy;
-  opacity: [Array<number>, Array<number>];
-  scale: [Array<number>, Array<number>];
+  opacity: readonly [Array<number>, Array<number>];
+  scale: readonly [Array<number>, Array<number>];
   shouldNotScale?: boolean;
 }
 
 export const PROJECT_CARD_HEIGHT = 500;
 
-export function CaseStudyCard(
-  props: FrontEndProjectMotionProps,
-): React.ReactNode {
+export function CaseStudyCard(props: CaseStudyCardProps): React.ReactNode {
   const { scrollY } = React.useContext(ColorContext);
-  const scale = useTransform(scrollY, ...get(props, ['scale']));
-  const opacity = useTransform(scrollY, ...get(props, ['opacity']));
+  const scale = useTransform(scrollY, ...props.scale);
+  const opacity = useTransform(scrollY, ...props.opacity);
 
   const { setCursorVariant } = React.useContext(CursorContext);
 

@@ -1,4 +1,4 @@
-import { type MotionProps, motion } from 'framer-motion';
+import { type MotionProps, type MotionStyle, motion } from 'framer-motion';
 import { get } from 'lodash-es';
 import React from 'react';
 import { twMerge } from 'tailwind-merge';
@@ -46,9 +46,11 @@ export function GitHubRepositoryCard(
       onMouseOut={() => {
         setCursorVariant(CursorVariants.DEFAULT);
       }}
-      style={{
-        border: `1px solid ${get(defaultState, ['foreground'])}`,
-      }}
+      style={
+        {
+          border: `1px solid ${get(defaultState, ['foreground'])}`,
+        } as MotionStyle
+      }
     >
       <h2 className='block pt-4 font-display text-4xl font-medium tracking-tight [text-wrap:balance] lg:text-7xl'>
         {get(props, ['title'], '--')}

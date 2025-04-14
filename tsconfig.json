@@ -1,9 +1,7 @@
 {
   "include": [
-    "app/**/*.ts",
-    "app/**/*.tsx",
-    "test/**/*.ts",
-    "test/**/*.tsx",
+    "app",
+    "test",
     "tailwind.config.ts",
     "setup.remix.ts",
     "vite.config.ts",
@@ -11,11 +9,12 @@
   ],
   "extends": "@kurocado-studio/styleguide/tsconfig/remix",
   "compilerOptions": {
+    "esModuleInterop": true,
     "skipLibCheck": true,
     "target": "ES5",
     "outDir": "./dist",
     "rootDir": ".",
-    "jsx": "react-jsx",
+    "jsx": "preserve",
     "moduleResolution": "Bundler",
     "baseUrl": "./app",
     "paths": {
@@ -23,5 +22,5 @@
     },
     "noEmit": true
   },
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "dist"]
 }

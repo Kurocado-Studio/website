@@ -11,6 +11,7 @@
   ],
   "extends": "@kurocado-studio/styleguide/tsconfig/remix",
   "compilerOptions": {
+    "skipLibCheck": true,
     "target": "ES5",
     "outDir": "./dist",
     "rootDir": ".",

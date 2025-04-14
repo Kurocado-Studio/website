@@ -8,10 +8,10 @@ import { twMerge } from 'tailwind-merge';
 import { ColorContext } from '~/context/ColorContext';
 import { CursorContext } from '~/context/CursorContext';
 import { CursorVariants } from '~/domain/enums';
-import type { FrontEndProject } from '~/domain/types';
+import type { CaseStudy } from '~/domain/types';
 
 export interface FrontEndProjectMotionProps {
-  frontEndProject: FrontEndProject;
+  caseStudy: CaseStudy;
   opacity: [Array<number>, Array<number>];
   scale: [Array<number>, Array<number>];
   shouldNotScale?: boolean;
@@ -54,7 +54,7 @@ export function CaseStudyCard(
       })}
     >
       <a
-        href={get(props, ['frontEndProject', 'url'])}
+        href={get(props, ['caseStudy', 'url'])}
         className={twMerge(
           'flex flex-col items-center overflow-hidden rounded-lg bg-dark-tile md:flex-row',
           `cursor-pointer shadow transition-all duration-300 ease-in-out hover:bg-lime-400`,
@@ -76,12 +76,17 @@ export function CaseStudyCard(
         }}
       >
         <div className='flex w-full flex-col justify-between bg-dark-tile px-8 py-12 leading-normal md:px-24'>
-          <h2 className='block font-display text-4xl font-medium tracking-tight [text-wrap:balance] md:mt-8 lg:text-7xl'>
-            {get(props, ['frontEndProject', 'title'], '--')}
+          <h2 className='mb-12 block font-display text-4xl font-medium tracking-tight [text-wrap:balance] md:mt-8 lg:mb-44 lg:text-7xl'>
+            {get(props, ['caseStudy', 'title'], '--')}
           </h2>
-          <p className='text-pretty mb-8 mt-12 block text-xl font-semibold [text-wrap:balance] lg:mt-36 lg:text-4xl'>
-            {get(props, ['frontEndProject', 'description'], '--')}
-          </p>
+          {props.caseStudy.descriptions.map((description) => (
+            <p
+              key={description}
+              className='text-pretty mb-8 mt-4 block text-xl font-semibold [text-wrap:balance] lg:text-4xl'
+            >
+              {description}
+            </p>
+          ))}
         </div>
       </a>
     </FadeIn>

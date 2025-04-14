@@ -31,8 +31,8 @@ export function About(): React.ReactNode {
         <article className='col-span-12 md:col-span-6'>
           <p className={sharedTypographyClassName}>
             I specialize in front-end development & my background includes UX
-            Design, React & Vue. I’ve picked some project management skills that
-            help me aligning myself better within stakeholders. This combined
+            Design, React and Vue. I’ve picked some project management skills
+            that help me align myself better within stakeholders. This combined
             perspective empowers me to create solutions that are not only
             visually appealing but also aligned with broader business goals.
           </p>

@@ -1,10 +1,10 @@
 /* eslint import/no-cycle: 0 */
-import { FadeIn, FadeInDirection } from '@kurocado-studio/ui';
 import { useTransform } from 'framer-motion';
 import { get } from 'lodash-es';
 import * as React from 'react';
 import { twMerge } from 'tailwind-merge';
 
+import { FadeIn, FadeInDirection } from '~/components/FadeIn';
 import { ColorContext } from '~/context/ColorContext';
 import { CursorContext } from '~/context/CursorContext';
 import { CursorVariants } from '~/domain/enums';

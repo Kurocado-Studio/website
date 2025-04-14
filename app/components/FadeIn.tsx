@@ -25,6 +25,7 @@ export type FadeInProps<T extends HTMLIntrinsicElements> =
   PropsWithoutRef<T> & {
     direction?: FadeInDirection;
     as?: T;
+    style?: React.CSSProperties;
   };
 
 export function FadeIn<T extends HTMLIntrinsicElements = 'div'>(

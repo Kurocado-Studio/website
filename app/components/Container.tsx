@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { motion } from 'framer-motion';
+import { type MotionStyle, motion } from 'framer-motion';
 import * as React from 'react';
 
 import type { HTMLIntrinsicElements, PropsWithoutRef } from '~/domain/types';
@@ -7,6 +7,7 @@ import type { HTMLIntrinsicElements, PropsWithoutRef } from '~/domain/types';
 interface ContainerProps<T extends HTMLIntrinsicElements = 'div'> {
   as?: T;
   ref?: T;
+  style?: React.CSSProperties & MotionStyle;
   withMaxWidth?: boolean;
   className?: string;
   children: React.ReactNode;

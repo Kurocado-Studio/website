@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { type MotionStyle, motion } from 'framer-motion';
 import * as React from 'react';
 
 export function StaggerSplitText(props: { text: string }): React.ReactNode {
@@ -8,16 +8,18 @@ export function StaggerSplitText(props: { text: string }): React.ReactNode {
     <motion.div
       initial='hidden'
       animate='visible'
-      style={{ display: 'inline-flex', flexWrap: 'wrap' }}
+      style={{ display: 'inline-flex', flexWrap: 'wrap' } as MotionStyle}
     >
       {text.split('').map((individualLetter, individualLetterIndex) => (
         <motion.span
           key={String(individualLetterIndex + 1)}
-          style={{
-            display: 'inline-block',
-            overflow: 'hidden',
-            whiteSpace: 'pre',
-          }}
+          style={
+            {
+              display: 'inline-block',
+              overflow: 'hidden',
+              whiteSpace: 'pre',
+            } as MotionStyle
+          }
           custom={individualLetterIndex}
           variants={{
             hidden: { opacity: 0, y: 12 },

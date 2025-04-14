@@ -1,5 +1,5 @@
 /* eslint import/no-cycle: 0 */
-import { useTransform } from 'framer-motion';
+import { type MotionStyle, useTransform } from 'framer-motion';
 import { get } from 'lodash-es';
 import * as React from 'react';
 import { twMerge } from 'tailwind-merge';
@@ -48,7 +48,7 @@ export function CaseStudyCard(props: CaseStudyCardProps): React.ReactNode {
           height: `${PROJECT_CARD_HEIGHT * 1.6}px`,
           scale,
           opacity,
-        },
+        } as React.CSSProperties & MotionStyle,
       })}
     >
       <a

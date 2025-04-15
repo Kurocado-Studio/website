@@ -16,7 +16,7 @@ importers:
         version: 1.1.4(@swc/core@1.11.21(@swc/helpers@0.5.17))(@testing-library/dom@10.4.0)(@types/debug@4.1.12)(@types/react@19.1.1)(eslint@9.24.0(jiti@2.4.2))(optionator@0.9.4)(prettier@3.5.3)(react@18.3.1)(rollup@4.40.0)(vite@5.4.12(@types/node@22.13.10))(vitest-axe@0.1.0(vitest@2.1.8(@types/node@22.13.10)(jsdom@26.1.0)))
       '@kurocado-studio/ui':
         specifier: 1.2.0
-        version: 1.2.0(framer-motion@11.13.5(react-dom@18.2.0(react@18.3.1))(react@18.3.1))(react-dom@18.2.0(react@18.3.1))(react@18.3.1)(tailwindcss-animate@1.0.7(tailwindcss@3.3.2))(tailwindcss@3.3.2)
+        version: 1.2.0(framer-motion@12.7.3(react-dom@18.2.0(react@18.3.1))(react@18.3.1))(react-dom@18.2.0(react@18.3.1))(react@18.3.1)(tailwindcss-animate@1.0.7(tailwindcss@3.3.2))(tailwindcss@3.3.2)
       '@motionone/utils':
         specifier: 10.18.0
         version: 10.18.0
@@ -33,8 +33,8 @@ importers:
         specifier: 2.1.1
         version: 2.1.1
       framer-motion:
-        specifier: 11.13.5
-        version: 11.13.5(react-dom@18.2.0(react@18.3.1))(react@18.3.1)
+        specifier: 12.7.3
+        version: 12.7.3(react-dom@18.2.0(react@18.3.1))(react@18.3.1)
       isbot:
         specifier: 5.1.25
         version: 5.1.25
@@ -3964,8 +3964,8 @@ packages:
   fraction.js@4.3.7:
     resolution: {integrity: sha512-ZsDfxO51wGAXREY55a7la9LScWpwv9RxIrYABrlvOFBlH/ShPnrtsXeuUIfXKKOVicNxQ+o8JTbJvjS4M89yew==}
 
-  framer-motion@11.13.5:
-    resolution: {integrity: sha512-rArI0zPU9VkpS3Wt0J7dmRxAFUWtzPWoSofNQAP0UO276CmJ+Xlf5xN19GMw3w2QsdrS2sU+0+Q2vtuz4IEZaw==}
+  framer-motion@12.7.3:
+    resolution: {integrity: sha512-dNT4l5gEnUo2ytXLUBUf6AI21dZ77TMclDKE3ElaIHZ8m90nJ/NCcExW51zdSIaS0RhAS5iXcF7bEIxZe8XG2g==}
     peerDependencies:
       '@emotion/is-prop-valid': '*'
       react: ^18.0.0 || ^19.0.0
@@ -5181,11 +5181,11 @@ packages:
     resolution: {integrity: sha512-AbegBVI4sh6El+1gNwvD5YIck7nSA36weD7xvIxG4in80j/UoK8AEGaWnnz8v1GxonMCltmlNs5ZKbGvl9b1XQ==}
     engines: {node: '>= 0.8.0'}
 
-  motion-dom@11.18.1:
-    resolution: {integrity: sha512-g76KvA001z+atjfxczdRtw/RXOM3OMSdd1f4DL77qCTF/+avrRJiawSG4yDibEQ215sr9kpinSlX2pCTJ9zbhw==}
+  motion-dom@12.7.3:
+    resolution: {integrity: sha512-IjMt1YJHrvyvruFvmpmd6bGXXGCvmygrnvSb3aZ8KhOzF4H3PulU+cMBzH+U8TBJHjC/mnmJFRIA1Cu4vBfcBA==}
 
-  motion-utils@11.18.1:
-    resolution: {integrity: sha512-49Kt+HKjtbJKLtgO/LKj9Ld+6vw9BjH5d9sc40R/kVyH8GLAXgT42M2NnuPcJNuA3s9ZfZBUcwIgpmZWGEE+hA==}
+  motion-utils@12.7.2:
+    resolution: {integrity: sha512-XhZwqctxyJs89oX00zn3OGCuIIpVevbTa+u82usWBC6pSHUd2AoNWiYa7Du8tJxJy9TFbZ82pcn5t7NOm1PHAw==}
 
   mri@1.2.0:
     resolution: {integrity: sha512-tzzskb3bG8LvYGFF/mDTpq3jpI6Q9wc3LEmBaghu+DdCssd1FakN7Bc0hVNmEyGq1bq3RgfkCb3cmQLpNPOroA==}
@@ -8229,12 +8229,12 @@ snapshots:
       - utf-8-validate
       - wrangler
 
-  '@kurocado-studio/ui@1.2.0(framer-motion@11.13.5(react-dom@18.2.0(react@18.3.1))(react@18.3.1))(react-dom@18.2.0(react@18.3.1))(react@18.3.1)(tailwindcss-animate@1.0.7(tailwindcss@3.3.2))(tailwindcss@3.3.2)':
+  '@kurocado-studio/ui@1.2.0(framer-motion@12.7.3(react-dom@18.2.0(react@18.3.1))(react@18.3.1))(react-dom@18.2.0(react@18.3.1))(react@18.3.1)(tailwindcss-animate@1.0.7(tailwindcss@3.3.2))(tailwindcss@3.3.2)':
     dependencies:
       '@kurocado-studio/html-forms': 1.0.0-alpha.6(react-dom@18.2.0(react@18.3.1))(react@18.3.1)
       '@react-aria/button': 3.13.0(react-dom@18.2.0(react@18.3.1))(react@18.3.1)
       '@react-aria/textfield': 3.17.2(react-dom@18.2.0(react@18.3.1))(react@18.3.1)
-      framer-motion: 11.13.5(react-dom@18.2.0(react@18.3.1))(react@18.3.1)
+      framer-motion: 12.7.3(react-dom@18.2.0(react@18.3.1))(react@18.3.1)
       lodash-es: 4.17.21
       react: 18.3.1
       react-dom: 18.2.0(react@18.3.1)
@@ -12460,10 +12460,10 @@ snapshots:
 
   fraction.js@4.3.7: {}
 
-  framer-motion@11.13.5(react-dom@18.2.0(react@18.3.1))(react@18.3.1):
+  framer-motion@12.7.3(react-dom@18.2.0(react@18.3.1))(react@18.3.1):
     dependencies:
-      motion-dom: 11.18.1
-      motion-utils: 11.18.1
+      motion-dom: 12.7.3
+      motion-utils: 12.7.2
       tslib: 2.8.1
     optionalDependencies:
       react: 18.3.1
@@ -13861,11 +13861,11 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  motion-dom@11.18.1:
+  motion-dom@12.7.3:
     dependencies:
-      motion-utils: 11.18.1
+      motion-utils: 12.7.2
 
-  motion-utils@11.18.1: {}
+  motion-utils@12.7.2: {}
 
   mri@1.2.0: {}
 

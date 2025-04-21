@@ -12,7 +12,6 @@ export interface FrontEndProject {
   title: string;
   description: string;
   url: string;
-  isPortfolioReady?: boolean;
 }
 
 export type CaseStudy = Omit<FrontEndProject, 'description'> & {

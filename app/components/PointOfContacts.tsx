@@ -10,7 +10,7 @@ import { socialMediaProfiles } from '~/domain/socialMediaProfiles';
 import type { PropsWithoutRef } from '~/domain/types';
 
 type SocialMediaCursorVariantMap = {
-  [CursorVariants.GITHUB]: {
+  [CursorVariants.EXTERNAL_GITHUB]: {
     cursor: () => void;
     icon: React.FC;
   };
@@ -36,7 +36,7 @@ export function PointOfContacts({
   };
 
   const setGithubVariant = (): void => {
-    setCursorVariant(CursorVariants.GITHUB);
+    setCursorVariant(CursorVariants.EXTERNAL_GITHUB);
   };
 
   const setLinkedInVariant = (): void => {
@@ -44,7 +44,7 @@ export function PointOfContacts({
   };
 
   const socialMediaCursorVariantMap: SocialMediaCursorVariantMap = {
-    [CursorVariants.GITHUB]: {
+    [CursorVariants.EXTERNAL_GITHUB]: {
       cursor: useCallback(setGithubVariant, [setCursorVariant]),
       icon: GitHubIcon,
     },

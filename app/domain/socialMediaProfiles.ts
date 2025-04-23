@@ -10,6 +10,6 @@ export const socialMediaProfiles: Array<SocialMediaProfile> = [
   {
     title: 'GitHub',
     href: SocialMediaLinks.GITHUB,
-    cursorVariant: CursorVariants.GITHUB,
+    cursorVariant: CursorVariants.EXTERNAL_GITHUB,
   },
 ];

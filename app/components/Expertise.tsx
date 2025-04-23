@@ -1,6 +1,5 @@
 import * as React from 'react';
 
-import { Container } from '~/components/Container';
 import { List, ListItem } from '~/components/List';
 import { CursorContext } from '~/context/CursorContext';
 import { CursorVariants } from '~/domain/enums';
@@ -15,7 +14,7 @@ export function ProductDesignExpertise(): React.ReactNode {
   const { setCursorVariant } = React.useContext(CursorContext);
 
   const setDefaultVariant = (): void => {
-    setCursorVariant(CursorVariants.HIDDEN);
+    setCursorVariant(CursorVariants.DEFAULT);
   };
 
   const setLandingPagesVariant = (): void => {
@@ -61,52 +60,50 @@ export function ProductDesignExpertise(): React.ReactNode {
   };
 
   return (
-    <Container className='my-12 lg:px-0'>
-      <List className='mb-24'>
-        <ListItem
-          withHoverStyles
-          title='e-commerce'
-          className='cursor-none'
-          onPointerEnter={setEcommerceVariant}
-          onPointerLeave={setDefaultVariant}
-        />
-        <ListItem
-          withHoverStyles
-          title='Web apps'
-          className='cursor-none'
-          onPointerEnter={setWebAppsVariant}
-          onPointerLeave={setDefaultVariant}
-        />
-        <ListItem
-          withHoverStyles
-          title='Design systems'
-          className='cursor-none'
-          onPointerEnter={setDesignSystemVariant}
-          onPointerLeave={setDefaultVariant}
-        />
-        <ListItem
-          withHoverStyles
-          title='Landing pages'
-          onPointerEnter={setLandingPagesVariant}
-          onPointerLeave={setDefaultVariant}
-          className='cursor-none'
-        />
-        <ListItem
-          withHoverStyles
-          title='Enterprise applications'
-          onPointerEnter={setEnterpriseApplicationsVariant}
-          onPointerLeave={setDefaultVariant}
-          className='cursor-none'
-        />
-        <ListItem
-          withHoverStyles
-          title='Illustrations'
-          onPointerEnter={setIllustrationsVariant}
-          onPointerLeave={setDefaultVariant}
-          className='cursor-none'
-        />
-      </List>
-    </Container>
+    <List className='mb-24'>
+      <ListItem
+        withHoverStyles
+        title='Web apps'
+        className='cursor-none'
+        onPointerEnter={setWebAppsVariant}
+        onPointerLeave={setDefaultVariant}
+      />
+      <ListItem
+        withHoverStyles
+        title='Design systems'
+        className='cursor-none'
+        onPointerEnter={setDesignSystemVariant}
+        onPointerLeave={setDefaultVariant}
+      />
+      <ListItem
+        withHoverStyles
+        title='Landing pages'
+        onPointerEnter={setLandingPagesVariant}
+        onPointerLeave={setDefaultVariant}
+        className='cursor-none'
+      />
+      <ListItem
+        withHoverStyles
+        title='Enterprise applications'
+        onPointerEnter={setEnterpriseApplicationsVariant}
+        onPointerLeave={setDefaultVariant}
+        className='cursor-none'
+      />
+      <ListItem
+        withHoverStyles
+        title='Illustrations'
+        onPointerEnter={setIllustrationsVariant}
+        onPointerLeave={setDefaultVariant}
+        className='cursor-none'
+      />
+      <ListItem
+        withHoverStyles
+        title='e-commerce'
+        className='cursor-none'
+        onPointerEnter={setEcommerceVariant}
+        onPointerLeave={setDefaultVariant}
+      />
+    </List>
   );
 }
 
@@ -114,7 +111,7 @@ export function FrontEndDevelopmentExpertise(): React.ReactNode {
   const { setCursorVariant } = React.useContext(CursorContext);
 
   const setDefaultVariant = (): void => {
-    setCursorVariant(CursorVariants.HIDDEN);
+    setCursorVariant(CursorVariants.DEFAULT);
   };
 
   const setNestJSVariant = (): void => {
@@ -141,52 +138,61 @@ export function FrontEndDevelopmentExpertise(): React.ReactNode {
     setCursorVariant(CursorVariants.TAILWIND);
   };
 
+  const setGitHubActionsVariant = (): void => {
+    setCursorVariant(CursorVariants.GITHUB_ACTIONS);
+  };
+
   return (
-    <Container className='my-12 lg:px-0'>
-      <List className='mb-24'>
-        <ListItem
-          withHoverStyles
-          title='React'
-          className='cursor-none'
-          onPointerEnter={setReactVariant}
-          onPointerLeave={setDefaultVariant}
-        />
-        <ListItem
-          withHoverStyles
-          title='Vue'
-          className='cursor-none'
-          onPointerEnter={setVueVariant}
-          onPointerLeave={setDefaultVariant}
-        />
-        <ListItem
-          withHoverStyles
-          title='Typescript'
-          className='cursor-none'
-          onPointerEnter={setTypescriptVariant}
-          onPointerLeave={setDefaultVariant}
-        />
-        <ListItem
-          withHoverStyles
-          title='Framer Motion'
-          className='cursor-none'
-          onPointerEnter={setFramerMotionVariant}
-          onPointerLeave={setDefaultVariant}
-        />
-        <ListItem
-          withHoverStyles
-          title='NestJS'
-          className='cursor-none'
-          onPointerEnter={setNestJSVariant}
-          onPointerLeave={setDefaultVariant}
-        />
-        <ListItem
-          withHoverStyles
-          title='Tailwind'
-          className='cursor-none'
-          onPointerEnter={setTailwindVariant}
-          onPointerLeave={setDefaultVariant}
-        />
-      </List>
-    </Container>
+    <List className='mb-24'>
+      <ListItem
+        withHoverStyles
+        title='React'
+        className='cursor-none'
+        onPointerEnter={setReactVariant}
+        onPointerLeave={setDefaultVariant}
+      />
+      <ListItem
+        withHoverStyles
+        title='Vue'
+        className='cursor-none'
+        onPointerEnter={setVueVariant}
+        onPointerLeave={setDefaultVariant}
+      />
+      <ListItem
+        withHoverStyles
+        title='Typescript'
+        className='cursor-none'
+        onPointerEnter={setTypescriptVariant}
+        onPointerLeave={setDefaultVariant}
+      />
+      <ListItem
+        withHoverStyles
+        title='Framer Motion'
+        className='cursor-none'
+        onPointerEnter={setFramerMotionVariant}
+        onPointerLeave={setDefaultVariant}
+      />
+      <ListItem
+        withHoverStyles
+        title='NestJS'
+        className='cursor-none'
+        onPointerEnter={setNestJSVariant}
+        onPointerLeave={setDefaultVariant}
+      />
+      <ListItem
+        withHoverStyles
+        title='Tailwind'
+        className='cursor-none'
+        onPointerEnter={setTailwindVariant}
+        onPointerLeave={setDefaultVariant}
+      />
+      <ListItem
+        withHoverStyles
+        title='GitHub Actions'
+        className='cursor-none'
+        onPointerEnter={setGitHubActionsVariant}
+        onPointerLeave={setDefaultVariant}
+      />
+    </List>
   );
 }

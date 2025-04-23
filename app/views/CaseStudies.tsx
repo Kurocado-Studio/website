@@ -1,5 +1,6 @@
 import { get } from 'lodash-es';
 import React from 'react';
+import { twMerge } from 'tailwind-merge';
 
 import { CaseStudyCard, PROJECT_CARD_HEIGHT } from '~/components/CaseStudyCard';
 import { Container } from '~/components/Container';
@@ -49,7 +50,10 @@ export function CaseStudies(): React.ReactNode {
       <FadeIn
         as='h2'
         direction={FadeInDirection.UP}
-        className='mb-12 block font-display text-4xl font-medium tracking-tight [text-wrap:balance] lg:text-7xl'
+        className={twMerge(
+          'mb-12 block lg:mb-36',
+          'block font-display text-7xl font-semibold [text-wrap:balance] lg:text-8xl',
+        )}
       >
         Case Studies
       </FadeIn>

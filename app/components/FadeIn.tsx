@@ -3,7 +3,11 @@ import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { get } from 'lodash-es';
 import React, { createContext, useContext } from 'react';
 
-import type { HTMLIntrinsicElements, PropsWithoutRef } from '~/domain/types';
+import type {
+  HTMLIntrinsicElements,
+  PropsWithRef,
+  PropsWithoutRef,
+} from '~/domain/types';
 
 const FadeInStaggerContext = createContext(false);
 
@@ -21,12 +25,11 @@ export enum FadeInDirection {
   RIGHT_TO_LEFT = 'RIGHT_TO_LEFT',
 }
 
-export type FadeInProps<T extends HTMLIntrinsicElements> =
-  PropsWithoutRef<T> & {
-    direction?: FadeInDirection;
-    as?: T;
-    style?: React.CSSProperties;
-  };
+export type FadeInProps<T extends HTMLIntrinsicElements> = PropsWithRef<T> & {
+  direction?: FadeInDirection;
+  as?: T;
+  style?: React.CSSProperties;
+};
 
 export function FadeIn<T extends HTMLIntrinsicElements = 'div'>(
   props: FadeInProps<T>,

@@ -12,6 +12,13 @@ export interface FrontEndProject {
   title: string;
   description: string;
   url: string;
+  tags?: Array<string>;
+}
+
+export interface PlatformProject {
+  title: string;
+  description: string;
+  url: string;
 }
 
 export type CaseStudy = Omit<FrontEndProject, 'description'> & {

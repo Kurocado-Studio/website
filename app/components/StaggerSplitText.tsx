@@ -16,7 +16,6 @@ export function StaggerSplitText(props: { text: string }): React.ReactNode {
           style={
             {
               display: 'inline-block',
-              overflow: 'hidden',
               whiteSpace: 'pre',
             } as MotionStyle
           }

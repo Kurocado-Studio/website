@@ -15,6 +15,8 @@ import { CursorVariants } from '~/domain/enums';
 import type { GrayscaleImageProps } from '~/domain/lib/GrayscaleImage';
 import { useWindowSize } from '~/hooks/useWindowSize';
 import { FramerMotionIcon } from '~/icons/FramerMotionIcon';
+import { GitHubActionsIcon } from '~/icons/GithubActionsIcon';
+import { GitHubIcon } from '~/icons/GithubIcon';
 import { NestJsIcon } from '~/icons/NestJsIcon';
 import { ReactIcon } from '~/icons/ReactIcon';
 import { TailwindIcon } from '~/icons/TailwindIcon';
@@ -167,13 +169,13 @@ export function CursorContextProvider({
       display: 'flex',
       height: 113,
       opacity,
-      padding: '4px',
+      padding: '0px',
       width: 200,
       x: mouseXPosition - 50,
       y: mouseYPosition - 100,
     },
     [CursorVariants.DRIBBBLE]: commonInteractiveCursor,
-    [CursorVariants.GITHUB]: {
+    [CursorVariants.EXTERNAL_GITHUB]: {
       ...commonInteractiveCursor,
       borderRadius: '100%',
     },
@@ -207,6 +209,18 @@ export function CursorContextProvider({
       backgroundColor: '#42b883',
       opacity,
     },
+    [CursorVariants.GITHUB]: {
+      ...commonSocialCustomCursor,
+      backgroundColor: 'white',
+      color: '#fff',
+      opacity,
+    },
+    [CursorVariants.GITHUB_ACTIONS]: {
+      ...commonSocialCustomCursor,
+      backgroundColor: 'white',
+      color: '#fff',
+      opacity,
+    },
   };
 
   const cursorVariantHandlers: { [K in CursorVariants]: () => void } =
@@ -228,9 +242,17 @@ export function CursorContextProvider({
           setCursorText(<OpenInNewTabCursorVariant title='Dribbble' />);
           setCursorVariant(CursorVariants.DRIBBBLE);
         },
-        [CursorVariants.GITHUB]: () => {
+        [CursorVariants.EXTERNAL_GITHUB]: () => {
           setCursorText(<OpenInNewTabCursorVariant title='GitHub' />);
+          setCursorVariant(CursorVariants.EXTERNAL_GITHUB);
+        },
+        [CursorVariants.GITHUB]: () => {
+          setCursorText(<GitHubIcon />);
           setCursorVariant(CursorVariants.GITHUB);
+        },
+        [CursorVariants.GITHUB_ACTIONS]: () => {
+          setCursorText(<GitHubActionsIcon />);
+          setCursorVariant(CursorVariants.GITHUB_ACTIONS);
         },
         [CursorVariants.OPEN_IN_NEW_TAB]: () => {
           setCursorText(<OpenInNewTabCursorVariant title='Open' />);
@@ -286,8 +308,8 @@ export function CursorContextProvider({
         if (typeof nextCursorVariant === 'object') {
           setCursorText(
             <motion.img
-              className='relative left-0 top-0 h-full w-full rounded-3xl object-cover object-left-top transition duration-300 group-hover:opacity-100'
               {...nextCursorVariant}
+              className='relative left-0 top-0 h-full w-full overflow-hidden rounded-3xl object-cover object-left-top transition duration-300 group-hover:opacity-100'
             />,
           );
           cursorVariantHandlers[CursorVariants.IMG]();

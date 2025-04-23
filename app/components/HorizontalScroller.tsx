@@ -9,7 +9,11 @@ import {
 } from 'framer-motion';
 import { get } from 'lodash-es';
 import React, { useEffect, useMemo, useRef, useState } from 'react';
+import { twMerge } from 'tailwind-merge';
 
+import { Container } from '~/components/Container';
+import { FadeIn, FadeInDirection } from '~/components/FadeIn';
+import { StaggerSplitText } from '~/components/StaggerSplitText';
 import { ColorContext } from '~/context/ColorContext';
 import { ColorThemes } from '~/context/types';
 import { useWindowSize } from '~/hooks/useWindowSize';
@@ -108,14 +112,28 @@ export function HorizontalScroller({
   }, [innerWidth]);
 
   return (
-    <motion.section
-      ref={triggerRef}
-      onMouseEnter={() => setColorContext(ColorThemes.DEFAULT)}
-      {...sectionProps}
-    >
-      <motion.div ref={containerRef} {...(containerProps as MotionProps)}>
-        {children}
-      </motion.div>
-    </motion.section>
+    <>
+      <Container as='header' className='mt-96'>
+        <FadeIn
+          as='h2'
+          direction={FadeInDirection.UP}
+          className={twMerge(
+            'mb-12 block lg:mb-36',
+            'block font-display text-7xl font-semibold [text-wrap:balance] lg:text-8xl',
+          )}
+        >
+          <StaggerSplitText text='Projects' />
+        </FadeIn>
+      </Container>
+      <motion.section
+        ref={triggerRef}
+        onMouseEnter={() => setColorContext(ColorThemes.DEFAULT)}
+        {...sectionProps}
+      >
+        <motion.div ref={containerRef} {...(containerProps as MotionProps)}>
+          {children}
+        </motion.div>
+      </motion.section>
+    </>
   );
 }

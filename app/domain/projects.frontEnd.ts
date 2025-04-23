@@ -1,34 +1,35 @@
 import type { FrontEndProject } from '~/domain/types';
 
+export const designSystem = {
+  title: 'Design System',
+  url: 'https://github.com/Kurocado-Studio/design-system',
+  description:
+    'A token‑driven UI library whose look and feel can be tweaked in Figma and—via Token Studio—propagated to React & Vue components',
+};
+
+export const dailyUI = {
+  title: 'Daily UI Challenge',
+  url: 'https://github.com/Kurocado-Studio/daily-ui',
+  description:
+    'A curated collection of daily UI challenges, designed in Figma, then implemented in React and Vue.',
+};
+
+export const urlShortener = {
+  title: 'URL Shortener App',
+  url: 'https://github.com/Kurocado-Studio/url-shortener',
+  description: 'This is a simple URL shortener built in React and TypeScript.',
+};
+
+export const productStarter = {
+  title: 'Product Starter Kit',
+  url: 'https://github.com/Kurocado-Studio/product-starter-kit',
+  description:
+    'A production-ready starter kit with a Figma-to-React design system flow, Tailwind, CI/CD, and instant Vercel deploy.',
+};
+
 export const frontEndProjects: Array<FrontEndProject> = [
-  {
-    title: 'Design System',
-    url: 'https://github.com/Kurocado-Studio/design-system',
-    description:
-      'A library of reusable UI components and guidelines to ensure visual consistency across all projects.',
-  },
-  {
-    title: 'Engineering Styleguide',
-    url: 'https://github.com/Kurocado-Studio/styleguide',
-    description:
-      'A centralized resource defining linting rules, formatting standards, and commit conventions.',
-  },
-  {
-    title: 'GitHub Actions',
-    url: 'https://github.com/Kurocado-Studio/dev-ops',
-    description:
-      'Unified GitHub Actions to automate workflows such as CI/CD, and routine maintenance tasks.',
-  },
-  {
-    title: 'Identity and Access Management',
-    url: 'https://github.com/Kurocado-Studio/iam',
-    description:
-      'Centralized authentication managed through Auth0 by Okta, ensuring secure access management.',
-  },
-  {
-    title: 'Developer Experience (DX)',
-    url: 'https://github.com/Kurocado-Studio/dev-experience',
-    description:
-      'Enhanced developer productivity through utilities like axios wrappers & reusable React hooks.',
-  },
+  productStarter,
+  designSystem,
+  dailyUI,
+  urlShortener,
 ];

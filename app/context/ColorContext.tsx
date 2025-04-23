@@ -24,7 +24,7 @@ type ColorContext = {
 };
 
 const initialInteractiveColorTheme: InteractiveColorTheme = {
-  defaultState: get(colorThemeMap, [ColorThemes.DEFAULT]),
+  defaultState: get(colorThemeMap, [ColorThemes.WHITE]),
   hoverState: get(colorThemeMap, [ColorThemes.BLUE]),
   interactiveState: get(colorThemeMap, [ColorThemes.ORANGE]),
 };

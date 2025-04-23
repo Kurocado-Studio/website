@@ -24,6 +24,7 @@ export function GitHubRepositoryCard(
   return (
     <motion.a
       {...(props as MotionProps)}
+      id={get(props, ['url'])}
       href={get(props, ['url'])}
       className={twMerge(
         'relative p-8 lg:p-12',
@@ -41,7 +42,7 @@ export function GitHubRepositoryCard(
       target='_blank'
       rel='noopener noreferrer'
       onMouseOver={() => {
-        setCursorVariant(CursorVariants.GITHUB);
+        setCursorVariant(CursorVariants.EXTERNAL_GITHUB);
       }}
       onMouseOut={() => {
         setCursorVariant(CursorVariants.DEFAULT);

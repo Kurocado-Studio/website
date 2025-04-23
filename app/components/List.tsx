@@ -25,9 +25,7 @@ export function List({
 }): React.ReactNode {
   return (
     <FadeInStagger>
-      <ul className={clsx('text-xl text-neutral-600', className)}>
-        {children}
-      </ul>
+      <ul className={clsx('text-xl', className)}>{children}</ul>
     </FadeInStagger>
   );
 }
@@ -50,12 +48,12 @@ export function ListItem({
         <Border
           className={clsx(
             'pt-10 group-first:before:hidden group-first:after:hidden',
-            withHoverStyles && 'my-2 rounded-sm px-2 hover:bg-slate-50',
+            withHoverStyles && 'my-2 rounded-sm px-2 hover:bg-slate-50/25',
             className,
           )}
         >
           {title ? (
-            <strong className='font-semibold text-neutral-950'>{`${title} `}</strong>
+            <strong className='font-semibold'>{`${title} `}</strong>
           ) : null}
           {children}
         </Border>

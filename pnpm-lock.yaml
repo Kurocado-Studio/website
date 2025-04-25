@@ -15,8 +15,8 @@ importers:
         specifier: ^1.1.4
         version: 1.1.4(@swc/core@1.11.21(@swc/helpers@0.5.17))(@testing-library/dom@10.4.0)(@types/debug@4.1.12)(@types/react@19.1.1)(eslint@9.24.0(jiti@2.4.2))(optionator@0.9.4)(prettier@3.5.3)(react@18.3.1)(rollup@4.40.0)(vite@5.4.12(@types/node@22.13.10))(vitest-axe@0.1.0(vitest@2.1.8(@types/node@22.13.10)(jsdom@26.1.0)))
       '@kurocado-studio/ui':
-        specifier: 1.2.0
-        version: 1.2.0(framer-motion@11.13.5(react-dom@18.2.0(react@18.3.1))(react@18.3.1))(react-dom@18.2.0(react@18.3.1))(react@18.3.1)(tailwindcss-animate@1.0.7(tailwindcss@3.3.2))(tailwindcss@3.3.2)
+        specifier: 1.3.2
+        version: 1.3.2(framer-motion@11.13.5(react-dom@18.2.0(react@18.3.1))(react@18.3.1))(react-dom@18.2.0(react@18.3.1))(react@18.3.1)(tailwindcss-animate@1.0.7(tailwindcss@3.3.2))(tailwindcss@3.3.2)
       '@motionone/utils':
         specifier: 10.18.0
         version: 10.18.0
@@ -399,16 +399,16 @@ packages:
     resolution: {integrity: sha512-LRjP623jPyf3Poyfb0ohMj8I3ORyBDOwXAgxxVPbSD0unJuW2mJWeiRfaQinjtccMqC5Wy1HOMfa4btKjbNxbg==}
     engines: {node: '>=v18'}
 
-  '@conform-to/dom@1.3.0':
-    resolution: {integrity: sha512-Tw42GucxyuUv72/NDRNFSyQIEw6E9To0wf9Bk0eZVFLXVS1Lg/fIkKi/wBuWdqUyHjzgKZSoe2jZNtRP9gwJwA==}
+  '@conform-to/dom@1.4.0':
+    resolution: {integrity: sha512-BvYzotcvq6PxTmxCOV089VXzv7oij+yeGIO/Q5/K2f8s030EHzxelPHmLmdnGrKrPP4XRVaYqQHdjHExrqbkBg==}
 
-  '@conform-to/react@1.3.0':
-    resolution: {integrity: sha512-vF3tOolb2lxHrjpIggcMEVZpo7+CC9pfezuXFA7XrjXmNYR84YqHpOfi/2ei1qtUTFxX2zZTqvsMD4ZuGtlCBg==}
+  '@conform-to/react@1.4.0':
+    resolution: {integrity: sha512-1oYN+sErUCmxVcVSGE8mO9PiAHKqkb9KrXstER4rTHw+xC3NrQJjQBs+ifilMCfGFw/UJZRexo05TwyI+h0jpg==}
     peerDependencies:
       react: '>=18'
 
-  '@conform-to/zod@1.3.0':
-    resolution: {integrity: sha512-6+sIlzJJYM2a4GjWmMeY8L8CilzRatkQtMd1/Q+mvElN8bRbIVOwoJLMgUnyIjIu5L3bZP91kt5UcTqA2tAaAA==}
+  '@conform-to/zod@1.4.0':
+    resolution: {integrity: sha512-8tEH5jZYHph7A+d4EPr7eIQpoygcOPvqDdMVML//nO3bixQjhu+mLSEoh/zun0BAhL2ePS5nxywhMP9buOlh8w==}
     peerDependencies:
       zod: ^3.21.0
 
@@ -866,8 +866,8 @@ packages:
   '@jspm/core@2.1.0':
     resolution: {integrity: sha512-3sRl+pkyFY/kLmHl0cgHiFp2xEqErA8N3ECjMs7serSUBmoJ70lBa0PG5t0IM6WJgdZNyyI0R8YFfi5wM8+mzg==}
 
-  '@kurocado-studio/html-forms@1.0.0-alpha.6':
-    resolution: {integrity: sha512-XrAk9yYOZkqUNrqaHbDDlw4CeQJPS6kN73L02Su1iZku255y1CYmLXQzp0OCFXl1BSYnUuQEgK+ZOVXK4fiy7A==}
+  '@kurocado-studio/html-forms@1.0.0':
+    resolution: {integrity: sha512-gDOT43sblcpGunK56cQ4dqRDZYFlSp7tFgBw5Oozq+vwgReoqReK31biNAdwfwaXzfD2/hi8vrPJLsHRPk4gjA==}
     peerDependencies:
       react: 19.0.0
       react-dom: 19.0.0
@@ -897,12 +897,12 @@ packages:
       vitest: ^2.1.3
       vitest-axe: ^0.1.0
 
-  '@kurocado-studio/ui@1.2.0':
-    resolution: {integrity: sha512-4W0R9Vy5PxZm2YZQ29dhZ9sPfZCABgBL39rrO40VaQNAuQQbL5viIo0z3Zc42pVXy/7r+rer96wp3JZ7jiJM5A==}
+  '@kurocado-studio/ui@1.3.2':
+    resolution: {integrity: sha512-F8NJZ0lXlQLALXugeb0CjGcqcqZd8uDMHDqwc8kA3xB9q5vdJ32HX9x90euE6XqP4pspMp5ELu0nlAXGKEtCCQ==}
     peerDependencies:
       framer-motion: ^12.6.2
-      react: 19.0.0
-      react-dom: 19.0.0
+      react: 19.1.0
+      react-dom: 19.1.0
       tailwindcss: ^3.4.0
       tailwindcss-animate: ^1.0.7
 
@@ -7256,8 +7256,8 @@ packages:
     resolution: {integrity: sha512-GQHQqAopRhwU8Kt1DDM8NjibDXHC8eoh1erhGAJPEyveY9qqVeXvVikNKrDz69sHowPMorbPUrH/mx8c50eiBQ==}
     engines: {node: '>=18'}
 
-  zod@3.24.2:
-    resolution: {integrity: sha512-lY7CDW43ECgW9u1TcT3IoXHflywfVqDYze4waEz812jR/bZ8FHDsl7pFQoSZTz5N+2NqRXs8GBwnAwo3ZNxqhQ==}
+  zod@3.24.3:
+    resolution: {integrity: sha512-HhY1oqzWCQWuUqvBFnsyrtZRhyPeR7SUGv+C4+MsisMuVfSPx8HpwWqH8tRahSlt6M3PiFAcoeFhZAqIXTxoSg==}
 
   zwitch@2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
@@ -7650,17 +7650,17 @@ snapshots:
       '@types/conventional-commits-parser': 5.0.1
       chalk: 5.4.1
 
-  '@conform-to/dom@1.3.0': {}
+  '@conform-to/dom@1.4.0': {}
 
-  '@conform-to/react@1.3.0(react@18.3.1)':
+  '@conform-to/react@1.4.0(react@18.3.1)':
     dependencies:
-      '@conform-to/dom': 1.3.0
+      '@conform-to/dom': 1.4.0
       react: 18.3.1
 
-  '@conform-to/zod@1.3.0(zod@3.24.2)':
+  '@conform-to/zod@1.4.0(zod@3.24.3)':
     dependencies:
-      '@conform-to/dom': 1.3.0
-      zod: 3.24.2
+      '@conform-to/dom': 1.4.0
+      zod: 3.24.3
 
   '@csstools/color-helpers@5.0.2': {}
 
@@ -8012,17 +8012,17 @@ snapshots:
 
   '@jspm/core@2.1.0': {}
 
-  '@kurocado-studio/html-forms@1.0.0-alpha.6(react-dom@18.2.0(react@18.3.1))(react@18.3.1)':
+  '@kurocado-studio/html-forms@1.0.0(react-dom@18.2.0(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@conform-to/dom': 1.3.0
-      '@conform-to/react': 1.3.0(react@18.3.1)
-      '@conform-to/zod': 1.3.0(zod@3.24.2)
+      '@conform-to/dom': 1.4.0
+      '@conform-to/react': 1.4.0(react@18.3.1)
+      '@conform-to/zod': 1.4.0(zod@3.24.3)
       '@react-aria/utils': 3.28.2(react-dom@18.2.0(react@18.3.1))(react@18.3.1)
       lodash-es: 4.17.21
       react: 18.3.1
       react-aria: 3.39.0(react-dom@18.2.0(react@18.3.1))(react@18.3.1)
       react-dom: 18.2.0(react@18.3.1)
-      zod: 3.24.2
+      zod: 3.24.3
 
   '@kurocado-studio/qa@1.1.4(@swc/core@1.11.21(@swc/helpers@0.5.17))(@testing-library/dom@10.4.0)(@types/debug@4.1.12)(@types/react@19.1.1)(eslint@9.24.0(jiti@2.4.2))(optionator@0.9.4)(prettier@3.5.3)(react@18.3.1)(rollup@4.40.0)(vite@5.4.12(@types/node@22.13.10))(vitest-axe@0.1.0(vitest@2.1.8(@types/node@22.13.10)(jsdom@26.1.0)))':
     dependencies:
@@ -8204,9 +8204,9 @@ snapshots:
       - utf-8-validate
       - wrangler
 
-  '@kurocado-studio/ui@1.2.0(framer-motion@11.13.5(react-dom@18.2.0(react@18.3.1))(react@18.3.1))(react-dom@18.2.0(react@18.3.1))(react@18.3.1)(tailwindcss-animate@1.0.7(tailwindcss@3.3.2))(tailwindcss@3.3.2)':
+  '@kurocado-studio/ui@1.3.2(framer-motion@11.13.5(react-dom@18.2.0(react@18.3.1))(react@18.3.1))(react-dom@18.2.0(react@18.3.1))(react@18.3.1)(tailwindcss-animate@1.0.7(tailwindcss@3.3.2))(tailwindcss@3.3.2)':
     dependencies:
-      '@kurocado-studio/html-forms': 1.0.0-alpha.6(react-dom@18.2.0(react@18.3.1))(react@18.3.1)
+      '@kurocado-studio/html-forms': 1.0.0(react-dom@18.2.0(react@18.3.1))(react@18.3.1)
       '@react-aria/button': 3.13.0(react-dom@18.2.0(react@18.3.1))(react@18.3.1)
       '@react-aria/textfield': 3.17.2(react-dom@18.2.0(react@18.3.1))(react@18.3.1)
       framer-motion: 11.13.5(react-dom@18.2.0(react@18.3.1))(react@18.3.1)
@@ -16088,6 +16088,6 @@ snapshots:
 
   yoctocolors@2.1.1: {}
 
-  zod@3.24.2: {}
+  zod@3.24.3: {}
 
   zwitch@2.0.4: {}

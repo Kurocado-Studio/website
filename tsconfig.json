@@ -3,7 +3,7 @@
     "app",
     "test",
     "tailwind.config.ts",
-    "setup.remix.ts",
+    "setup.web.ts",
     "vite.config.ts",
     "vitest.config.ts"
   ],

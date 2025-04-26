@@ -79,7 +79,7 @@ export function PointOfContacts({
             onPointerLeave={() => setDefaultVariant()}
             className={sharedClassName}
           >
-            E-mail me
+            Let&#39;s work together
           </motion.a>
         </FadeIn>
         {socialMediaProfiles.map((socialMediaProfile, idx) => (

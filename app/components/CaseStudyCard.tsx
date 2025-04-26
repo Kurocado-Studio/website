@@ -54,7 +54,7 @@ export function CaseStudyCard(props: CaseStudyCardProps): React.ReactNode {
       <a
         href={get(props, ['caseStudy', 'url'])}
         className={twMerge(
-          'flex flex-col items-center overflow-hidden rounded-lg bg-dark-tile md:flex-row',
+          'flex flex-col items-center overflow-hidden rounded-full bg-dark-tile md:flex-row',
           `cursor-pointer shadow transition-all duration-300 ease-in-out hover:bg-lime-400`,
         )}
         target='_blank'

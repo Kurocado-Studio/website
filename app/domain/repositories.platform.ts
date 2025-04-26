@@ -36,8 +36,8 @@ export const devExperience = {
 };
 
 export const qa = {
-  title: 'Developer Experience (DX)',
-  url: 'https://github.com/Kurocado-Studio/dev-experience',
+  title: 'Quality Assurance (QA)',
+  url: 'https://github.com/Kurocado-Studio/qa',
   description:
     'Enhanced developer productivity through utilities like axios wrappers & reusable React hooks.',
 };

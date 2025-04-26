@@ -34,15 +34,15 @@ export function About(): React.ReactNode {
       </section>
       <article className='col-span-12 md:col-span-6'>
         <p className={sharedTypographyClassName}>
-          I specialize in front-end development & my background includes UX
-          Design, React and Vue. I’ve picked some project management skills that
-          help me align myself better within stakeholders. This combined
-          perspective empowers me to create solutions that are not only visually
-          appealing but also aligned with broader business goals.
+          I&#39;m a frontend engineer focused on building scalable,
+          design-driven web platforms with TypeScript, React, and Vue. My work
+          bridges the gap between product design and production-ready code—with
+          a strong emphasis on developer experience, automation, and visual
+          consistency.
         </p>
         <p className={sharedTypographyClassName}>
-          My goal is to collaborate with forward-thinking teams and deliver
-          user-centered solutions, so lets connect!
+          Below are some of my open-source projects and a detailed case study
+          that explores the thinking behind one of them.
         </p>
         <PointOfContacts className='mb-36 mt-24' />
         <h2

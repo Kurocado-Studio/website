@@ -59,7 +59,7 @@ export function HorizontalScroller({
   const xAxisScrollRange = useTransform(
     scrollYProgress,
     [0, 1],
-    [-(initialX * 3), initialX * 5],
+    [-(initialX * 16), initialX * 18],
   );
 
   const springConfig = {
@@ -74,7 +74,7 @@ export function HorizontalScroller({
     if (isPointerDevice) {
       return {
         style: {
-          height: `${innerHeight * 8}px`,
+          height: `${innerHeight * 16}px`,
         },
       };
     }
@@ -123,6 +123,16 @@ export function HorizontalScroller({
           )}
         >
           <StaggerSplitText text='Projects' />
+        </FadeIn>
+        <FadeIn
+          as='p'
+          direction={FadeInDirection.DOWN}
+          className='prose prose-sm mt-24 block pb-4 font-body text-xl font-semibold [text-wrap:balance] lg:text-4xl'
+        >
+          A curated collection of frontend tools and experiments, each crafted
+          with TypeScript, Figma, and modern frameworks like React and Vue.
+          These projects reflect my focus on design systems, developer
+          experience, and scalable UI architecture.
         </FadeIn>
       </Container>
       <motion.section

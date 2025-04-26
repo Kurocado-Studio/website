@@ -14,12 +14,6 @@ export const dailyUI = {
     'A curated collection of daily UI challenges, designed in Figma, then implemented in React and Vue.',
 };
 
-export const urlShortener = {
-  title: 'URL Shortener App',
-  url: 'https://github.com/Kurocado-Studio/url-shortener',
-  description: 'This is a simple URL shortener built in React and TypeScript.',
-};
-
 export const productStarter = {
   title: 'Product Starter Kit',
   url: 'https://github.com/Kurocado-Studio/product-starter-kit',
@@ -31,5 +25,4 @@ export const frontEndProjects: Array<FrontEndProject> = [
   productStarter,
   designSystem,
   dailyUI,
-  urlShortener,
 ];

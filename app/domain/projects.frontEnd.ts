@@ -31,5 +31,4 @@ export const frontEndProjects: Array<FrontEndProject> = [
   productStarter,
   designSystem,
   dailyUI,
-  urlShortener,
 ];

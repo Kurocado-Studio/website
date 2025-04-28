@@ -5,7 +5,7 @@ export const typeScriptPlatform = {
   url: 'https://kurocado-studio.github.io/platform/case-study.html',
   descriptions: [
     `This case study examines the conception & implementation of a modular TypeScript React development platform to support the Product Starter kit.`,
-    `The Product Starter kit includes CI/CD pipelines, testing, automated dependency management and a customizable design system from Figma to React thru Token Studio.`,
+    `The Product Starter kit includes CI/CD pipelines, testing, automated dependency management and a customizable design system from Figma to React and Vue thru Token Studio.`,
   ],
 };
 

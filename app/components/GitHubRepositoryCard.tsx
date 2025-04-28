@@ -35,7 +35,7 @@ export function GitHubRepositoryCard(
         'xl:w-[calc(100vw/2.5)] xl:min-w-[calc(100vw/3)] xl:max-w-[calc(100vw/4)]',
         'bg-[DarkSlateGray] text-[NavajoWhite]',
         'lg:hover:bg-[papayawhip] lg:hover:text-[Magenta]',
-        'flex flex-col content-between overflow-hidden rounded-lg',
+        'flex flex-col content-between overflow-hidden rounded-lg lg:rounded-xl',
         `cursor-pointer shadow transition-all duration-300 ease-in-out`,
         props.className,
       )}

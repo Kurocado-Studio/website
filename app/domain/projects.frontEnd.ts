@@ -18,7 +18,7 @@ export const productStarter = {
   title: 'Product Starter Kit',
   url: 'https://github.com/Kurocado-Studio/product-starter-kit',
   description:
-    'A production-ready starter kit with a Figma-to-React design system flow, Tailwind, CI/CD, and instant Vercel deploy.',
+    'A production-ready starter kit with a Figma-to-React and Vue design system flow, Tailwind, CI/CD, and instant Vercel deploy.',
 };
 
 export const frontEndProjects: Array<FrontEndProject> = [

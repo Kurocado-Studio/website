@@ -4,7 +4,7 @@ export const designSystem = {
   title: 'Design System',
   url: 'https://github.com/Kurocado-Studio/design-system',
   description:
-    'A token‑driven UI library whose look and feel can be tweaked in Figma and—via Token Studio—propagated to React & Vue components',
+    'A token‑driven UI library whose look and feel can be tweaked in Figma and—via Token Studio—propagate to React & Vue components',
 };
 
 export const dailyUI = {

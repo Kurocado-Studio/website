@@ -54,7 +54,7 @@ export function CaseStudyCard(props: CaseStudyCardProps): React.ReactNode {
       <a
         href={get(props, ['caseStudy', 'url'])}
         className={twMerge(
-          'flex flex-col items-center overflow-hidden rounded-full bg-dark-tile md:flex-row',
+          'flex flex-col items-center overflow-hidden rounded-lg bg-dark-tile md:flex-row md:rounded-full',
           `cursor-pointer shadow transition-all duration-300 ease-in-out hover:bg-lime-400`,
         )}
         target='_blank'
@@ -74,7 +74,7 @@ export function CaseStudyCard(props: CaseStudyCardProps): React.ReactNode {
         }}
       >
         <div className='flex w-full flex-col justify-between bg-dark-tile px-8 py-12 leading-normal md:px-24'>
-          <h2 className='mb-12 block font-display text-4xl font-medium tracking-tight [text-wrap:balance] md:mt-8 lg:mb-44 lg:text-7xl'>
+          <h2 className='mb-12 mt-4 block font-display text-4xl font-medium tracking-tight [text-wrap:balance] md:mt-8 lg:mb-44 lg:mt-24 lg:text-7xl'>
             {get(props, ['caseStudy', 'title'], '--')}
           </h2>
           {props.caseStudy.descriptions.map((description) => (

@@ -13,10 +13,10 @@ importers:
         version: 2.2.0(react@19.0.0)
       '@kurocado-studio/qa':
         specifier: 2.0.0-alpha.2
-        version: 2.0.0-alpha.2(@swc/core@1.11.21(@swc/helpers@0.5.17))(@testing-library/dom@10.4.0)(@types/debug@4.1.12)(@types/react@19.1.1)(eslint@9.26.0(jiti@2.4.2))(optionator@0.9.4)(prettier@3.5.3)(react@19.0.0)(rollup@4.40.0)(vite@5.4.12(@types/node@22.13.10))(vitest-axe@0.1.0(vitest@2.1.8(@types/node@22.13.10)(jsdom@26.1.0)))
+        version: 2.0.0-alpha.2(@swc/core@1.11.21(@swc/helpers@0.5.17))(@testing-library/dom@10.4.0)(@types/debug@4.1.12)(@types/react@19.1.1)(@vue/compiler-sfc@3.5.14)(eslint@9.26.0(jiti@2.4.2))(optionator@0.9.4)(prettier@3.5.3)(react@19.0.0)(rollup@4.40.0)(vite@5.4.12(@types/node@22.13.10))(vitest-axe@0.1.0(vitest@2.1.8(@types/node@22.13.10)(jsdom@26.1.0)))
       '@kurocado-studio/ui':
-        specifier: 1.3.2
-        version: 1.3.2(framer-motion@11.13.5(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss-animate@1.0.7(tailwindcss@3.3.2))(tailwindcss@3.3.2)
+        specifier: 1.4.0
+        version: 1.4.0(framer-motion@11.13.5(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss-animate@1.0.7(tailwindcss@3.3.2))(tailwindcss@3.3.2)(vue@3.5.14(typescript@5.8.3))
       '@motionone/utils':
         specifier: 10.18.0
         version: 10.18.0
@@ -62,7 +62,7 @@ importers:
         version: 0.5.9
       '@kurocado-studio/styleguide':
         specifier: 1.10.3
-        version: 1.10.3(@commitlint/cli@19.8.1(@types/node@22.13.10)(typescript@5.8.3))(@commitlint/config-conventional@19.8.0)(@remix-run/serve@2.16.6(typescript@5.8.3))(@swc/helpers@0.5.17)(@testing-library/jest-dom@6.6.3)(@testing-library/react@16.3.0(@testing-library/dom@10.4.0)(@types/react-dom@18.3.1)(@types/react@19.1.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@testing-library/user-event@14.6.1(@testing-library/dom@10.4.0))(@vitejs/plugin-react@4.3.4(vite@5.4.12(@types/node@22.13.10)))(eslint@9.26.0(jiti@2.4.2))(husky@9.1.7)(prettier@3.5.3)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(rollup@4.40.0)(semantic-release@23.1.1(typescript@5.8.3))(typescript@5.8.3)(vite@5.4.12(@types/node@22.13.10))(vitest-axe@0.1.0(vitest@2.1.8(@types/node@22.13.10)(jsdom@26.1.0)))(vitest@2.1.8(@types/node@22.13.10)(jsdom@26.1.0))
+        version: 1.10.3(@commitlint/cli@19.8.1(@types/node@22.13.10)(typescript@5.8.3))(@commitlint/config-conventional@19.8.0)(@remix-run/serve@2.16.6(typescript@5.8.3))(@swc/helpers@0.5.17)(@testing-library/jest-dom@6.6.3)(@testing-library/react@16.3.0(@testing-library/dom@10.4.0)(@types/react-dom@18.3.1)(@types/react@19.1.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@testing-library/user-event@14.6.1(@testing-library/dom@10.4.0))(@vitejs/plugin-react@4.3.4(vite@5.4.12(@types/node@22.13.10)))(@vue/compiler-sfc@3.5.14)(eslint@9.26.0(jiti@2.4.2))(husky@9.1.7)(prettier@3.5.3)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(rollup@4.40.0)(semantic-release@23.1.1(typescript@5.8.3))(typescript@5.8.3)(vite@5.4.12(@types/node@22.13.10))(vitest-axe@0.1.0(vitest@2.1.8(@types/node@22.13.10)(jsdom@26.1.0)))(vitest@2.1.8(@types/node@22.13.10)(jsdom@26.1.0))
       '@remix-run/dev':
         specifier: 2.8.1
         version: 2.8.1(@remix-run/serve@2.16.6(typescript@5.8.3))(@types/node@22.13.10)(typescript@5.8.3)(vite@5.4.12(@types/node@22.13.10))
@@ -71,7 +71,7 @@ importers:
         version: 2.16.6(typescript@5.8.3)
       '@trivago/prettier-plugin-sort-imports':
         specifier: ^5.2.2
-        version: 5.2.2(prettier@3.5.3)
+        version: 5.2.2(@vue/compiler-sfc@3.5.14)(prettier@3.5.3)
       '@types/lodash-es':
         specifier: ^4.17.12
         version: 4.17.12
@@ -110,7 +110,7 @@ importers:
         version: 2.5.13(prettier@3.5.3)
       prettier-plugin-tailwindcss:
         specifier: ^0.6.11
-        version: 0.6.11(@trivago/prettier-plugin-sort-imports@5.2.2(prettier@3.5.3))(prettier-plugin-sort-imports@1.8.7(typescript@5.8.3))(prettier@3.5.3)
+        version: 0.6.11(@trivago/prettier-plugin-sort-imports@5.2.2(@vue/compiler-sfc@3.5.14)(prettier@3.5.3))(prettier-plugin-sort-imports@1.8.7(typescript@5.8.3))(prettier@3.5.3)
       semantic-release:
         specifier: 23.1.1
         version: 23.1.1(typescript@5.8.3)
@@ -431,16 +431,16 @@ packages:
     resolution: {integrity: sha512-/yCrWGCoA1SVKOks25EGadP9Pnj0oAIHGpl2wH2M2Y46dPM2ueb8wyCVOD7O3WCTkaJ0IkKvzhl1JY7+uCT2Dw==}
     engines: {node: '>=v18'}
 
-  '@conform-to/dom@1.4.0':
-    resolution: {integrity: sha512-BvYzotcvq6PxTmxCOV089VXzv7oij+yeGIO/Q5/K2f8s030EHzxelPHmLmdnGrKrPP4XRVaYqQHdjHExrqbkBg==}
+  '@conform-to/dom@1.5.1':
+    resolution: {integrity: sha512-QZeNJ+TC6NjBb8zHYHcXVxuFHxWLo8zYhJyHvKymkIqKwoDCnu6X8EheAbnKHh79PpgBttIu6gdjibEwUsBGuw==}
 
-  '@conform-to/react@1.4.0':
-    resolution: {integrity: sha512-1oYN+sErUCmxVcVSGE8mO9PiAHKqkb9KrXstER4rTHw+xC3NrQJjQBs+ifilMCfGFw/UJZRexo05TwyI+h0jpg==}
+  '@conform-to/react@1.5.1':
+    resolution: {integrity: sha512-dEKH81vm1+BphgFP9v7OkHxu4CDVq70yk4tApIFV2gqQAA0P7ZMrD4cu2e2o2TAYDiThPEuKxkcCmuAwbZTZbw==}
     peerDependencies:
       react: '>=18'
 
-  '@conform-to/zod@1.4.0':
-    resolution: {integrity: sha512-8tEH5jZYHph7A+d4EPr7eIQpoygcOPvqDdMVML//nO3bixQjhu+mLSEoh/zun0BAhL2ePS5nxywhMP9buOlh8w==}
+  '@conform-to/zod@1.5.1':
+    resolution: {integrity: sha512-X89Asni+LlM5U7abJcD3OE/HLKB0SGqo9KVLGZsn/QUVXT+cJDVAXFz1TP6/zDEdsOkabDw+xBHQF2vPxkfrOg==}
     peerDependencies:
       zod: ^3.21.0
 
@@ -933,8 +933,8 @@ packages:
       vitest: ^2.1.3
       vitest-axe: ^0.1.0
 
-  '@kurocado-studio/ui@1.3.2':
-    resolution: {integrity: sha512-F8NJZ0lXlQLALXugeb0CjGcqcqZd8uDMHDqwc8kA3xB9q5vdJ32HX9x90euE6XqP4pspMp5ELu0nlAXGKEtCCQ==}
+  '@kurocado-studio/ui@1.4.0':
+    resolution: {integrity: sha512-NMjqXXHmQyNqZFDXcBbmyJ+/n3EE5gOp+sVEBhU2FNhy0OeyeYcFCDKRVPo4/hEiR5u/9TUysKJjMGo0UusSmg==}
     peerDependencies:
       framer-motion: ^12.6.2
       react: 19.1.0
@@ -2382,6 +2382,9 @@ packages:
   '@types/unist@2.0.11':
     resolution: {integrity: sha512-CmBKiL6NNo/OqgmMn95Fk9Whlp2mtvIv+KNpQKN2F4SjvrEesubTRWGYSg+BnWZOnlCaSTU1sMpsBOzgbYhnsA==}
 
+  '@types/web-bluetooth@0.0.20':
+    resolution: {integrity: sha512-g9gZnnXVq7gM7v3tJCWV/qw7w+KeOlSHAhgF9RytFyifW6AF61hdT2ucrYhPq9hLs5JIryeupHV3qGk95dH9ow==}
+
   '@types/yargs-parser@21.0.3':
     resolution: {integrity: sha512-I4q9QU9MQv4oEOz4tAHJtNz1cwuLxn2F3xcc2iV5WdqLPpUnj30aUuxt1mAxYTG+oe8CZMV/+6rU4S4gRDzqtQ==}
 
@@ -2642,8 +2645,20 @@ packages:
   '@vue/compiler-core@3.5.13':
     resolution: {integrity: sha512-oOdAkwqUfW1WqpwSYJce06wvt6HljgY3fGeM9NcVA1HaYOij3mZG9Rkysn0OHuyUAGMbEbARIpsG+LPVlBJ5/Q==}
 
+  '@vue/compiler-core@3.5.14':
+    resolution: {integrity: sha512-k7qMHMbKvoCXIxPhquKQVw3Twid3Kg4s7+oYURxLGRd56LiuHJVrvFKI4fm2AM3c8apqODPfVJGoh8nePbXMRA==}
+
   '@vue/compiler-dom@3.5.13':
     resolution: {integrity: sha512-ZOJ46sMOKUjO3e94wPdCzQ6P1Lx/vhp2RSvfaab88Ajexs0AHeV0uasYhi99WPaogmBlRHNRuly8xV75cNTMDA==}
+
+  '@vue/compiler-dom@3.5.14':
+    resolution: {integrity: sha512-1aOCSqxGOea5I80U2hQJvXYpPm/aXo95xL/m/mMhgyPUsKe9jhjwWpziNAw7tYRnbz1I61rd9Mld4W9KmmRoug==}
+
+  '@vue/compiler-sfc@3.5.14':
+    resolution: {integrity: sha512-9T6m/9mMr81Lj58JpzsiSIjBgv2LiVoWjIVa7kuXHICUi8LiDSIotMpPRXYJsXKqyARrzjT24NAwttrMnMaCXA==}
+
+  '@vue/compiler-ssr@3.5.14':
+    resolution: {integrity: sha512-Y0G7PcBxr1yllnHuS/NxNCSPWnRGH4Ogrp0tsLA5QemDZuJLs99YjAKQ7KqkHE0vCg4QTKlQzXLKCMF7WPSl7Q==}
 
   '@vue/compiler-vue2@2.7.16':
     resolution: {integrity: sha512-qYC3Psj9S/mfu9uVi5WvNZIzq+xnXMhOwbTFKKDD7b1lhpnn71jXSFdTQ+WsIEk0ONCd7VV2IMm7ONl6tbQ86A==}
@@ -2656,8 +2671,34 @@ packages:
       typescript:
         optional: true
 
+  '@vue/reactivity@3.5.14':
+    resolution: {integrity: sha512-7cK1Hp343Fu/SUCCO52vCabjvsYu7ZkOqyYu7bXV9P2yyfjUMUXHZafEbq244sP7gf+EZEz+77QixBTuEqkQQw==}
+
+  '@vue/runtime-core@3.5.14':
+    resolution: {integrity: sha512-w9JWEANwHXNgieAhxPpEpJa+0V5G0hz3NmjAZwlOebtfKyp2hKxKF0+qSh0Xs6/PhfGihuSdqMprMVcQU/E6ag==}
+
+  '@vue/runtime-dom@3.5.14':
+    resolution: {integrity: sha512-lCfR++IakeI35TVR80QgOelsUIdcKjd65rWAMfdSlCYnaEY5t3hYwru7vvcWaqmrK+LpI7ZDDYiGU5V3xjMacw==}
+
+  '@vue/server-renderer@3.5.14':
+    resolution: {integrity: sha512-Rf/ISLqokIvcySIYnv3tNWq40PLpNLDLSJwwVWzG6MNtyIhfbcrAxo5ZL9nARJhqjZyWWa40oRb2IDuejeuv6w==}
+    peerDependencies:
+      vue: 3.5.14
+
   '@vue/shared@3.5.13':
     resolution: {integrity: sha512-/hnE/qP5ZoGpol0a5mDi45bOd7t3tjYJBjsgCsivow7D48cJeV5l05RD82lPqi7gRiphZM37rnhW1l6ZoCNNnQ==}
+
+  '@vue/shared@3.5.14':
+    resolution: {integrity: sha512-oXTwNxVfc9EtP1zzXAlSlgARLXNC84frFYkS0HHz0h3E4WZSP9sywqjqzGCP9Y34M8ipNmd380pVgmMuwELDyQ==}
+
+  '@vueuse/core@10.11.1':
+    resolution: {integrity: sha512-guoy26JQktXPcz+0n3GukWIy/JDNKti9v6VEMu6kV2sYBsWuGiTU8OWdg+ADfUbHg3/3DlqySDe7JmdHrktiww==}
+
+  '@vueuse/metadata@10.11.1':
+    resolution: {integrity: sha512-IGa5FXd003Ug1qAZmyE8wF3sJ81xGLSqTqtQ6jaVfkeZ4i5kS2mwQF61yhVqojRnenVew5PldLyRgvdl4YYuSw==}
+
+  '@vueuse/shared@10.11.1':
+    resolution: {integrity: sha512-LHpC8711VFZlDaYUXEBbFBCQ7GS3dVU9mjOhhMhXP6txTV4EhYQg/KGnQuvt/sPAtoUKq7VVUnL6mVtFoL42sA==}
 
   '@web3-storage/multipart-parser@1.0.0':
     resolution: {integrity: sha512-BEO6al7BYqcnfX15W2cnGR+Q566ACXAT9UQykORCWW80lmkpWsnEob6zJS1ZVBKsSJC8+7vJkHwlp+lXG1UCdw==}
@@ -4052,6 +4093,34 @@ packages:
       react-dom:
         optional: true
 
+  framer-motion@12.11.4:
+    resolution: {integrity: sha512-kyE5oWZCUxhDb7LtpEyyadNThJJvoE8a6bfUTBqz++zw3XxDOosPAvw1lqNhYbjOgy57YuAlJ5qG/Cx5BigiEQ==}
+    peerDependencies:
+      '@emotion/is-prop-valid': '*'
+      react: ^18.0.0 || ^19.0.0
+      react-dom: ^18.0.0 || ^19.0.0
+    peerDependenciesMeta:
+      '@emotion/is-prop-valid':
+        optional: true
+      react:
+        optional: true
+      react-dom:
+        optional: true
+
+  framer-motion@12.5.0:
+    resolution: {integrity: sha512-buPlioFbH9/W7rDzYh1C09AuZHAk2D1xTA1BlounJ2Rb9aRg84OXexP0GLd+R83v0khURdMX7b5MKnGTaSg5iA==}
+    peerDependencies:
+      '@emotion/is-prop-valid': '*'
+      react: ^18.0.0 || ^19.0.0
+      react-dom: ^18.0.0 || ^19.0.0
+    peerDependenciesMeta:
+      '@emotion/is-prop-valid':
+        optional: true
+      react:
+        optional: true
+      react-dom:
+        optional: true
+
   fresh@0.5.2:
     resolution: {integrity: sha512-zJ2mQYM18rEFOudeV4GShTGIQ7RbzA7ozbU9I/XBpm7kqgMywgmylMwXHxZJmkVoYkna9d2pVXVXPdYTP9ej8Q==}
     engines: {node: '>= 0.6'}
@@ -5278,8 +5347,33 @@ packages:
   motion-dom@11.18.1:
     resolution: {integrity: sha512-g76KvA001z+atjfxczdRtw/RXOM3OMSdd1f4DL77qCTF/+avrRJiawSG4yDibEQ215sr9kpinSlX2pCTJ9zbhw==}
 
+  motion-dom@12.11.4:
+    resolution: {integrity: sha512-1z/qYsrDjSx5QjOH8GfJ2RfFBvEzI2gdAEt2zNW+f7QkLlqjM3sQieESJr5+QtVmvD81qPANM7t97ROixKIt9Q==}
+
   motion-utils@11.18.1:
     resolution: {integrity: sha512-49Kt+HKjtbJKLtgO/LKj9Ld+6vw9BjH5d9sc40R/kVyH8GLAXgT42M2NnuPcJNuA3s9ZfZBUcwIgpmZWGEE+hA==}
+
+  motion-utils@12.9.4:
+    resolution: {integrity: sha512-BW3I65zeM76CMsfh3kHid9ansEJk9Qvl+K5cu4DVHKGsI52n76OJ4z2CUJUV+Mn3uEP9k1JJA3tClG0ggSrRcg==}
+
+  motion-v@1.0.2:
+    resolution: {integrity: sha512-Qn/X9Mx/5g02rjvpGtn5fht2OWTAnZoed4vLXgjM0lJgkSEtoGuadwEVypbCVH3WW1AHsns2k2okKAjpDrKu6A==}
+    peerDependencies:
+      vue: '>=3.0.0'
+
+  motion@12.11.4:
+    resolution: {integrity: sha512-1UnHgj/GBJ3NmLKSQFYJBCh5qOZYGUdoTZWk0N8rWrrCUfsNMTzSlhaaS3t3QdBwTTi3jWoT9iW7UciqvIxRpQ==}
+    peerDependencies:
+      '@emotion/is-prop-valid': '*'
+      react: ^18.0.0 || ^19.0.0
+      react-dom: ^18.0.0 || ^19.0.0
+    peerDependenciesMeta:
+      '@emotion/is-prop-valid':
+        optional: true
+      react:
+        optional: true
+      react-dom:
+        optional: true
 
   mri@1.2.0:
     resolution: {integrity: sha512-tzzskb3bG8LvYGFF/mDTpq3jpI6Q9wc3LEmBaghu+DdCssd1FakN7Bc0hVNmEyGq1bq3RgfkCb3cmQLpNPOroA==}
@@ -7249,6 +7343,25 @@ packages:
   vscode-uri@3.1.0:
     resolution: {integrity: sha512-/BpdSx+yCQGnCvecbyXdxHDkuk55/G3xwnC0GqY4gmQ3j+A+g8kzzgB4Nk/SINjqn6+waqw3EgbVF2QKExkRxQ==}
 
+  vue-demi@0.14.10:
+    resolution: {integrity: sha512-nMZBOwuzabUO0nLgIcc6rycZEebF6eeUfaiQx9+WSk8e29IbLvPU9feI6tqW4kTo3hvoYAJkMh8n8D0fuISphg==}
+    engines: {node: '>=12'}
+    hasBin: true
+    peerDependencies:
+      '@vue/composition-api': ^1.0.0-rc.1
+      vue: ^3.0.0-0 || ^2.6.0
+    peerDependenciesMeta:
+      '@vue/composition-api':
+        optional: true
+
+  vue@3.5.14:
+    resolution: {integrity: sha512-LbOm50/vZFG6Mhy6KscQYXZMQ0LMCC/y40HDJPPvGFQ+i/lUH+PJHR6C3assgOQiXdl6tAfsXHbXYVBZZu65ew==}
+    peerDependencies:
+      typescript: '*'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+
   w3c-xmlserializer@5.0.0:
     resolution: {integrity: sha512-o8qghlI8NZHU1lLPrpi2+Uq7abh4GGPpYANlalzWxyWteJOCsr/P+oPBA49TOLu5FTZO4d3F9MnWJfiMo4BkmA==}
     engines: {node: '>=18'}
@@ -7841,16 +7954,16 @@ snapshots:
       '@types/conventional-commits-parser': 5.0.1
       chalk: 5.4.1
 
-  '@conform-to/dom@1.4.0': {}
+  '@conform-to/dom@1.5.1': {}
 
-  '@conform-to/react@1.4.0(react@19.0.0)':
+  '@conform-to/react@1.5.1(react@19.0.0)':
     dependencies:
-      '@conform-to/dom': 1.4.0
+      '@conform-to/dom': 1.5.1
       react: 19.0.0
 
-  '@conform-to/zod@1.4.0(zod@3.24.4)':
+  '@conform-to/zod@1.5.1(zod@3.24.4)':
     dependencies:
-      '@conform-to/dom': 1.4.0
+      '@conform-to/dom': 1.5.1
       zod: 3.24.4
 
   '@csstools/color-helpers@5.0.2': {}
@@ -8205,9 +8318,9 @@ snapshots:
 
   '@kurocado-studio/html-forms@1.0.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
-      '@conform-to/dom': 1.4.0
-      '@conform-to/react': 1.4.0(react@19.0.0)
-      '@conform-to/zod': 1.4.0(zod@3.24.4)
+      '@conform-to/dom': 1.5.1
+      '@conform-to/react': 1.5.1(react@19.0.0)
+      '@conform-to/zod': 1.5.1(zod@3.24.4)
       '@react-aria/utils': 3.28.2(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       lodash-es: 4.17.21
       react: 19.0.0
@@ -8215,7 +8328,7 @@ snapshots:
       react-dom: 19.0.0(react@19.0.0)
       zod: 3.24.4
 
-  '@kurocado-studio/qa@2.0.0-alpha.2(@swc/core@1.11.21(@swc/helpers@0.5.17))(@testing-library/dom@10.4.0)(@types/debug@4.1.12)(@types/react@19.1.1)(eslint@9.26.0(jiti@2.4.2))(optionator@0.9.4)(prettier@3.5.3)(react@19.0.0)(rollup@4.40.0)(vite@5.4.12(@types/node@22.13.10))(vitest-axe@0.1.0(vitest@2.1.8(@types/node@22.13.10)(jsdom@26.1.0)))':
+  '@kurocado-studio/qa@2.0.0-alpha.2(@swc/core@1.11.21(@swc/helpers@0.5.17))(@testing-library/dom@10.4.0)(@types/debug@4.1.12)(@types/react@19.1.1)(@vue/compiler-sfc@3.5.14)(eslint@9.26.0(jiti@2.4.2))(optionator@0.9.4)(prettier@3.5.3)(react@19.0.0)(rollup@4.40.0)(vite@5.4.12(@types/node@22.13.10))(vitest-axe@0.1.0(vitest@2.1.8(@types/node@22.13.10)(jsdom@26.1.0)))':
     dependencies:
       '@eslint/js': 9.24.0
       '@faker-js/faker': 9.7.0
@@ -8224,7 +8337,7 @@ snapshots:
       '@testing-library/jest-dom': 6.6.3
       '@testing-library/react': 16.3.0(@testing-library/dom@10.4.0)(@types/react-dom@19.0.0)(@types/react@19.1.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@testing-library/user-event': 14.6.1(@testing-library/dom@10.4.0)
-      '@trivago/prettier-plugin-sort-imports': 5.2.2(prettier@3.5.3)
+      '@trivago/prettier-plugin-sort-imports': 5.2.2(@vue/compiler-sfc@3.5.14)(prettier@3.5.3)
       '@types/express': 5.0.1
       '@types/jest': 29.5.14
       '@types/jest-axe': 3.5.9
@@ -8288,7 +8401,7 @@ snapshots:
       - vti
       - vue-tsc
 
-  '@kurocado-studio/styleguide@1.10.3(@commitlint/cli@19.8.1(@types/node@22.13.10)(typescript@5.8.3))(@commitlint/config-conventional@19.8.0)(@remix-run/serve@2.16.6(typescript@5.8.3))(@swc/helpers@0.5.17)(@testing-library/jest-dom@6.6.3)(@testing-library/react@16.3.0(@testing-library/dom@10.4.0)(@types/react-dom@18.3.1)(@types/react@19.1.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@testing-library/user-event@14.6.1(@testing-library/dom@10.4.0))(@vitejs/plugin-react@4.3.4(vite@5.4.12(@types/node@22.13.10)))(eslint@9.26.0(jiti@2.4.2))(husky@9.1.7)(prettier@3.5.3)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(rollup@4.40.0)(semantic-release@23.1.1(typescript@5.8.3))(typescript@5.8.3)(vite@5.4.12(@types/node@22.13.10))(vitest-axe@0.1.0(vitest@2.1.8(@types/node@22.13.10)(jsdom@26.1.0)))(vitest@2.1.8(@types/node@22.13.10)(jsdom@26.1.0))':
+  '@kurocado-studio/styleguide@1.10.3(@commitlint/cli@19.8.1(@types/node@22.13.10)(typescript@5.8.3))(@commitlint/config-conventional@19.8.0)(@remix-run/serve@2.16.6(typescript@5.8.3))(@swc/helpers@0.5.17)(@testing-library/jest-dom@6.6.3)(@testing-library/react@16.3.0(@testing-library/dom@10.4.0)(@types/react-dom@18.3.1)(@types/react@19.1.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@testing-library/user-event@14.6.1(@testing-library/dom@10.4.0))(@vitejs/plugin-react@4.3.4(vite@5.4.12(@types/node@22.13.10)))(@vue/compiler-sfc@3.5.14)(eslint@9.26.0(jiti@2.4.2))(husky@9.1.7)(prettier@3.5.3)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(rollup@4.40.0)(semantic-release@23.1.1(typescript@5.8.3))(typescript@5.8.3)(vite@5.4.12(@types/node@22.13.10))(vitest-axe@0.1.0(vitest@2.1.8(@types/node@22.13.10)(jsdom@26.1.0)))(vitest@2.1.8(@types/node@22.13.10)(jsdom@26.1.0))':
     dependencies:
       '@babel/core': 7.26.10
       '@babel/eslint-parser': 7.27.0(@babel/core@7.26.10)(eslint@9.26.0(jiti@2.4.2))
@@ -8304,7 +8417,7 @@ snapshots:
       '@testing-library/jest-dom': 6.6.3
       '@testing-library/react': 16.3.0(@testing-library/dom@10.4.0)(@types/react-dom@18.3.1)(@types/react@19.1.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@testing-library/user-event': 14.6.1(@testing-library/dom@10.4.0)
-      '@trivago/prettier-plugin-sort-imports': 4.3.0(prettier@3.5.3)
+      '@trivago/prettier-plugin-sort-imports': 4.3.0(@vue/compiler-sfc@3.5.14)(prettier@3.5.3)
       '@types/express': 4.17.21
       '@types/jest': 29.5.14
       '@types/jest-axe': 3.5.9
@@ -8342,7 +8455,7 @@ snapshots:
       prettier: 3.5.3
       prettier-plugin-packagejson: 2.5.13(prettier@3.5.3)
       prettier-plugin-sort-imports: 1.8.7(typescript@5.8.3)
-      prettier-plugin-tailwindcss: 0.6.11(@trivago/prettier-plugin-sort-imports@4.3.0(prettier@3.5.3))(prettier-plugin-sort-imports@1.8.7(typescript@5.8.3))(prettier@3.5.3)
+      prettier-plugin-tailwindcss: 0.6.11(@trivago/prettier-plugin-sort-imports@4.3.0(@vue/compiler-sfc@3.5.14)(prettier@3.5.3))(prettier-plugin-sort-imports@1.8.7(typescript@5.8.3))(prettier@3.5.3)
       semantic-release: 23.1.1(typescript@5.8.3)
       semantic-release-github-pullrequest: 1.3.0(semantic-release@23.1.1(typescript@5.8.3))
       typescript: 5.8.3
@@ -8396,19 +8509,26 @@ snapshots:
       - utf-8-validate
       - wrangler
 
-  '@kurocado-studio/ui@1.3.2(framer-motion@11.13.5(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss-animate@1.0.7(tailwindcss@3.3.2))(tailwindcss@3.3.2)':
+  '@kurocado-studio/ui@1.4.0(framer-motion@11.13.5(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss-animate@1.0.7(tailwindcss@3.3.2))(tailwindcss@3.3.2)(vue@3.5.14(typescript@5.8.3))':
     dependencies:
       '@kurocado-studio/html-forms': 1.0.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@react-aria/button': 3.13.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@react-aria/textfield': 3.17.2(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      '@vue/runtime-dom': 3.5.14
       framer-motion: 11.13.5(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       lodash-es: 4.17.21
+      motion: 12.11.4(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      motion-v: 1.0.2(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(vue@3.5.14(typescript@5.8.3))
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
       tailwind-merge: 3.3.0
       tailwind-variants: 1.0.0(tailwindcss@3.3.2)
       tailwindcss: 3.3.2
       tailwindcss-animate: 1.0.7(tailwindcss@3.3.2)
+    transitivePeerDependencies:
+      - '@emotion/is-prop-valid'
+      - '@vue/composition-api'
+      - vue
 
   '@mdx-js/mdx@2.3.0':
     dependencies:
@@ -10452,7 +10572,7 @@ snapshots:
     dependencies:
       '@testing-library/dom': 10.4.0
 
-  '@trivago/prettier-plugin-sort-imports@4.3.0(prettier@3.5.3)':
+  '@trivago/prettier-plugin-sort-imports@4.3.0(@vue/compiler-sfc@3.5.14)(prettier@3.5.3)':
     dependencies:
       '@babel/generator': 7.17.7
       '@babel/parser': 7.27.0
@@ -10461,10 +10581,12 @@ snapshots:
       javascript-natural-sort: 0.7.1
       lodash: 4.17.21
       prettier: 3.5.3
+    optionalDependencies:
+      '@vue/compiler-sfc': 3.5.14
     transitivePeerDependencies:
       - supports-color
 
-  '@trivago/prettier-plugin-sort-imports@5.2.2(prettier@3.5.3)':
+  '@trivago/prettier-plugin-sort-imports@5.2.2(@vue/compiler-sfc@3.5.14)(prettier@3.5.3)':
     dependencies:
       '@babel/generator': 7.27.0
       '@babel/parser': 7.27.0
@@ -10473,6 +10595,8 @@ snapshots:
       javascript-natural-sort: 0.7.1
       lodash: 4.17.21
       prettier: 3.5.3
+    optionalDependencies:
+      '@vue/compiler-sfc': 3.5.14
     transitivePeerDependencies:
       - supports-color
 
@@ -10677,6 +10801,8 @@ snapshots:
       '@types/superagent': 8.1.9
 
   '@types/unist@2.0.11': {}
+
+  '@types/web-bluetooth@0.0.20': {}
 
   '@types/yargs-parser@21.0.3': {}
 
@@ -11061,10 +11187,40 @@ snapshots:
       estree-walker: 2.0.2
       source-map-js: 1.2.1
 
+  '@vue/compiler-core@3.5.14':
+    dependencies:
+      '@babel/parser': 7.27.2
+      '@vue/shared': 3.5.14
+      entities: 4.5.0
+      estree-walker: 2.0.2
+      source-map-js: 1.2.1
+
   '@vue/compiler-dom@3.5.13':
     dependencies:
       '@vue/compiler-core': 3.5.13
       '@vue/shared': 3.5.13
+
+  '@vue/compiler-dom@3.5.14':
+    dependencies:
+      '@vue/compiler-core': 3.5.14
+      '@vue/shared': 3.5.14
+
+  '@vue/compiler-sfc@3.5.14':
+    dependencies:
+      '@babel/parser': 7.27.2
+      '@vue/compiler-core': 3.5.14
+      '@vue/compiler-dom': 3.5.14
+      '@vue/compiler-ssr': 3.5.14
+      '@vue/shared': 3.5.14
+      estree-walker: 2.0.2
+      magic-string: 0.30.17
+      postcss: 8.5.3
+      source-map-js: 1.2.1
+
+  '@vue/compiler-ssr@3.5.14':
+    dependencies:
+      '@vue/compiler-dom': 3.5.14
+      '@vue/shared': 3.5.14
 
   '@vue/compiler-vue2@2.7.16':
     dependencies:
@@ -11076,7 +11232,7 @@ snapshots:
       '@volar/language-core': 2.4.12
       '@vue/compiler-dom': 3.5.13
       '@vue/compiler-vue2': 2.7.16
-      '@vue/shared': 3.5.13
+      '@vue/shared': 3.5.14
       alien-signals: 0.4.14
       minimatch: 9.0.5
       muggle-string: 0.4.1
@@ -11084,7 +11240,50 @@ snapshots:
     optionalDependencies:
       typescript: 5.8.3
 
+  '@vue/reactivity@3.5.14':
+    dependencies:
+      '@vue/shared': 3.5.14
+
+  '@vue/runtime-core@3.5.14':
+    dependencies:
+      '@vue/reactivity': 3.5.14
+      '@vue/shared': 3.5.14
+
+  '@vue/runtime-dom@3.5.14':
+    dependencies:
+      '@vue/reactivity': 3.5.14
+      '@vue/runtime-core': 3.5.14
+      '@vue/shared': 3.5.14
+      csstype: 3.1.3
+
+  '@vue/server-renderer@3.5.14(vue@3.5.14(typescript@5.8.3))':
+    dependencies:
+      '@vue/compiler-ssr': 3.5.14
+      '@vue/shared': 3.5.14
+      vue: 3.5.14(typescript@5.8.3)
+
   '@vue/shared@3.5.13': {}
+
+  '@vue/shared@3.5.14': {}
+
+  '@vueuse/core@10.11.1(vue@3.5.14(typescript@5.8.3))':
+    dependencies:
+      '@types/web-bluetooth': 0.0.20
+      '@vueuse/metadata': 10.11.1
+      '@vueuse/shared': 10.11.1(vue@3.5.14(typescript@5.8.3))
+      vue-demi: 0.14.10(vue@3.5.14(typescript@5.8.3))
+    transitivePeerDependencies:
+      - '@vue/composition-api'
+      - vue
+
+  '@vueuse/metadata@10.11.1': {}
+
+  '@vueuse/shared@10.11.1(vue@3.5.14(typescript@5.8.3))':
+    dependencies:
+      vue-demi: 0.14.10(vue@3.5.14(typescript@5.8.3))
+    transitivePeerDependencies:
+      - '@vue/composition-api'
+      - vue
 
   '@web3-storage/multipart-parser@1.0.0': {}
 
@@ -12726,6 +12925,24 @@ snapshots:
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
 
+  framer-motion@12.11.4(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
+    dependencies:
+      motion-dom: 12.11.4
+      motion-utils: 12.9.4
+      tslib: 2.8.1
+    optionalDependencies:
+      react: 19.0.0
+      react-dom: 19.0.0(react@19.0.0)
+
+  framer-motion@12.5.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
+    dependencies:
+      motion-dom: 12.11.4
+      motion-utils: 12.9.4
+      tslib: 2.8.1
+    optionalDependencies:
+      react: 19.0.0
+      react-dom: 19.0.0(react@19.0.0)
+
   fresh@0.5.2: {}
 
   fresh@2.0.0: {}
@@ -14147,7 +14364,34 @@ snapshots:
     dependencies:
       motion-utils: 11.18.1
 
+  motion-dom@12.11.4:
+    dependencies:
+      motion-utils: 12.9.4
+
   motion-utils@11.18.1: {}
+
+  motion-utils@12.9.4: {}
+
+  motion-v@1.0.2(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(vue@3.5.14(typescript@5.8.3)):
+    dependencies:
+      '@vueuse/core': 10.11.1(vue@3.5.14(typescript@5.8.3))
+      framer-motion: 12.5.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      hey-listen: 1.0.8
+      motion-dom: 12.11.4
+      vue: 3.5.14(typescript@5.8.3)
+    transitivePeerDependencies:
+      - '@emotion/is-prop-valid'
+      - '@vue/composition-api'
+      - react
+      - react-dom
+
+  motion@12.11.4(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
+    dependencies:
+      framer-motion: 12.11.4(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      tslib: 2.8.1
+    optionalDependencies:
+      react: 19.0.0
+      react-dom: 19.0.0(react@19.0.0)
 
   mri@1.2.0: {}
 
@@ -14653,18 +14897,18 @@ snapshots:
       prettier: 3.5.3
       typescript: 5.8.3
 
-  prettier-plugin-tailwindcss@0.6.11(@trivago/prettier-plugin-sort-imports@4.3.0(prettier@3.5.3))(prettier-plugin-sort-imports@1.8.7(typescript@5.8.3))(prettier@3.5.3):
+  prettier-plugin-tailwindcss@0.6.11(@trivago/prettier-plugin-sort-imports@4.3.0(@vue/compiler-sfc@3.5.14)(prettier@3.5.3))(prettier-plugin-sort-imports@1.8.7(typescript@5.8.3))(prettier@3.5.3):
     dependencies:
       prettier: 3.5.3
     optionalDependencies:
-      '@trivago/prettier-plugin-sort-imports': 4.3.0(prettier@3.5.3)
+      '@trivago/prettier-plugin-sort-imports': 4.3.0(@vue/compiler-sfc@3.5.14)(prettier@3.5.3)
       prettier-plugin-sort-imports: 1.8.7(typescript@5.8.3)
 
-  prettier-plugin-tailwindcss@0.6.11(@trivago/prettier-plugin-sort-imports@5.2.2(prettier@3.5.3))(prettier-plugin-sort-imports@1.8.7(typescript@5.8.3))(prettier@3.5.3):
+  prettier-plugin-tailwindcss@0.6.11(@trivago/prettier-plugin-sort-imports@5.2.2(@vue/compiler-sfc@3.5.14)(prettier@3.5.3))(prettier-plugin-sort-imports@1.8.7(typescript@5.8.3))(prettier@3.5.3):
     dependencies:
       prettier: 3.5.3
     optionalDependencies:
-      '@trivago/prettier-plugin-sort-imports': 5.2.2(prettier@3.5.3)
+      '@trivago/prettier-plugin-sort-imports': 5.2.2(@vue/compiler-sfc@3.5.14)(prettier@3.5.3)
       prettier-plugin-sort-imports: 1.8.7(typescript@5.8.3)
 
   prettier@2.8.8: {}
@@ -16312,6 +16556,20 @@ snapshots:
       vscode-languageserver-protocol: 3.16.0
 
   vscode-uri@3.1.0: {}
+
+  vue-demi@0.14.10(vue@3.5.14(typescript@5.8.3)):
+    dependencies:
+      vue: 3.5.14(typescript@5.8.3)
+
+  vue@3.5.14(typescript@5.8.3):
+    dependencies:
+      '@vue/compiler-dom': 3.5.14
+      '@vue/compiler-sfc': 3.5.14
+      '@vue/runtime-dom': 3.5.14
+      '@vue/server-renderer': 3.5.14(vue@3.5.14(typescript@5.8.3))
+      '@vue/shared': 3.5.14
+    optionalDependencies:
+      typescript: 5.8.3
 
   w3c-xmlserializer@5.0.0:
     dependencies:

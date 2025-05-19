@@ -34,11 +34,10 @@ export function About(): React.ReactNode {
       </section>
       <article className='col-span-12 md:col-span-6'>
         <p className={sharedTypographyClassName}>
-          I&#39;m a frontend engineer focused on building scalable,
-          design-driven web platforms with TypeScript, React, and Vue. My work
-          bridges the gap between product design and production-ready code—with
-          a strong emphasis on developer experience, automation, and visual
-          consistency.
+          I&#39;m a designer & frontend engineer focused on building apps with
+          TypeScript, React, and Vue. My work bridges the gap between product
+          design and production-ready code—with a strong emphasis on developer
+          experience, automation, and visual consistency.
         </p>
         <p className={sharedTypographyClassName}>
           Below are some of my open-source projects and a detailed case study

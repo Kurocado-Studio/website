@@ -22,7 +22,7 @@ export const productStarter = {
 };
 
 export const frontEndProjects: Array<FrontEndProject> = [
-  productStarter,
-  designSystem,
   dailyUI,
+  designSystem,
+  productStarter,
 ];

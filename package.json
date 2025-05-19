@@ -37,7 +37,7 @@
     "@remix-run/node": "2.16.6",
     "@remix-run/react": "2.16.6",
     "@testing-library/jest-dom": "^6.6.3",
-    "ahooks": "^3.8.4",
+    "ahooks": "^3.8.5",
     "clsx": "2.1.1",
     "framer-motion": "11.13.5",
     "isbot": "5.1.28",

@@ -11,7 +11,7 @@ export const dailyUI = {
   title: 'Daily UI Challenge',
   url: 'https://github.com/Kurocado-Studio/daily-ui',
   description:
-    'A curated collection of daily UI challenges, designed in Figma, then implemented in React and Vue.',
+    'A curated collection of daily UI challenges implemented in React and Vue.',
 };
 
 export const productStarter = {

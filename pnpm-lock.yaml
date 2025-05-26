@@ -16,7 +16,7 @@ importers:
         version: 2.0.0-alpha.2(@swc/core@1.11.21(@swc/helpers@0.5.17))(@testing-library/dom@10.4.0)(@types/debug@4.1.12)(@types/react@19.1.1)(@vue/compiler-sfc@3.5.14)(eslint@9.27.0(jiti@2.4.2))(optionator@0.9.4)(prettier@3.5.3)(react@19.0.0)(rollup@4.40.0)(vite@5.4.12(@types/node@22.13.10))(vitest-axe@0.1.0(vitest@2.1.8(@types/node@22.13.10)(jsdom@26.1.0)))
       '@kurocado-studio/ui':
         specifier: 1.4.0
-        version: 1.4.0(framer-motion@11.13.5(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss-animate@1.0.7(tailwindcss@3.3.2))(tailwindcss@3.3.2)(vue@3.5.14(typescript@5.8.3))
+        version: 1.4.0(framer-motion@12.14.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss-animate@1.0.7(tailwindcss@3.3.2))(tailwindcss@3.3.2)(vue@3.5.14(typescript@5.8.3))
       '@motionone/utils':
         specifier: 10.18.0
         version: 10.18.0
@@ -36,8 +36,8 @@ importers:
         specifier: 2.1.1
         version: 2.1.1
       framer-motion:
-        specifier: 11.13.5
-        version: 11.13.5(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+        specifier: 12.14.0
+        version: 12.14.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       isbot:
         specifier: 5.1.28
         version: 5.1.28
@@ -4042,22 +4042,8 @@ packages:
   fraction.js@4.3.7:
     resolution: {integrity: sha512-ZsDfxO51wGAXREY55a7la9LScWpwv9RxIrYABrlvOFBlH/ShPnrtsXeuUIfXKKOVicNxQ+o8JTbJvjS4M89yew==}
 
-  framer-motion@11.13.5:
-    resolution: {integrity: sha512-rArI0zPU9VkpS3Wt0J7dmRxAFUWtzPWoSofNQAP0UO276CmJ+Xlf5xN19GMw3w2QsdrS2sU+0+Q2vtuz4IEZaw==}
-    peerDependencies:
-      '@emotion/is-prop-valid': '*'
-      react: ^18.0.0 || ^19.0.0
-      react-dom: ^18.0.0 || ^19.0.0
-    peerDependenciesMeta:
-      '@emotion/is-prop-valid':
-        optional: true
-      react:
-        optional: true
-      react-dom:
-        optional: true
-
-  framer-motion@12.11.4:
-    resolution: {integrity: sha512-kyE5oWZCUxhDb7LtpEyyadNThJJvoE8a6bfUTBqz++zw3XxDOosPAvw1lqNhYbjOgy57YuAlJ5qG/Cx5BigiEQ==}
+  framer-motion@12.14.0:
+    resolution: {integrity: sha512-P/CLiA+YLc0GL1nB2bgtRBFAbRh0aawU5KPLqnXi6QEZQE2BEwqgIH8qUIT7cMN+4a4nj0iZ2uWTKOrzcYsyGQ==}
     peerDependencies:
       '@emotion/is-prop-valid': '*'
       react: ^18.0.0 || ^19.0.0
@@ -5288,17 +5274,11 @@ packages:
     resolution: {integrity: sha512-AbegBVI4sh6El+1gNwvD5YIck7nSA36weD7xvIxG4in80j/UoK8AEGaWnnz8v1GxonMCltmlNs5ZKbGvl9b1XQ==}
     engines: {node: '>= 0.8.0'}
 
-  motion-dom@11.18.1:
-    resolution: {integrity: sha512-g76KvA001z+atjfxczdRtw/RXOM3OMSdd1f4DL77qCTF/+avrRJiawSG4yDibEQ215sr9kpinSlX2pCTJ9zbhw==}
+  motion-dom@12.14.0:
+    resolution: {integrity: sha512-t5v1QNXrOsLmIzTdmB9OlZ1cA8zkHlpPhn85123/B+8Xe6tiENWKELAZm0yvAoFjcbFmq4u80uUXortZTTvDbg==}
 
-  motion-dom@12.11.4:
-    resolution: {integrity: sha512-1z/qYsrDjSx5QjOH8GfJ2RfFBvEzI2gdAEt2zNW+f7QkLlqjM3sQieESJr5+QtVmvD81qPANM7t97ROixKIt9Q==}
-
-  motion-utils@11.18.1:
-    resolution: {integrity: sha512-49Kt+HKjtbJKLtgO/LKj9Ld+6vw9BjH5d9sc40R/kVyH8GLAXgT42M2NnuPcJNuA3s9ZfZBUcwIgpmZWGEE+hA==}
-
-  motion-utils@12.9.4:
-    resolution: {integrity: sha512-BW3I65zeM76CMsfh3kHid9ansEJk9Qvl+K5cu4DVHKGsI52n76OJ4z2CUJUV+Mn3uEP9k1JJA3tClG0ggSrRcg==}
+  motion-utils@12.12.1:
+    resolution: {integrity: sha512-f9qiqUHm7hWSLlNW8gS9pisnsN7CRFRD58vNjptKdsqFLpkVnX00TNeD6Q0d27V9KzT7ySFyK1TZ/DShfVOv6w==}
 
   motion-v@1.0.2:
     resolution: {integrity: sha512-Qn/X9Mx/5g02rjvpGtn5fht2OWTAnZoed4vLXgjM0lJgkSEtoGuadwEVypbCVH3WW1AHsns2k2okKAjpDrKu6A==}
@@ -8409,13 +8389,13 @@ snapshots:
       - utf-8-validate
       - wrangler
 
-  '@kurocado-studio/ui@1.4.0(framer-motion@11.13.5(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss-animate@1.0.7(tailwindcss@3.3.2))(tailwindcss@3.3.2)(vue@3.5.14(typescript@5.8.3))':
+  '@kurocado-studio/ui@1.4.0(framer-motion@12.14.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss-animate@1.0.7(tailwindcss@3.3.2))(tailwindcss@3.3.2)(vue@3.5.14(typescript@5.8.3))':
     dependencies:
       '@kurocado-studio/html-forms': 1.0.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@react-aria/button': 3.13.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@react-aria/textfield': 3.17.2(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@vue/runtime-dom': 3.5.14
-      framer-motion: 11.13.5(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      framer-motion: 12.14.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       lodash-es: 4.17.21
       motion: 12.11.4(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       motion-v: 1.0.2(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(vue@3.5.14(typescript@5.8.3))
@@ -12722,19 +12702,10 @@ snapshots:
 
   fraction.js@4.3.7: {}
 
-  framer-motion@11.13.5(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
+  framer-motion@12.14.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
     dependencies:
-      motion-dom: 11.18.1
-      motion-utils: 11.18.1
-      tslib: 2.8.1
-    optionalDependencies:
-      react: 19.0.0
-      react-dom: 19.0.0(react@19.0.0)
-
-  framer-motion@12.11.4(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
-    dependencies:
-      motion-dom: 12.11.4
-      motion-utils: 12.9.4
+      motion-dom: 12.14.0
+      motion-utils: 12.12.1
       tslib: 2.8.1
     optionalDependencies:
       react: 19.0.0
@@ -12742,8 +12713,8 @@ snapshots:
 
   framer-motion@12.5.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
     dependencies:
-      motion-dom: 12.11.4
-      motion-utils: 12.9.4
+      motion-dom: 12.14.0
+      motion-utils: 12.12.1
       tslib: 2.8.1
     optionalDependencies:
       react: 19.0.0
@@ -14154,24 +14125,18 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  motion-dom@11.18.1:
+  motion-dom@12.14.0:
     dependencies:
-      motion-utils: 11.18.1
+      motion-utils: 12.12.1
 
-  motion-dom@12.11.4:
-    dependencies:
-      motion-utils: 12.9.4
-
-  motion-utils@11.18.1: {}
-
-  motion-utils@12.9.4: {}
+  motion-utils@12.12.1: {}
 
   motion-v@1.0.2(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(vue@3.5.14(typescript@5.8.3)):
     dependencies:
       '@vueuse/core': 10.11.1(vue@3.5.14(typescript@5.8.3))
       framer-motion: 12.5.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       hey-listen: 1.0.8
-      motion-dom: 12.11.4
+      motion-dom: 12.14.0
       vue: 3.5.14(typescript@5.8.3)
     transitivePeerDependencies:
       - '@emotion/is-prop-valid'
@@ -14181,7 +14146,7 @@ snapshots:
 
   motion@12.11.4(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
     dependencies:
-      framer-motion: 12.11.4(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      framer-motion: 12.14.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       tslib: 2.8.1
     optionalDependencies:
       react: 19.0.0

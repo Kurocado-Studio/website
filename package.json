@@ -35,7 +35,7 @@
     "@kurocado-studio/ui": "1.4.0",
     "@motionone/utils": "10.18.0",
     "@remix-run/node": "2.16.7",
-    "@remix-run/react": "2.16.7",
+    "@remix-run/react": "2.16.8",
     "@testing-library/jest-dom": "^6.6.3",
     "ahooks": "^3.8.5",
     "clsx": "2.1.1",
